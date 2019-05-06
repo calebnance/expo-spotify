@@ -1,0 +1,41 @@
+{
+  "name": "expo-spotify",
+  "version": "0.0.1",
+  "description": "spotify clone with expo",
+  "author": "Caleb Nance",
+  "license": "MIT",
+  "keywords": [
+    "expo",
+    "react native",
+    "react navigation",
+    "spotify"
+  ],
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "dev": "expo start",
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^10.0.1",
+    "expo": "^32.0.6",
+    "prop-types": "^15.7.2",
+    "react": "16.5.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-navigation": "^3.9.1"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "^5.0.0",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "prettier": "^1.16.4"
+  },
+  "private": true
+}
