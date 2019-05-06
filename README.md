@@ -1,5 +1,9 @@
 # Spotify Clone with Expo
 
+<p align="center">
+  <img src="screenshots/screenshare-2.png?raw=true" />
+</p>
+
 ## Table of Contents
 
 - [Install & Build](#install--build)
