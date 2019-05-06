@@ -38,3 +38,12 @@ Run Project Locally: `expo start`
 ## Release Notes
 
 ### version 0.0.1 (current)
+
+- iOS and Android
+- Tab Navigation (stacks created)
+  - Home
+  - Search
+  - Library
+  - Custom Bar for Music Player added to `<BottomTabBar />`
+- Modals (bottom to top)
+  - Music Player
