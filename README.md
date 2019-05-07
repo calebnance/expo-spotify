@@ -42,6 +42,11 @@ Run Project Locally: `expo start`
 - iOS and Android
 - Tab Navigation (stacks created)
   - Home
+    - Horizontal Album component
+    - Album Screen
+    - Header animation on scroll event
+      - opacity on iPhoneX notch
+      - opacity on cog icon
   - Search
   - Library
   - Custom Bar for Music Player added to `<BottomTabBar />`
