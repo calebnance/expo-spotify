@@ -38,6 +38,7 @@ class ModalMusicPlayer extends React.Component {
     const { favorited, paused } = this.state;
 
     const favoriteColor = favorited ? colors.brandPrimary : colors.white;
+    const favoriteIcon = favorited ? 'heart' : 'heart-o';
     const iconPlay = paused ? 'play-circle' : 'pause-circle';
 
     return (
@@ -59,7 +60,7 @@ class ModalMusicPlayer extends React.Component {
             </View>
             <View style={styles.containerFavorite}>
               <TouchIcon
-                icon={<FontAwesome color={favoriteColor} name="heart-o" />}
+                icon={<FontAwesome color={favoriteColor} name={favoriteIcon} />}
                 onPress={this.toggleFavorite}
               />
             </View>
