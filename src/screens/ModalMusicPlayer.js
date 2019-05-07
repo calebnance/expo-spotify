@@ -50,7 +50,7 @@ class ModalMusicPlayer extends React.Component {
         />
 
         <View style={gStyle.p24}>
-          <Image source={images.macMillerswimming} style={styles.image} />
+          <Image source={images.swimming} style={styles.image} />
 
           <View style={[gStyle.flexRowSpace, styles.containerDetails]}>
             <View style={styles.containerSong}>
