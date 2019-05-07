@@ -23,6 +23,7 @@ class Home extends React.Component {
   }
 
   render() {
+    const { navigation } = this.props;
     const { scrollY } = this.state;
 
     const opacityIn = scrollY.interpolate({
@@ -59,17 +60,24 @@ class Home extends React.Component {
           style={gStyle.container}
         >
           <View style={gStyle.spacer128} />
-          <AlbumsHorizontal data={recentlyPlayed} heading="Recently played" />
+
+          <AlbumsHorizontal
+            data={recentlyPlayed}
+            heading="Recently played"
+            navigation={navigation}
+          />
 
           <AlbumsHorizontal
             data={heavyRotation}
             heading="Your heavy rotation"
+            navigation={navigation}
             tagline="The music you've had on repeat this month."
           />
 
           <AlbumsHorizontal
             data={jumpBackIn}
             heading="Jump back in"
+            navigation={navigation}
             tagline="Your top listens from the past few months."
           />
         </Animated.ScrollView>

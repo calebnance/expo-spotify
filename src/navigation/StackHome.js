@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createStackNavigator } from 'react-navigation';
 
-import HomeScreen from '../screens/Home';
+import Home from '../screens/Home';
+import Album from '../screens/Album';
 import SvgTabHome from '../components/icons/Svg.TabHome';
 
 const Icon = ({ focused }) => <SvgTabHome active={focused} />;
@@ -14,12 +15,12 @@ Icon.propTypes = {
 
 export default createStackNavigator(
   {
-    HomeMain: {
-      screen: HomeScreen
-    }
+    Home,
+    Album
   },
   {
     headerMode: 'none',
+    initialRouteName: 'Home',
     navigationOptions: {
       tabBarLabel: 'Home',
       tabBarIcon: Icon

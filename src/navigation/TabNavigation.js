@@ -40,8 +40,8 @@ export default createBottomTabNavigator(
     StackLibrary
   },
   {
-    tabBarComponent: props => <TabBarComponent {...props} />,
     initialRouteName: 'StackHome',
+    tabBarComponent: props => <TabBarComponent {...props} />,
     tabBarOptions: {
       activeTintColor: colors.white,
       inactiveTintColor: colors.greyInactive,
