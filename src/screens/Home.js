@@ -7,6 +7,11 @@ import { colors, device, gStyle } from '../api';
 // components
 import AlbumsHorizontal from '../components/AlbumsHorizontal';
 
+// mock data
+import heavyRotation from '../mockdata/heavyRotation';
+import jumpBackIn from '../mockdata/jumpBackIn';
+import recentlyPlayed from '../mockdata/recentlyPlayed';
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -54,19 +59,19 @@ class Home extends React.Component {
           style={gStyle.container}
         >
           <View style={gStyle.spacer128} />
-          <AlbumsHorizontal heading="Recently played" />
+          <AlbumsHorizontal data={recentlyPlayed} heading="Recently played" />
 
           <AlbumsHorizontal
+            data={heavyRotation}
             heading="Your heavy rotation"
             tagline="The music you've had on repeat this month."
           />
 
           <AlbumsHorizontal
+            data={jumpBackIn}
             heading="Jump back in"
             tagline="Your top listens from the past few months."
           />
-
-          <AlbumsHorizontal heading="Similar to The Beatles" />
         </Animated.ScrollView>
       </React.Fragment>
     );

@@ -3,18 +3,7 @@ import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { colors, fonts, images } from '../api';
 
-const albumsArray = [
-  { id: 1, image: 'exRe', title: 'Ex:Re' },
-  { id: 2, image: 'swimming', title: 'Swimming' },
-  { id: 3, title: 'Lux Prima' },
-  { id: 4, title: 'Man On The Moon II: The Legend of Mr. Rager' },
-  { id: 5, title: 'Sea Of Cowards' },
-  { id: 6, title: 'Wish You Were Here' },
-  { id: 7, title: 'Extraordinary Machine' },
-  { id: 8, title: 'The Creek Drank The Cradle' }
-];
-
-const AlbumsHorizontal = ({ heading, tagline }) => {
+const AlbumsHorizontal = ({ data, heading, tagline }) => {
   return (
     <View style={styles.container}>
       {heading && <Text style={styles.heading}>{heading}</Text>}
@@ -22,7 +11,7 @@ const AlbumsHorizontal = ({ heading, tagline }) => {
 
       <FlatList
         contentContainerStyle={styles.containerContent}
-        data={albumsArray}
+        data={data}
         horizontal
         keyExtractor={itemObj => itemObj.id.toString()}
         renderItem={itemObj => {
@@ -51,6 +40,9 @@ AlbumsHorizontal.defaultProps = {
 };
 
 AlbumsHorizontal.propTypes = {
+  // required
+  data: PropTypes.array.isRequired,
+
   // optional
   heading: PropTypes.string,
   tagline: PropTypes.string
