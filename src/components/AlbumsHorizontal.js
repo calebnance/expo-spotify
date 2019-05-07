@@ -1,11 +1,11 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors, fonts } from '../api';
+import { colors, fonts, images } from '../api';
 
 const albumsArray = [
-  { id: 1, title: 'Ex:Re' },
-  { id: 2, title: 'Swimming' },
+  { id: 1, image: 'exRe', title: 'Ex:Re' },
+  { id: 2, image: 'swimming', title: 'Swimming' },
   { id: 3, title: 'Lux Prima' },
   { id: 4, title: 'Man On The Moon II: The Legend of Mr. Rager' },
   { id: 5, title: 'Sea Of Cowards' },
@@ -14,10 +14,11 @@ const albumsArray = [
   { id: 8, title: 'The Creek Drank The Cradle' }
 ];
 
-const AlbumsHorizontal = ({ heading }) => {
+const AlbumsHorizontal = ({ heading, tagline }) => {
   return (
     <View style={styles.container}>
       {heading && <Text style={styles.heading}>{heading}</Text>}
+      {tagline && <Text style={styles.tagline}>{tagline}</Text>}
 
       <FlatList
         contentContainerStyle={styles.containerContent}
@@ -29,7 +30,11 @@ const AlbumsHorizontal = ({ heading }) => {
 
           return (
             <View style={styles.item}>
-              <View style={styles.image} />
+              <View style={styles.image}>
+                {item.image && (
+                  <Image source={images[item.image]} style={styles.image} />
+                )}
+              </View>
               <Text style={styles.title}>{item.title}</Text>
             </View>
           );
@@ -41,44 +46,51 @@ const AlbumsHorizontal = ({ heading }) => {
 };
 
 AlbumsHorizontal.defaultProps = {
-  heading: null
+  heading: null,
+  tagline: null
 };
 
 AlbumsHorizontal.propTypes = {
   // optional
-  heading: PropTypes.string
+  heading: PropTypes.string,
+  tagline: PropTypes.string
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'red',
-    marginBottom: 16,
+    marginBottom: 32,
     width: '100%'
   },
   containerContent: {
-    paddingLeft: 24,
-    paddingRight: 8
+    paddingLeft: 16
   },
   heading: {
     color: colors.white,
     fontFamily: fonts.spotifyBold,
     fontSize: 18,
-    paddingBottom: 8,
+    paddingBottom: 6,
+    textAlign: 'center'
+  },
+  tagline: {
+    color: colors.greyInactive,
+    fontFamily: fonts.spotifyRegular,
+    fontSize: 12,
+    paddingBottom: 6,
     textAlign: 'center'
   },
   item: {
     marginRight: 16,
-    width: 180
+    width: 148
   },
   image: {
-    backgroundColor: colors.white,
-    height: 180,
-    width: 180
+    backgroundColor: colors.greyLight,
+    height: 148,
+    width: 148
   },
   title: {
     color: colors.white,
     fontFamily: fonts.spotifyBold,
-    fontSize: 14,
+    fontSize: 12,
     marginTop: 4,
     textAlign: 'center'
   }
