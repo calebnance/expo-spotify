@@ -1,17 +1,103 @@
 import React from 'react';
+import { Animated, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { Text, View } from 'react-native';
-import { gStyle } from '../api';
+import { FontAwesome } from '@expo/vector-icons';
+import { colors, device, gStyle } from '../api';
 
-const Home = ({ navigation }) => (
-  <View style={gStyle.container}>
-    <Text>Home</Text>
-  </View>
-);
+// components
+import AlbumsHorizontal from '../components/AlbumsHorizontal';
+
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.scrollValue = new Animated.Value(0);
+    this.state = {
+      scrollY: new Animated.Value(0)
+    };
+  }
+
+  render() {
+    const { scrollY } = this.state;
+
+    const opacityIn = scrollY.interpolate({
+      inputRange: [0, 128],
+      outputRange: [0, 1],
+      extrapolate: 'clamp'
+    });
+
+    const opacityOut = scrollY.interpolate({
+      inputRange: [0, 88],
+      outputRange: [1, 0],
+      extrapolate: 'clamp'
+    });
+
+    return (
+      <React.Fragment>
+        {device.iPhoneX && (
+          <Animated.View style={[styles.iPhoneNotch, { opacity: opacityIn }]} />
+        )}
+
+        <Animated.View
+          style={[styles.containerHeader, { opacity: opacityOut }]}
+        >
+          <FontAwesome color={colors.white} name="cog" size={28} />
+        </Animated.View>
+
+        <Animated.ScrollView
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+            { useNativeDriver: true }
+          )}
+          scrollEventThrottle={16}
+          showsVerticalScrollIndicator={false}
+          style={gStyle.container}
+        >
+          <View style={gStyle.spacer128} />
+          <AlbumsHorizontal heading="Recently played" />
+
+          <AlbumsHorizontal
+            heading="Your heavy rotation"
+            tagline="The music you've had on repeat this month."
+          />
+
+          <AlbumsHorizontal
+            heading="Jump back in"
+            tagline="Your top listens from the past few months."
+          />
+
+          <AlbumsHorizontal heading="Similar to The Beatles" />
+        </Animated.ScrollView>
+      </React.Fragment>
+    );
+  }
+}
 
 Home.propTypes = {
   // required
   navigation: PropTypes.object.isRequired
 };
+
+const styles = StyleSheet.create({
+  iPhoneNotch: {
+    backgroundColor: colors.black70,
+    height: 44,
+    position: 'absolute',
+    top: 0,
+    width: '100%',
+    zIndex: 20
+  },
+  containerHeader: {
+    alignItems: 'flex-end',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    paddingHorizontal: 16,
+    paddingTop: device.iPhoneX ? 60 : 16,
+    position: 'absolute',
+    top: 0,
+    width: '100%',
+    zIndex: 10
+  }
+});
 
 export default Home;

@@ -35,6 +35,11 @@ export default {
   flex3: { flex: 3 },
   flex4: { flex: 4 },
 
+  spacer24: { height: 24 },
+  spacer48: { height: 48 },
+  spacer64: { height: 64 },
+  spacer128: { height: 128 },
+
   mB8: { marginBottom: 8 },
   mR8: { marginRight: 8 },
   mR16: { marginRight: 16 },
