@@ -1,0 +1,20 @@
+{
+  "artist": "Fiona Apple",
+  "image": "extraMachine",
+  "released": 2005,
+  "title": "Extraordinary Machine",
+  "tracks": [
+    { "title": "Extraordinary Machine", "seconds": "224" },
+    { "title": "Get Him Back", "seconds": "326" },
+    { "title": "O' Sailor", "seconds": "337" },
+    { "title": "Better Version of Me", "seconds": "181" },
+    { "title": "Tymps (the Sick in the Head Song)", "seconds": "245" },
+    { "title": "Parting Gift", "seconds": "216" },
+    { "title": "Window", "seconds": "333" },
+    { "title": "Oh Well", "seconds": "222" },
+    { "title": "Please Please Please", "seconds": "215" },
+    { "title": "Red Red Red", "seconds": "248" },
+    { "title": "Not About Love", "seconds": "261" },
+    { "title": "Waltz (Better Than Fine)", "seconds": "226" }
+  ]
+}
