@@ -1,7 +1,7 @@
 # Spotify Clone with Expo
 
 <p align="center">
-  <img src="screenshots/screenshare-2.png?raw=true" />
+  <img src="screenshots/screenshare-2.jpg?raw=true" />
 </p>
 
 ## Table of Contents
