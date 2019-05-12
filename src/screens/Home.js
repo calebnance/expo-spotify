@@ -16,7 +16,6 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.scrollValue = new Animated.Value(0);
     this.state = {
       scrollY: new Animated.Value(0)
     };
