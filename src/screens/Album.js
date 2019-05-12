@@ -75,7 +75,7 @@ class Album extends React.Component {
       */}
         <View style={styles.containerFixed}>
           <View style={styles.containerLinear}>
-            <LinearGradient fill="#3d4928" />
+            <LinearGradient fill={album.backgroundColor} />
           </View>
           <View style={styles.containerImage}>
             <Image source={images[album.image]} style={styles.image} />
