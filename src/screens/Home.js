@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end',
     paddingHorizontal: 16,
-    paddingTop: device.iPhoneX ? 60 : 16,
+    paddingTop: device.iPhoneX ? 60 : 36,
     position: 'absolute',
     top: 0,
     width: '100%',
