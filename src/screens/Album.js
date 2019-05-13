@@ -118,7 +118,6 @@ class Album extends React.Component {
                 />
               </View>
             </View>
-            <Text style={{ color: colors.white }}>{`Album: ${title}`}</Text>
           </View>
         </ScrollView>
       </View>
@@ -158,7 +157,8 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontFamily: fonts.spotifyBold,
     fontSize: 20,
-    marginBottom: 8
+    marginBottom: 8,
+    textAlign: 'center'
   },
   albumInfo: {
     color: colors.greyInactive,
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 27,
     shadowColor: colors.blackBg,
-    shadowOffset: { height: -40, width: 0 },
+    shadowOffset: { height: -20, width: 0 },
     shadowOpacity: 0.4,
     shadowRadius: 20
   },
