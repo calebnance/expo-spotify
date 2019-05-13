@@ -1,0 +1,19 @@
+{
+  "artist": "Ex:Re",
+  "backgroundColor": "#0d2157",
+  "image": "exRe",
+  "released": 2018,
+  "title": "Ex:Re",
+  "tracks": [
+    { "title": "Where The Time Went", "seconds": 251 },
+    { "title": "Crushing", "seconds": 248 },
+    { "title": "New York", "seconds": 320 },
+    { "title": "Romance", "seconds": 403 },
+    { "title": "The Dazzler", "seconds": 282 },
+    { "title": "Too Sad", "seconds": 328 },
+    { "title": "Liar", "seconds": 294 },
+    { "title": "I Can't Keep You", "seconds": 257 },
+    { "title": "5AM", "seconds": 204 },
+    { "title": "My Heart", "seconds": 277 }
+  ]
+}

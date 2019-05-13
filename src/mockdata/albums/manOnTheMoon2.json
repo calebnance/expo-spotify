@@ -1,0 +1,14 @@
+{
+  "artist": "Kid Cudi",
+  "backgroundColor": "#70603b",
+  "image": "theLegendOfMrRager",
+  "released": 2010,
+  "title": "Man On The Moon II: The Legend of Mr. Rager",
+  "tracks": [
+    {
+      "title": "Scott Mescudi vs. the World",
+      "seconds": 161,
+      "featuring": ["CeeLo Green"]
+    }
+  ]
+}
