@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     color: colors.white,
-    fontFamily: fonts.spotifyRegular,
+    fontFamily: fonts.spotifyBold,
     fontSize: 16,
     paddingHorizontal: 8,
     marginTop: 2,
