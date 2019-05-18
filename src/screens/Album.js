@@ -124,7 +124,7 @@ class Album extends React.Component {
               album.tracks.map((track, index) => (
                 <LineItemSong
                   downloaded={downloaded}
-                  key={index}
+                  key={index.toString()}
                   onPress={changeSong}
                   songData={{
                     album: album.title,
