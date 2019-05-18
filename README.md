@@ -47,7 +47,7 @@ View the code here: [feature_expo-web](https://github.com/calebnance/expo-spotif
 a couple manual changes within `index.html` i found needed to be made so far:
 - "mobile-web-app-capable" => "apple-mobile-web-app-capable"
 - apple-mobile-web-app-status-bar-style="default" => "black-translucent"
-- set background color within body{} example: background-color: #121212;
+- add background color within body{background-color: #121212; ...}
 - double image meta tags
 - double/triple js packages
 
