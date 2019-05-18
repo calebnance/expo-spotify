@@ -2,6 +2,7 @@ import { Dimensions, Platform } from 'react-native';
 
 // is iPhoneX, iPhoneXs, iPhoneXr, iPhoneXs Max
 const iOS = Platform.OS === 'ios';
+const web = Platform.OS === 'web';
 const windowInfo = Dimensions.get('window');
 const { height, width } = windowInfo;
 
@@ -19,5 +20,6 @@ export default {
   height,
   iOS,
   iPhoneX,
+  web,
   width
 };
