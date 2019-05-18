@@ -45,11 +45,11 @@ Currently Expo Web support is not production ready, but if you want to see how t
 View the code here: [feature_expo-web](https://github.com/calebnance/expo-spotify/tree/feature_expo-web)
 
 a couple manual changes within `index.html` i found needed to be made so far:
-- "mobile-web-app-capable" => "apple-mobile-web-app-capable"
-- apple-mobile-web-app-status-bar-style="default" => "black-translucent"
-- add background color within body{background-color: #121212; ...}
-- double image meta tags
-- double/triple js packages
+- **to make splash screen work:** "mobile-web-app-capable" => "apple-mobile-web-app-capable"
+- **status bar transparent:** apple-mobile-web-app-status-bar-style="default" => "black-translucent"
+- **no white background:** add background color within body{background-color: #121212; ...}
+- **check output meta:** double image meta tags
+- **check output js:** double/triple js packages
 
 ## Release Notes
 
