@@ -59,6 +59,8 @@ class Album extends React.Component {
       );
     }
 
+    const stickyArray = device.web ? [] : [0];
+
     return (
       <View style={gStyle.container}>
         {/*
@@ -88,7 +90,7 @@ class Album extends React.Component {
 
         <ScrollView
           showsVerticalScrollIndicator={false}
-          stickyHeaderIndices={[0]}
+          stickyHeaderIndices={stickyArray}
           style={styles.containerScroll}
         >
           <View style={styles.containerSticky}>
@@ -150,7 +152,7 @@ const styles = StyleSheet.create({
   },
   image: {
     height: 148,
-    marginBottom: 16,
+    marginBottom: device.web ? 0 : 16,
     width: 148
   },
   title: {
