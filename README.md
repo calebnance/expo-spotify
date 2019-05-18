@@ -38,9 +38,18 @@ Run Project Locally: `expo start`
 
 ## Expo Web
 
-Currently Expo Web support is in alpha, but if you want to see how this project looks on the web as a PWA (Progressive Web App)
+Currently Expo Web support is not production ready, but if you want to see how this project looks on the web as a PWA (Progressive Web App)...
 
-[PWA: Expo Spotify](https://expo-spotify.calebnance.now.sh)
+[PWA: Expo Spotify](https://expo-spotify.calebnance.now.sh) looks best on a mobile device, but not bad on desktop!
+
+View the code here: [feature_expo-web](https://github.com/calebnance/expo-spotify/tree/feature_expo-web)
+
+a couple manual changes within `index.html` i found needed to be made so far:
+- "mobile-web-app-capable" => "apple-mobile-web-app-capable"
+- apple-mobile-web-app-status-bar-style="default" => "black-translucent"
+- set background color within body{} example: background-color: #121212;
+- double image meta tags
+- double/triple js packages
 
 ## Release Notes
 
