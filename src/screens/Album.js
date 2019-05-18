@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Animated,
   Image,
   ScrollView,
   StyleSheet,
@@ -25,6 +26,7 @@ class Album extends React.Component {
     this.state = {
       album: null,
       downloaded: false,
+      scrollY: new Animated.Value(0),
       title: null
     };
 
@@ -51,7 +53,7 @@ class Album extends React.Component {
   render() {
     const { screenProps } = this.props;
     const { changeSong } = screenProps;
-    const { album, downloaded, title } = this.state;
+    const { album, downloaded, scrollY, title } = this.state;
 
     // album data not set?
     if (album === null) {
@@ -62,20 +64,33 @@ class Album extends React.Component {
       );
     }
 
+    const opacityHeading = scrollY.interpolate({
+      inputRange: [220, 280],
+      outputRange: [0, 1],
+      extrapolate: 'clamp'
+    });
+    const opacityShuffleLinear = scrollY.interpolate({
+      inputRange: [40, 80],
+      outputRange: [0, 1],
+      extrapolate: 'clamp'
+    });
+
     return (
       <View style={gStyle.container}>
-        {/*
-      <View
-        style={{
-          backgroundColor: 'red',
-          height: 89,
-          position: 'absolute',
-          top: 0,
-          width: '100%',
-          zIndex: 40
-        }}
-      />
-      */}
+        <Animated.View
+          style={{
+            // backgroundColor: 'red',
+            backgroundColor: colors.blackBg,
+            height: 89,
+            opacity: opacityHeading,
+            position: 'absolute',
+            top: 0,
+            width: '100%',
+            zIndex: 40
+          }}
+        >
+          <LinearGradient fill={album.backgroundColor} height={89} />
+        </Animated.View>
         <View style={styles.containerFixed}>
           <View style={styles.containerLinear}>
             <LinearGradient fill={album.backgroundColor} />
@@ -91,16 +106,26 @@ class Album extends React.Component {
           </Text>
         </View>
 
-        <ScrollView
+        <Animated.ScrollView
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+            { useNativeDriver: true }
+          )}
+          scrollEventThrottle={16}
           showsVerticalScrollIndicator={false}
           stickyHeaderIndices={[0]}
           style={styles.containerScroll}
         >
           <View style={styles.containerSticky}>
+            <Animated.View
+              style={[
+                styles.containerStickyLinear,
+                { opacity: opacityShuffleLinear }
+              ]}
+            >
+              <LinearGradient fill={colors.black20} height={54} />
+            </Animated.View>
             <View style={styles.containerShuffle}>
-              {/*
-            <LinearGradient fill={colors.black20} height={27} />
-            */}
               <TouchText
                 onPress={() => null}
                 style={styles.btn}
@@ -137,7 +162,7 @@ class Album extends React.Component {
               ))}
           </View>
           <View style={gStyle.spacer128} />
-        </ScrollView>
+        </Animated.ScrollView>
       </View>
     );
   }
@@ -187,24 +212,34 @@ const styles = StyleSheet.create({
     marginBottom: 48
   },
   containerScroll: {
-    paddingTop: 116
+    paddingTop: 89
   },
   containerSticky: {
+    // backgroundColor: 'red',
+    // backgroundColor: colors.blackBg,
     marginTop: device.iPhoneX ? 238 : 194
   },
   containerShuffle: {
+    // backgroundColor: 'blue',
     alignItems: 'center',
-    height: 27,
+    height: 54,
     shadowColor: colors.blackBg,
     shadowOffset: { height: -20, width: 0 },
     shadowOpacity: 0.4,
     shadowRadius: 20
   },
+  containerStickyLinear: {
+    // backgroundColor: 'purple',
+    // height: 54,
+    top: 0,
+    position: 'absolute',
+    width: '100%'
+  },
   btn: {
     backgroundColor: colors.brandPrimary,
     borderRadius: 27,
     height: 54,
-    top: -27,
+    // top: -27,
     width: 200
   },
   btnText: {
