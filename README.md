@@ -9,6 +9,7 @@
 - [Install & Build](#install--build)
 - [Stats](#stats)
 - [Linting](#linting)
+- [Expo Web](#expo-web)
 - [Demo & Release Notes](#release-notes)
 
 ## Install & Build
@@ -34,6 +35,12 @@ Run Project Locally: `expo start`
   - stylelint integration
   - automatic format on save (toggle format on save)
 - be aware of the `.prettierignore` file
+
+## Expo Web
+
+Currently Expo Web support is in alpha, but if you want to see how this project looks on the web as a PWA (Progressive Web App)
+
+[PWA: Expo Spotify](https://expo-spotify.calebnance.now.sh)
 
 ## Release Notes
 
