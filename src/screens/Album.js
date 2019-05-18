@@ -1,19 +1,13 @@
 import React from 'react';
-import {
-  Animated,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Switch,
-  Text,
-  View
-} from 'react-native';
+import { Animated, Image, StyleSheet, Switch, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { Feather } from '@expo/vector-icons';
 import { colors, device, fonts, gStyle, images } from '../api';
 
 // components
 import LinearGradient from '../components/LinearGradient';
 import LineItemSong from '../components/LineItemSong';
+import TouchIcon from '../components/TouchIcon';
 import TouchText from '../components/TouchText';
 
 // data
@@ -51,7 +45,7 @@ class Album extends React.Component {
   }
 
   render() {
-    const { screenProps } = this.props;
+    const { navigation, screenProps } = this.props;
     const { changeSong } = screenProps;
     const { album, downloaded, scrollY, title } = this.state;
 
@@ -65,11 +59,12 @@ class Album extends React.Component {
     }
 
     const opacityHeading = scrollY.interpolate({
-      inputRange: [220, 280],
+      inputRange: [230, 280],
       outputRange: [0, 1],
       extrapolate: 'clamp'
     });
-    const opacityShuffleLinear = scrollY.interpolate({
+
+    const opacityShuffle = scrollY.interpolate({
       inputRange: [40, 80],
       outputRange: [0, 1],
       extrapolate: 'clamp'
@@ -77,20 +72,27 @@ class Album extends React.Component {
 
     return (
       <View style={gStyle.container}>
-        <Animated.View
-          style={{
-            // backgroundColor: 'red',
-            backgroundColor: colors.blackBg,
-            height: 89,
-            opacity: opacityHeading,
-            position: 'absolute',
-            top: 0,
-            width: '100%',
-            zIndex: 40
-          }}
-        >
-          <LinearGradient fill={album.backgroundColor} height={89} />
-        </Animated.View>
+        <View style={styles.containerHeader}>
+          <Animated.View
+            style={[styles.headerLinear, { opacity: opacityHeading }]}
+          >
+            <LinearGradient fill={album.backgroundColor} height={89} />
+          </Animated.View>
+          <View style={styles.header}>
+            <TouchIcon
+              icon={<Feather color={colors.greyLight} name="chevron-left" />}
+              onPress={() => navigation.goBack(null)}
+            />
+            <Animated.View style={{ opacity: opacityShuffle }}>
+              <Text style={styles.headerTitle}>{album.title}</Text>
+            </Animated.View>
+            <TouchIcon
+              icon={<Feather color={colors.greyLight} name="more-horizontal" />}
+              onPress={() => null}
+            />
+          </View>
+        </View>
+
         <View style={styles.containerFixed}>
           <View style={styles.containerLinear}>
             <LinearGradient fill={album.backgroundColor} />
@@ -120,7 +122,7 @@ class Album extends React.Component {
             <Animated.View
               style={[
                 styles.containerStickyLinear,
-                { opacity: opacityShuffleLinear }
+                { opacity: opacityShuffle }
               ]}
             >
               <LinearGradient fill={colors.black20} height={54} />
@@ -175,6 +177,36 @@ Album.propTypes = {
 };
 
 const styles = StyleSheet.create({
+  containerHeader: {
+    height: 89,
+    position: 'absolute',
+    top: 0,
+    width: '100%',
+    zIndex: 100
+  },
+  headerLinear: {
+    height: 89,
+    width: '100%'
+  },
+  header: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 24,
+    paddingTop: device.iPhoneX ? 48 : 24,
+    position: 'absolute',
+    top: 0,
+    width: '100%'
+  },
+  headerTitle: {
+    color: colors.white,
+    fontFamily: fonts.spotifyRegular,
+    fontSize: 16,
+    paddingHorizontal: 8,
+    marginTop: 2,
+    textAlign: 'center',
+    width: device.width - 100
+  },
   containerFixed: {
     alignItems: 'center',
     paddingTop: device.iPhoneX ? 94 : 50,
@@ -201,7 +233,7 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontFamily: fonts.spotifyBold,
     fontSize: 20,
-    paddingHorizontal: 16,
+    paddingHorizontal: 24,
     marginBottom: 8,
     textAlign: 'center'
   },
@@ -215,22 +247,17 @@ const styles = StyleSheet.create({
     paddingTop: 89
   },
   containerSticky: {
-    // backgroundColor: 'red',
-    // backgroundColor: colors.blackBg,
     marginTop: device.iPhoneX ? 238 : 194
   },
   containerShuffle: {
-    // backgroundColor: 'blue',
     alignItems: 'center',
     height: 54,
     shadowColor: colors.blackBg,
-    shadowOffset: { height: -20, width: 0 },
-    shadowOpacity: 0.4,
+    shadowOffset: { height: -10, width: 0 },
+    shadowOpacity: 0.2,
     shadowRadius: 20
   },
   containerStickyLinear: {
-    // backgroundColor: 'purple',
-    // height: 54,
     top: 0,
     position: 'absolute',
     width: '100%'
@@ -239,7 +266,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.brandPrimary,
     borderRadius: 27,
     height: 54,
-    // top: -27,
     width: 200
   },
   btnText: {
