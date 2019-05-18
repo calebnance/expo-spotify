@@ -5,18 +5,13 @@ import { BottomTabBar } from 'react-navigation';
 // components
 import BarMusicPlayer from './BarMusicPlayer';
 
-// data
-const songMockData = {
-  artist: 'Mac Miller',
-  title: 'So it goes'
-};
-
 const CustomTabBar = props => {
-  const { navigation } = props;
+  const { navigation, screenProps } = props;
+  const { currentSongData } = screenProps;
 
   return (
     <React.Fragment>
-      <BarMusicPlayer navigation={navigation} song={songMockData} />
+      <BarMusicPlayer navigation={navigation} song={currentSongData} />
       <BottomTabBar {...props} />
     </React.Fragment>
   );
@@ -24,7 +19,8 @@ const CustomTabBar = props => {
 
 CustomTabBar.propTypes = {
   // required
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
+  screenProps: PropTypes.object.isRequired
 };
 
 export default CustomTabBar;

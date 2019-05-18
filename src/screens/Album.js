@@ -12,6 +12,7 @@ import { colors, device, fonts, gStyle, images } from '../api';
 
 // components
 import LinearGradient from '../components/LinearGradient';
+import LineItemSong from '../components/LineItemSong';
 import TouchText from '../components/TouchText';
 
 // data
@@ -48,6 +49,8 @@ class Album extends React.Component {
   }
 
   render() {
+    const { screenProps } = this.props;
+    const { changeSong } = screenProps;
     const { album, downloaded, title } = this.state;
 
     // album data not set?
@@ -80,7 +83,9 @@ class Album extends React.Component {
           <View style={styles.containerImage}>
             <Image source={images[album.image]} style={styles.image} />
           </View>
-          <Text style={styles.title}>{album.title}</Text>
+          <Text ellipsizeMode="tail" numberOfLines={1} style={styles.title}>
+            {album.title}
+          </Text>
           <Text style={styles.albumInfo}>
             {`Album by ${album.artist} · ${album.released}`}
           </Text>
@@ -106,19 +111,32 @@ class Album extends React.Component {
           </View>
           <View style={styles.containerSongs}>
             <View style={styles.row}>
-              <View>
-                <Text style={styles.downloadText}>
-                  {downloaded ? 'Downloaded' : 'Download'}
-                </Text>
-              </View>
-              <View>
-                <Switch
-                  onValueChange={val => this.toggleDownloaded(val)}
-                  value={downloaded}
-                />
-              </View>
+              <Text style={styles.downloadText}>
+                {downloaded ? 'Downloaded' : 'Download'}
+              </Text>
+              <Switch
+                onValueChange={val => this.toggleDownloaded(val)}
+                value={downloaded}
+              />
             </View>
+
+            {album.tracks &&
+              album.tracks.map((track, index) => (
+                <LineItemSong
+                  downloaded={downloaded}
+                  key={index}
+                  onPress={changeSong}
+                  songData={{
+                    album: album.title,
+                    artist: album.artist,
+                    image: album.image,
+                    length: track.seconds,
+                    title: track.title
+                  }}
+                />
+              ))}
           </View>
+          <View style={gStyle.spacer128} />
         </ScrollView>
       </View>
     );
@@ -127,7 +145,8 @@ class Album extends React.Component {
 
 Album.propTypes = {
   // required
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
+  screenProps: PropTypes.object.isRequired
 };
 
 const styles = StyleSheet.create({
@@ -157,6 +176,7 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontFamily: fonts.spotifyBold,
     fontSize: 20,
+    paddingHorizontal: 16,
     marginBottom: 8,
     textAlign: 'center'
   },
@@ -196,8 +216,7 @@ const styles = StyleSheet.create({
   },
   containerSongs: {
     alignItems: 'center',
-    backgroundColor: colors.blackBg,
-    height: 1000
+    backgroundColor: colors.blackBg
   },
   row: {
     alignItems: 'center',

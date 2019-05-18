@@ -11,6 +11,9 @@ export default {
     justifyContent: 'center'
   },
   flexRow: {
+    flexDirection: 'row'
+  },
+  flexRowCenterAlign: {
     alignItems: 'center',
     flexDirection: 'row'
   },
@@ -34,6 +37,7 @@ export default {
   flex2: { flex: 2 },
   flex3: { flex: 3 },
   flex4: { flex: 4 },
+  flex5: { flex: 5 },
 
   spacer24: { height: 24 },
   spacer48: { height: 48 },
