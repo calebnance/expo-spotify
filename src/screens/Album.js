@@ -80,14 +80,14 @@ class Album extends React.Component {
           </Animated.View>
           <View style={styles.header}>
             <TouchIcon
-              icon={<Feather color={colors.greyLight} name="chevron-left" />}
+              icon={<Feather color={colors.white} name="chevron-left" />}
               onPress={() => navigation.goBack(null)}
             />
             <Animated.View style={{ opacity: opacityShuffle }}>
               <Text style={styles.headerTitle}>{album.title}</Text>
             </Animated.View>
             <TouchIcon
-              icon={<Feather color={colors.greyLight} name="more-horizontal" />}
+              icon={<Feather color={colors.white} name="more-horizontal" />}
               onPress={() => null}
             />
           </View>

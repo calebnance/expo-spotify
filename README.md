@@ -60,9 +60,11 @@ a couple manual changes within `index.html` i found needed to be made so far:
   - Home
     - Horizontal Album component
     - Album Screen
+      - animation opacity on header
+      - scroll sticky of shuffle button
     - Header animation on scroll event
-      - opacity on iPhoneX notch
-      - opacity on cog icon
+      - animation opacity on iPhoneX notch
+      - animation opacity on cog icon
   - Search
   - Library
   - Custom Bar for Music Player added to `<BottomTabBar />`
