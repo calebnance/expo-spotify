@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     position: 'absolute',
     right: 24,
-    top: 78,
+    top: device.web ? 40 : 78,
     width: 28
   }
 });

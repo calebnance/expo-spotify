@@ -50,7 +50,16 @@ class Album extends React.Component {
   }
 
   toggleDownloaded(val) {
-    // warn on switch off from kids settings...
+    // if web
+    if (device.web) {
+      this.setState({
+        downloaded: val
+      });
+
+      return;
+    }
+
+    // remove downloads alert
     if (val === false) {
       Alert.alert(
         'Remove from Downloads?',
@@ -90,14 +99,17 @@ class Album extends React.Component {
     }
 
     const stickyArray = device.web ? [] : [0];
+    const headingRange = device.web ? [140, 200] : [230, 280];
+    const shuffleRange = device.web ? [40, 80] : [40, 80];
+
     const opacityHeading = scrollY.interpolate({
-      inputRange: [230, 280],
+      inputRange: headingRange,
       outputRange: [0, 1],
       extrapolate: 'clamp'
     });
 
     const opacityShuffle = scrollY.interpolate({
-      inputRange: [40, 80],
+      inputRange: shuffleRange,
       outputRange: [0, 1],
       extrapolate: 'clamp'
     });
@@ -132,12 +144,16 @@ class Album extends React.Component {
           <View style={styles.containerImage}>
             <Image source={images[album.image]} style={styles.image} />
           </View>
-          <Text ellipsizeMode="tail" numberOfLines={1} style={styles.title}>
-            {album.title}
-          </Text>
-          <Text style={styles.albumInfo}>
-            {`Album by ${album.artist} · ${album.released}`}
-          </Text>
+          <View style={styles.containerTitle}>
+            <Text ellipsizeMode="tail" numberOfLines={1} style={styles.title}>
+              {album.title}
+            </Text>
+          </View>
+          <View style={styles.containerAlbum}>
+            <Text style={styles.albumInfo}>
+              {`Album by ${album.artist} · ${album.released}`}
+            </Text>
+          </View>
         </View>
 
         <Animated.ScrollView
@@ -242,25 +258,31 @@ const styles = StyleSheet.create({
   },
   containerFixed: {
     alignItems: 'center',
-    paddingTop: device.iPhoneX ? 94 : 50,
+    paddingTop: device.iPhoneX ? 94 : 60,
     position: 'absolute',
     width: '100%'
   },
   containerLinear: {
     position: 'absolute',
     top: 0,
-    width: '100%'
+    width: '100%',
+    zIndex: device.web ? 5 : 0
   },
   containerImage: {
     shadowColor: colors.black,
     shadowOffset: { height: 8, width: 0 },
     shadowOpacity: 0.8,
-    shadowRadius: 6
+    shadowRadius: 6,
+    zIndex: device.web ? 20 : 0
   },
   image: {
     height: 148,
     marginBottom: device.web ? 0 : 16,
     width: 148
+  },
+  containerTitle: {
+    marginTop: device.web ? 8 : 0,
+    zIndex: device.web ? 20 : 0
   },
   title: {
     color: colors.white,
@@ -269,6 +291,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     marginBottom: 8,
     textAlign: 'center'
+  },
+  containerAlbum: {
+    zIndex: device.web ? 20 : 0
   },
   albumInfo: {
     color: colors.greyInactive,
