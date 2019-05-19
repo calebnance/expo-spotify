@@ -44,6 +44,12 @@ Currently Expo Web support is not production ready, but if you want to see how t
 
 View the code here: [feature_expo-web](https://github.com/calebnance/expo-spotify/tree/feature_expo-web)
 
+**Dev with Expo Web**
+- Remove node_modules if they exist: `rm -rf nodes_modules`
+- Install/Re-install: `yarn`
+- Start development: `expo start --web`
+- Build PWA: `expo build:web`
+
 a couple manual changes within `index.html` i found needed to be made so far:
 - **to make splash screen work:** "mobile-web-app-capable" => "apple-mobile-web-app-capable"
 - **status bar transparent:** apple-mobile-web-app-status-bar-style="default" => "black-translucent"
