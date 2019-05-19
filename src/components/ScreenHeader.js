@@ -9,25 +9,22 @@ import { colors, device, fonts, gStyle } from '../api';
 import TouchIcon from './TouchIcon';
 
 const ScreenHeader = ({ navigation, showBack, title }) => (
-  <React.Fragment>
-    <BlurView tint="dark" intensity={100} style={StyleSheet.absoluteFill} />
-    <View style={styles.container}>
-      {showBack && (
-        <View style={styles.left}>
-          <TouchIcon
-            icon={<Feather color={colors.white} name="chevron-left" />}
-            onPress={() => navigation.goBack(null)}
-          />
-        </View>
-      )}
-
-      <View style={styles.containerText}>
-        <Text style={styles.text}>{title}</Text>
+  <BlurView tint="dark" intensity={96} style={styles.container}>
+    {showBack && (
+      <View style={styles.left}>
+        <TouchIcon
+          icon={<Feather color={colors.white} name="chevron-left" />}
+          onPress={() => navigation.goBack(null)}
+        />
       </View>
+    )}
 
-      {showBack && <View style={gStyle.flex1} />}
+    <View style={styles.containerText}>
+      <Text style={styles.text}>{title}</Text>
     </View>
-  </React.Fragment>
+
+    {showBack && <View style={gStyle.flex1} />}
+  </BlurView>
 );
 
 ScreenHeader.defaultProps = {
