@@ -1,5 +1,13 @@
 import React from 'react';
-import { Animated, Image, StyleSheet, Switch, Text, View } from 'react-native';
+import {
+  Alert,
+  Animated,
+  Image,
+  StyleSheet,
+  Switch,
+  Text,
+  View
+} from 'react-native';
 import PropTypes from 'prop-types';
 import { Feather } from '@expo/vector-icons';
 import { colors, device, fonts, gStyle, images } from '../api';
@@ -32,6 +40,9 @@ class Album extends React.Component {
     // const albumTitle = navigation.getParam('title', 'ALBUM NOT FOUND?!');
     const albumTitle = navigation.getParam('title', 'Extraordinary Machine');
 
+    // TODO :: tintColor deprecated
+    console.disableYellowBox = true;
+
     this.setState({
       album: albums[albumTitle] || null,
       title: albumTitle
@@ -39,9 +50,29 @@ class Album extends React.Component {
   }
 
   toggleDownloaded(val) {
-    this.setState({
-      downloaded: val
-    });
+    // warn on switch off from kids settings...
+    if (val === false) {
+      Alert.alert(
+        'Remove from Downloads?',
+        "You won't be able to play this offline.",
+        [
+          { text: 'Cancel' },
+          {
+            onPress: () => {
+              this.setState({
+                downloaded: false
+              });
+            },
+            text: 'Remove'
+          }
+        ],
+        { cancelable: false }
+      );
+    } else {
+      this.setState({
+        downloaded: val
+      });
+    }
   }
 
   render() {
@@ -142,6 +173,7 @@ class Album extends React.Component {
                 {downloaded ? 'Downloaded' : 'Download'}
               </Text>
               <Switch
+                tintColor={colors.greySwitchBorder}
                 onValueChange={val => this.toggleDownloaded(val)}
                 value={downloaded}
               />

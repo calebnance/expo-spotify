@@ -12,6 +12,7 @@ export default {
   grey: '#282828',
   greyInactive: '#b3b3b3',
   greyLight: '#bebebe',
+  greySwitchBorder: '#404040',
   greyOff: '#3e3e3e',
   grey3: '#333'
 };
