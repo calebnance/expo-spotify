@@ -10,7 +10,7 @@ import LineItemSong from '../components/LineItemSong';
 import TouchIcon from '../components/TouchIcon';
 import TouchText from '../components/TouchText';
 
-// data
+// mock data
 import albums from '../mockdata/albums';
 
 class Album extends React.Component {
