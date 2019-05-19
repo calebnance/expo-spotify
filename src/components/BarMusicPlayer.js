@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: colors.grey,
     borderBottomColor: colors.blackBg,
-    borderBottomWidth: 1,
+    borderBottomWidth: StyleSheet.hairlineWidth,
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: 8,
