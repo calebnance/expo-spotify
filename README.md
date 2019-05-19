@@ -66,6 +66,8 @@ a couple manual changes within `index.html` i found needed to be made so far:
       - animation opacity on iPhoneX notch
       - animation opacity on cog icon
   - Search
+    - Sticky search bar (animated width)
+    - Playlists sections added (with mock data)
   - Library
   - Custom Bar for Music Player added to `<BottomTabBar />`
 - Modals (bottom to top)
