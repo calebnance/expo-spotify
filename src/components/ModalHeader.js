@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colors.white,
-    fontFamily: fonts.spotifyRegular,
+    fontFamily: fonts.spotifyBold,
     fontSize: 16,
     textAlign: 'center'
   },
