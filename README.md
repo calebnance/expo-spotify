@@ -69,6 +69,7 @@ a couple manual changes within `index.html` i found needed to be made so far:
     - Sticky search bar (animated width)
     - Playlists sections added (with mock data)
   - Library
+    - Menu items from mock data
   - Custom Bar for Music Player added to `<BottomTabBar />`
 - Modals (bottom to top)
   - Music Player
