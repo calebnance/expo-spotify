@@ -1,0 +1,20 @@
+[
+  { "id": 1, "color": "#e69e41", "title": "Podcasts" },
+  { "id": 2, "color": "#5b8d7c", "title": "Charts" },
+  { "id": 3, "color": "#a3bdcb", "title": "New Releases" },
+  { "id": 4, "color": "#e1789d", "title": "Radio" },
+  { "id": 5, "color": "#6297eb", "title": "Videos" },
+  { "id": 6, "color": "#ac9ac1", "title": "Discover" },
+  { "id": 7, "color": "#ea6c45", "title": "Concerts" },
+  { "id": 8, "color": "#6297eb", "title": "Mood" },
+  { "id": 9, "color": "#e3b966", "title": "Workout" },
+  { "id": 10, "color": "#8ecfc1", "title": "Decades" },
+  { "id": 11, "color": "#5b8d7c", "title": "Country" },
+  { "id": 12, "color": "#ae9ac2", "title": "Focus" },
+  { "id": 13, "color": "#ea6c45", "title": "Latin" },
+  { "id": 14, "color": "#a3bdcb", "title": "Chill" },
+  { "id": 15, "color": "#8ecfc1", "title": "R&B" },
+  { "id": 16, "color": "#5b8d7c", "title": "Folk & Acoustic" },
+  { "id": 17, "color": "#da47a0", "title": "Party" },
+  { "id": 18, "color": "#a3becb", "title": "Sleep" }
+]

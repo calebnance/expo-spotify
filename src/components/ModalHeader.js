@@ -61,8 +61,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colors.white,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 16
+    fontFamily: fonts.spotifyBold,
+    fontSize: 16,
+    textAlign: 'center'
   },
   left: {
     alignItems: 'flex-start',

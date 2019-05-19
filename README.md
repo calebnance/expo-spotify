@@ -1,7 +1,7 @@
 # Spotify Clone with Expo
 
 <p align="center">
-  <img src="screenshots/screenshare-2.jpg?raw=true" />
+  <img src="screenshots/screenshare-4.jpg?raw=true" />
 </p>
 
 ## Table of Contents
@@ -38,9 +38,18 @@ Run Project Locally: `expo start`
 
 ## Expo Web
 
-Currently Expo Web support is in alpha, but if you want to see how this project looks on the web as a PWA (Progressive Web App)
+Currently Expo Web support is not production ready, but if you want to see how this project looks on the web as a PWA (Progressive Web App)...
 
-[PWA: Expo Spotify](https://expo-spotify.calebnance.now.sh)
+[PWA: Expo Spotify](https://expo-spotify.calebnance.now.sh) looks best on a mobile device, but not bad on desktop!
+
+View the code here: [feature_expo-web](https://github.com/calebnance/expo-spotify/tree/feature_expo-web)
+
+a couple manual changes within `index.html` i found needed to be made so far:
+- **to make splash screen work:** "mobile-web-app-capable" => "apple-mobile-web-app-capable"
+- **status bar transparent:** apple-mobile-web-app-status-bar-style="default" => "black-translucent"
+- **no white background:** add background color within body{background-color: #121212; ...}
+- **check output meta:** double image meta tags
+- **check output js:** double/triple js packages
 
 ## Release Notes
 
@@ -51,11 +60,16 @@ Currently Expo Web support is in alpha, but if you want to see how this project 
   - Home
     - Horizontal Album component
     - Album Screen
+      - animation opacity on header
+      - scroll sticky of shuffle button
     - Header animation on scroll event
-      - opacity on iPhoneX notch
-      - opacity on cog icon
+      - animation opacity on iPhoneX notch
+      - animation opacity on cog icon
   - Search
+    - Sticky search bar (animated width)
+    - Playlists sections added (with mock data)
   - Library
+    - Menu items from mock data
   - Custom Bar for Music Player added to `<BottomTabBar />`
 - Modals (bottom to top)
   - Music Player

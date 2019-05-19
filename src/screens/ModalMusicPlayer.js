@@ -3,6 +3,7 @@ import { Image, Slider, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { Feather, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import { colors, device, fonts, gStyle, images } from '../api';
+import { formatTime } from '../api/functions';
 
 // components
 import ModalHeader from '../components/ModalHeader';
@@ -34,12 +35,16 @@ class ModalMusicPlayer extends React.Component {
   }
 
   render() {
-    const { navigation } = this.props;
+    const { navigation, screenProps } = this.props;
+    const { currentSongData } = screenProps;
     const { favorited, paused } = this.state;
 
     const favoriteColor = favorited ? colors.brandPrimary : colors.white;
     const favoriteIcon = favorited ? 'heart' : 'heart-o';
     const iconPlay = paused ? 'play-circle' : 'pause-circle';
+
+    const timePast = formatTime(0);
+    const timeLeft = formatTime(currentSongData.length);
 
     return (
       <View style={gStyle.container}>
@@ -47,16 +52,18 @@ class ModalMusicPlayer extends React.Component {
           left={<Feather color={colors.greyLight} name="chevron-down" />}
           leftPress={() => navigation.goBack(null)}
           right={<Feather color={colors.greyLight} name="more-horizontal" />}
-          text="Swimming"
+          text={currentSongData.album}
         />
 
         <View style={gStyle.p24}>
-          <Image source={images.swimming} style={styles.image} />
+          <Image source={images[currentSongData.image]} style={styles.image} />
 
           <View style={[gStyle.flexRowSpace, styles.containerDetails]}>
             <View style={styles.containerSong}>
-              <Text style={styles.song}>So It Goes</Text>
-              <Text style={styles.artist}>Mac Miller</Text>
+              <Text ellipsizeMode="tail" numberOfLines={1} style={styles.song}>
+                {currentSongData.title}
+              </Text>
+              <Text style={styles.artist}>{currentSongData.artist}</Text>
             </View>
             <View style={styles.containerFavorite}>
               <TouchIcon
@@ -68,14 +75,14 @@ class ModalMusicPlayer extends React.Component {
 
           <View style={styles.containerVolume}>
             <Slider
-              minimumValue={1}
-              maximumValue={513}
+              minimumValue={0}
+              maximumValue={currentSongData.length}
               minimumTrackTintColor={colors.white}
               maximumTrackTintColor={colors.grey3}
             />
             <View style={styles.containerTime}>
-              <Text style={styles.time}>0:02</Text>
-              <Text style={styles.time}>-5:11</Text>
+              <Text style={styles.time}>{timePast}</Text>
+              <Text style={styles.time}>{`-${timeLeft}`}</Text>
             </View>
           </View>
 
@@ -84,7 +91,7 @@ class ModalMusicPlayer extends React.Component {
               icon={<Feather color={colors.greyLight} name="shuffle" />}
               onPress={() => null}
             />
-            <View style={gStyle.flexRow}>
+            <View style={gStyle.flexRowCenterAlign}>
               <TouchIcon
                 icon={<FontAwesome color={colors.white} name="step-backward" />}
                 iconSize={32}
@@ -129,7 +136,8 @@ class ModalMusicPlayer extends React.Component {
 
 ModalMusicPlayer.propTypes = {
   // required
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
+  screenProps: PropTypes.object.isRequired
 };
 
 const styles = StyleSheet.create({
@@ -142,12 +150,12 @@ const styles = StyleSheet.create({
     marginBottom: 16
   },
   containerSong: {
-    flex: 5
+    flex: 6
   },
   song: {
     color: colors.white,
     fontFamily: fonts.spotifyBold,
-    fontSize: 26
+    fontSize: 24
   },
   artist: {
     color: colors.greyInactive,

@@ -11,12 +11,27 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
+      currentSongData: {
+        album: 'Swimming',
+        artist: 'Mac Miller',
+        image: 'swimming',
+        length: 312,
+        title: 'So it goes'
+      },
       isLoading: true
     };
+
+    this.changeSong = this.changeSong.bind(this);
+  }
+
+  changeSong(data) {
+    this.setState({
+      currentSongData: data
+    });
   }
 
   render() {
-    const { isLoading } = this.state;
+    const { currentSongData, isLoading } = this.state;
 
     if (isLoading) {
       return (
@@ -31,7 +46,12 @@ export default class App extends React.Component {
       <React.Fragment>
         <StatusBar barStyle="light-content" />
 
-        <Stack />
+        <Stack
+          screenProps={{
+            currentSongData,
+            changeSong: this.changeSong
+          }}
+        />
       </React.Fragment>
     );
   }

@@ -11,6 +11,9 @@ export default {
     justifyContent: 'center'
   },
   flexRow: {
+    flexDirection: 'row'
+  },
+  flexRowCenterAlign: {
     alignItems: 'center',
     flexDirection: 'row'
   },
@@ -34,10 +37,12 @@ export default {
   flex2: { flex: 2 },
   flex3: { flex: 3 },
   flex4: { flex: 4 },
+  flex5: { flex: 5 },
 
   spacer24: { height: 24 },
   spacer48: { height: 48 },
   spacer64: { height: 64 },
+  spacer88: { height: 88 },
   spacer128: { height: 128 },
 
   mB8: { marginBottom: 8 },
@@ -49,6 +54,8 @@ export default {
   mT4: { marginTop: 4 },
   mT8: { marginTop: 8 },
   mT16: { marginTop: 16 },
+
+  mH24: { marginHorizontal: 24 },
 
   mV16: { marginVertical: 16 },
   mV24: { marginVertical: 24 },

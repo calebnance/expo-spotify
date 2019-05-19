@@ -1,0 +1,10 @@
+[
+  { "id": 1, "icon": "sun", "title": "Made For You" },
+  { "id": 2, "icon": "music", "title": "Playlists" },
+  { "id": 3, "icon": "radio", "title": "Stations" },
+  { "id": 4, "icon": "speaker", "title": "Songs" },
+  { "id": 5, "icon": "disc", "title": "Albums" },
+  { "id": 6, "icon": "user", "title": "Artists" },
+  { "id": 7, "icon": "mic", "title": "Podcasts" },
+  { "id": 8, "icon": "youtube", "title": "Videos" }
+]

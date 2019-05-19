@@ -18,7 +18,7 @@ const LinearGradient = ({ fill, height }) => (
 
 LinearGradient.defaultProps = {
   fill: colors.brandPrimary,
-  height: 300
+  height: 320
 };
 
 LinearGradient.propTypes = {

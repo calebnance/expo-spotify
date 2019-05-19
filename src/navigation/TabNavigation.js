@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { BottomTabBar, createBottomTabNavigator } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation';
 import { colors } from '../api';
 
 // grabs stacks
@@ -9,29 +8,7 @@ import StackSearch from './StackSearch';
 import StackLibrary from './StackLibrary';
 
 // components
-import BarMusicPlayer from '../components/BarMusicPlayer';
-
-// data
-const songMockData = {
-  artist: 'Mac Miller',
-  title: 'So it goes'
-};
-
-const TabBarComponent = props => {
-  const { navigation } = props;
-
-  return (
-    <React.Fragment>
-      <BarMusicPlayer navigation={navigation} song={songMockData} />
-      <BottomTabBar {...props} />
-    </React.Fragment>
-  );
-};
-
-TabBarComponent.propTypes = {
-  // required
-  navigation: PropTypes.object.isRequired
-};
+import CustomTabBar from '../components/CustomTabBar';
 
 export default createBottomTabNavigator(
   {
@@ -41,7 +18,7 @@ export default createBottomTabNavigator(
   },
   {
     initialRouteName: 'StackHome',
-    tabBarComponent: props => <TabBarComponent {...props} />,
+    tabBarComponent: props => <CustomTabBar {...props} />,
     tabBarOptions: {
       activeTintColor: colors.white,
       inactiveTintColor: colors.greyInactive,
