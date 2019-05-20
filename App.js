@@ -16,7 +16,7 @@ export default class App extends React.Component {
         artist: 'Mac Miller',
         image: 'swimming',
         length: 312,
-        title: 'So it goes'
+        title: 'So It Goes'
       },
       isLoading: true
     };

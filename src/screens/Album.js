@@ -38,7 +38,8 @@ class Album extends React.Component {
   }
 
   componentDidMount() {
-    const { navigation } = this.props;
+    const { navigation, screenProps } = this.props;
+    const { currentSongData } = screenProps;
     // const albumTitle = navigation.getParam('title', 'ALBUM NOT FOUND?!');
     const albumTitle = navigation.getParam('title', 'Extraordinary Machine');
 
@@ -47,6 +48,7 @@ class Album extends React.Component {
 
     this.setState({
       album: albums[albumTitle] || null,
+      song: currentSongData.title,
       title: albumTitle
     });
   }
