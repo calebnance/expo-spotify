@@ -34,6 +34,7 @@ class Album extends React.Component {
     };
 
     this.toggleDownloaded = this.toggleDownloaded.bind(this);
+    this.changeSong = this.changeSong.bind(this);
   }
 
   componentDidMount() {
@@ -76,10 +77,20 @@ class Album extends React.Component {
     }
   }
 
-  render() {
-    const { navigation, screenProps } = this.props;
+  changeSong(songData) {
+    const { screenProps } = this.props;
     const { changeSong } = screenProps;
-    const { album, downloaded, scrollY, title } = this.state;
+
+    changeSong(songData);
+
+    this.setState({
+      song: songData.title
+    });
+  }
+
+  render() {
+    const { navigation } = this.props;
+    const { album, downloaded, scrollY, song, title } = this.state;
 
     // album data not set?
     if (album === null) {
@@ -183,9 +194,10 @@ class Album extends React.Component {
             {album.tracks &&
               album.tracks.map((track, index) => (
                 <LineItemSong
+                  active={song === track.title}
                   downloaded={downloaded}
                   key={index.toString()}
-                  onPress={changeSong}
+                  onPress={this.changeSong}
                   songData={{
                     album: album.title,
                     artist: album.artist,
