@@ -1,0 +1,21 @@
+{
+  "artist": "Lana Del Rey",
+  "backgroundColor": "#3d4c6c",
+  "image": "bornToDie",
+  "released": 2012,
+  "title": "Born to Die",
+  "tracks": [
+    { "title": "Born to Die", "seconds": 161 },
+    { "title": "Off to the Races", "seconds": 245 },
+    { "title": "Blue Jeans", "seconds": 288 },
+    { "title": "Video Games", "seconds": 215 },
+    { "title": "Diet Mountain Dew", "seconds": 345 },
+    { "title": "National Anthem", "seconds": 250 },
+    { "title": "Dark Paradise", "seconds": 287 },
+    { "title": "Radio", "seconds": 271 },
+    { "title": "Carmen", "seconds": 210 },
+    { "title": "Million Dollar Man", "seconds": 237 },
+    { "title": "Summertime Sadness", "seconds": 345 },
+    { "title": "This Is What Makes Us Girls", "seconds": 347 }
+  ]
+}

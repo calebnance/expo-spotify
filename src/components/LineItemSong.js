@@ -4,14 +4,21 @@ import PropTypes from 'prop-types';
 import { Feather, Ionicons } from '@expo/vector-icons';
 import { colors, fonts, gStyle } from '../api';
 
-const LineItemSong = ({ downloaded, onPress, songData }) => (
+const LineItemSong = ({ active, downloaded, onPress, songData }) => (
   <View style={styles.container}>
     <TouchableOpacity
       activeOpacity={gStyle.activeOpacity}
       onPress={() => onPress(songData)}
       style={gStyle.flex5}
     >
-      <Text style={styles.title}>{songData.title}</Text>
+      <Text
+        style={[
+          styles.title,
+          { color: active ? colors.brandPrimary : colors.white }
+        ]}
+      >
+        {songData.title}
+      </Text>
       <View style={gStyle.flexRow}>
         {downloaded && (
           <View style={styles.circleDownloaded}>
@@ -33,6 +40,7 @@ const LineItemSong = ({ downloaded, onPress, songData }) => (
 );
 
 LineItemSong.defaultProps = {
+  active: false,
   downloaded: false
 };
 
@@ -48,6 +56,7 @@ LineItemSong.propTypes = {
   }).isRequired,
 
   // optional
+  active: PropTypes.bool,
   downloaded: PropTypes.bool
 };
 

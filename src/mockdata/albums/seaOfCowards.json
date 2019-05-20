@@ -1,0 +1,20 @@
+{
+  "artist": "The Dead Weather",
+  "backgroundColor": "#736026",
+  "image": "seaOfCowards",
+  "released": 2010,
+  "title": "Sea Of Cowards",
+  "tracks": [
+    { "title": "Blue Blood Blues", "seconds": 161 },
+    { "title": "Hustle and Cuss", "seconds": 245 },
+    { "title": "The Difference Between Us", "seconds": 288 },
+    { "title": "I'm Mad", "seconds": 215 },
+    { "title": "Die by the Drop", "seconds": 345 },
+    { "title": "I Can't Hear You", "seconds": 250 },
+    { "title": "Gasoline", "seconds": 287 },
+    { "title": "No Horse", "seconds": 271 },
+    { "title": "Looking at the Invisible Man", "seconds": 210 },
+    { "title": "Jawbreaker", "seconds": 237 },
+    { "title": "Old Mary", "seconds": 345 }
+  ]
+}

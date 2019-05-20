@@ -29,14 +29,17 @@ class Album extends React.Component {
       album: null,
       downloaded: false,
       scrollY: new Animated.Value(0),
+      song: null,
       title: null
     };
 
     this.toggleDownloaded = this.toggleDownloaded.bind(this);
+    this.changeSong = this.changeSong.bind(this);
   }
 
   componentDidMount() {
-    const { navigation } = this.props;
+    const { navigation, screenProps } = this.props;
+    const { currentSongData } = screenProps;
     // const albumTitle = navigation.getParam('title', 'ALBUM NOT FOUND?!');
     const albumTitle = navigation.getParam('title', 'Extraordinary Machine');
 
@@ -45,6 +48,7 @@ class Album extends React.Component {
 
     this.setState({
       album: albums[albumTitle] || null,
+      song: currentSongData.title,
       title: albumTitle
     });
   }
@@ -84,10 +88,20 @@ class Album extends React.Component {
     }
   }
 
-  render() {
-    const { navigation, screenProps } = this.props;
+  changeSong(songData) {
+    const { screenProps } = this.props;
     const { changeSong } = screenProps;
-    const { album, downloaded, scrollY, title } = this.state;
+
+    changeSong(songData);
+
+    this.setState({
+      song: songData.title
+    });
+  }
+
+  render() {
+    const { navigation } = this.props;
+    const { album, downloaded, scrollY, song, title } = this.state;
 
     // album data not set?
     if (album === null) {
@@ -173,7 +187,7 @@ class Album extends React.Component {
                 { opacity: opacityShuffle }
               ]}
             >
-              <LinearGradient fill={colors.black20} height={54} />
+              <LinearGradient fill={colors.black20} height={50} />
             </Animated.View>
             <View style={styles.containerShuffle}>
               <TouchText
@@ -199,9 +213,10 @@ class Album extends React.Component {
             {album.tracks &&
               album.tracks.map((track, index) => (
                 <LineItemSong
+                  active={song === track.title}
                   downloaded={downloaded}
                   key={index.toString()}
-                  onPress={changeSong}
+                  onPress={this.changeSong}
                   songData={{
                     album: album.title,
                     artist: album.artist,
@@ -309,7 +324,7 @@ const styles = StyleSheet.create({
   },
   containerShuffle: {
     alignItems: 'center',
-    height: 54,
+    height: 50,
     shadowColor: colors.blackBg,
     shadowOffset: { height: -10, width: 0 },
     shadowOpacity: 0.2,
@@ -322,9 +337,9 @@ const styles = StyleSheet.create({
   },
   btn: {
     backgroundColor: colors.brandPrimary,
-    borderRadius: 27,
-    height: 54,
-    width: 200
+    borderRadius: 25,
+    height: 50,
+    width: 220
   },
   btnText: {
     color: colors.white,
@@ -335,7 +350,8 @@ const styles = StyleSheet.create({
   },
   containerSongs: {
     alignItems: 'center',
-    backgroundColor: colors.blackBg
+    backgroundColor: colors.blackBg,
+    minHeight: 540
   },
   row: {
     alignItems: 'center',
