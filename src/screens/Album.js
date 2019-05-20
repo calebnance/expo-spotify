@@ -324,7 +324,8 @@ const styles = StyleSheet.create({
   },
   containerSongs: {
     alignItems: 'center',
-    backgroundColor: colors.blackBg
+    backgroundColor: colors.blackBg,
+    minHeight: 540
   },
   row: {
     alignItems: 'center',
