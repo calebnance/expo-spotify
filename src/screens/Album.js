@@ -29,6 +29,7 @@ class Album extends React.Component {
       album: null,
       downloaded: false,
       scrollY: new Animated.Value(0),
+      song: null,
       title: null
     };
 
@@ -156,7 +157,7 @@ class Album extends React.Component {
                 { opacity: opacityShuffle }
               ]}
             >
-              <LinearGradient fill={colors.black20} height={54} />
+              <LinearGradient fill={colors.black20} height={50} />
             </Animated.View>
             <View style={styles.containerShuffle}>
               <TouchText
@@ -283,7 +284,7 @@ const styles = StyleSheet.create({
   },
   containerShuffle: {
     alignItems: 'center',
-    height: 54,
+    height: 50,
     shadowColor: colors.blackBg,
     shadowOffset: { height: -10, width: 0 },
     shadowOpacity: 0.2,
@@ -296,9 +297,9 @@ const styles = StyleSheet.create({
   },
   btn: {
     backgroundColor: colors.brandPrimary,
-    borderRadius: 27,
-    height: 54,
-    width: 200
+    borderRadius: 25,
+    height: 50,
+    width: 220
   },
   btnText: {
     color: colors.white,
