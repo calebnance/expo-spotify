@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { FontAwesome } from '@expo/vector-icons';
-import { colors, device, fonts, gStyle } from '../api';
+import { colors, device, fonts, gStyle } from '../constants';
 
 class BarMusicPlayer extends React.Component {
   constructor(props) {

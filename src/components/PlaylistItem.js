@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors, fonts, gStyle } from '../api';
+import { colors, fonts, gStyle } from '../constants';
 
 const PlaylistItem = ({ bgColor, onPress, title }) => (
   <TouchableOpacity

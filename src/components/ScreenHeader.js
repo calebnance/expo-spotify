@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { BlurView } from 'expo';
 import PropTypes from 'prop-types';
 import { Feather } from '@expo/vector-icons';
-import { colors, device, fonts, gStyle } from '../api';
+import { colors, device, fonts, gStyle } from '../constants';
 
 // components
 import TouchIcon from './TouchIcon';

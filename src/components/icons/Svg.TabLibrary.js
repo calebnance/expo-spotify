@@ -1,7 +1,7 @@
 import React from 'react';
 import { Svg } from 'expo';
 import PropTypes from 'prop-types';
-import { colors } from '../../api';
+import { colors } from '../../constants';
 
 const SvgTabLibrary = ({ active, size }) => {
   const fill = active ? colors.white : colors.greyInactive;

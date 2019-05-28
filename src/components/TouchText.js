@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import { gStyle } from '../api';
+import { gStyle } from '../constants';
 
 const TouchText = ({ onPress, style, styleText, text }) => (
   <TouchableOpacity

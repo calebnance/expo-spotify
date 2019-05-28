@@ -2,7 +2,7 @@ import React from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { FontAwesome } from '@expo/vector-icons';
-import { colors, device, gStyle } from '../api';
+import { colors, device, gStyle } from '../constants';
 
 // components
 import AlbumsHorizontal from '../components/AlbumsHorizontal';
