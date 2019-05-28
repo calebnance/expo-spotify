@@ -13,8 +13,8 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "dev": "expo start",
-    "lint": "eslint ./",
     "start": "expo start",
+    "lint": "eslint ./",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject"
