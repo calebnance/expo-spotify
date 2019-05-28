@@ -13,6 +13,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "dev": "expo start",
+    "lint": "eslint ./",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -23,19 +24,28 @@
     "expo": "^32.0.6",
     "prop-types": "^15.7.2",
     "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "react-navigation": "^3.9.1"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.3.tar.gz",
+    "react-navigation": "^3.11.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
-    "eslint": "^5.15.1",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-import": "^2.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4",
-    "prettier": "^1.16.4"
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.13.0",
+    "prettier": "^1.17.1"
   },
-  "private": true
+  "private": true,
+  "prettier": {
+    "singleQuote": true
+  },
+  "eslintIgnore": [
+    "babel.config.js"
+  ],
+  "engines": {
+    "node": ">=10.3.0"
+  }
 }
