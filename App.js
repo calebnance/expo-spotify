@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
-import { loadAssetsAsync } from './src/api/functions';
+import { func } from './src/constants';
 
 // main navigation stack
 import Stack from './src/navigation/Stack';
@@ -37,7 +37,7 @@ export default class App extends React.Component {
       return (
         <AppLoading
           onFinish={() => this.setState({ isLoading: false })}
-          startAsync={loadAssetsAsync}
+          startAsync={func.loadAssetsAsync}
         />
       );
     }

@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { Feather } from '@expo/vector-icons';
-import { colors, fonts, gStyle } from '../api';
+import { colors, fonts, gStyle } from '../constants';
 
 const LineItemCategory = ({ icon, onPress, title }) => (
   <TouchableOpacity

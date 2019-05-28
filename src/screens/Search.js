@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { FontAwesome } from '@expo/vector-icons';
-import { colors, device, fonts, gStyle } from '../api';
+import { colors, device, fonts, gStyle } from '../constants';
 
 // components
 import PlaylistItem from '../components/PlaylistItem';

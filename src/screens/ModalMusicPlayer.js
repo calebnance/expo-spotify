@@ -2,8 +2,7 @@ import React from 'react';
 import { Image, Slider, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { Feather, FontAwesome, MaterialIcons } from '@expo/vector-icons';
-import { colors, device, fonts, gStyle, images } from '../api';
-import { formatTime } from '../api/functions';
+import { colors, device, fonts, func, gStyle, images } from '../constants';
 
 // components
 import ModalHeader from '../components/ModalHeader';
@@ -43,8 +42,8 @@ class ModalMusicPlayer extends React.Component {
     const favoriteIcon = favorited ? 'heart' : 'heart-o';
     const iconPlay = paused ? 'play-circle' : 'pause-circle';
 
-    const timePast = formatTime(0);
-    const timeLeft = formatTime(currentSongData.length);
+    const timePast = func.formatTime(0);
+    const timeLeft = func.formatTime(currentSongData.length);
 
     return (
       <View style={gStyle.container}>

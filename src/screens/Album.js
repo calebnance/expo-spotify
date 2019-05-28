@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { Feather } from '@expo/vector-icons';
-import { colors, device, fonts, gStyle, images } from '../api';
+import { colors, device, fonts, gStyle, images } from '../constants';
 
 // components
 import LinearGradient from '../components/LinearGradient';

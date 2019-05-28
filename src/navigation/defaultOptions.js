@@ -1,4 +1,4 @@
-import { gStyle } from '../api';
+import { gStyle } from '../constants';
 
 export default () => ({
   headerStyle: gStyle.navHeaderStyle

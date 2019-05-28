@@ -8,7 +8,7 @@ import {
   View
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors, fonts, gStyle, images } from '../api';
+import { colors, fonts, gStyle, images } from '../constants';
 
 const AlbumsHorizontal = ({ data, heading, navigation, tagline }) => (
   <View style={styles.container}>
