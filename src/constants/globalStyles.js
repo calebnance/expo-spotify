@@ -6,6 +6,12 @@ export default {
     backgroundColor: colors.blackBg,
     flex: 1
   },
+  containerAbsolute: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    zIndex: 50
+  },
   flexCenter: {
     alignItems: 'center',
     justifyContent: 'center'
@@ -46,6 +52,7 @@ export default {
   spacer128: { height: 128 },
 
   mB8: { marginBottom: 8 },
+  mB22: { marginBottom: 24 },
   mR8: { marginRight: 8 },
   mR16: { marginRight: 16 },
   mR24: { marginRight: 24 },
@@ -65,6 +72,7 @@ export default {
   p8: { padding: 8 },
   p16: { padding: 16 },
   p24: { padding: 24 },
+  pB80: { paddingBottom: 80 },
 
   pH4: { paddingHorizontal: 4 },
   pH8: { paddingHorizontal: 8 },

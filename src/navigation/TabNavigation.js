@@ -10,7 +10,7 @@ import StackLibrary from './StackLibrary';
 // components
 import CustomTabBar from '../components/CustomTabBar';
 
-export default createBottomTabNavigator(
+const BottomTabNavigator = createBottomTabNavigator(
   {
     StackHome,
     StackSearch,
@@ -29,3 +29,5 @@ export default createBottomTabNavigator(
     }
   }
 );
+
+export default BottomTabNavigator;

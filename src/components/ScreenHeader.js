@@ -9,7 +9,7 @@ import { colors, device, fonts, gStyle } from '../constants';
 import TouchIcon from './TouchIcon';
 
 const ScreenHeader = ({ navigation, showBack, title }) => (
-  <BlurView tint="dark" intensity={96} style={styles.container}>
+  <BlurView tint="dark" intensity={95} style={styles.container}>
     {showBack && (
       <View style={styles.left}>
         <TouchIcon

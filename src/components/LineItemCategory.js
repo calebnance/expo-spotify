@@ -1,30 +1,79 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { Feather } from '@expo/vector-icons';
+import {
+  Feather,
+  Entypo,
+  MaterialIcons,
+  MaterialCommunityIcons,
+  FontAwesome
+} from '@expo/vector-icons';
 import { colors, fonts, gStyle } from '../constants';
 
-const LineItemCategory = ({ icon, onPress, title }) => (
-  <TouchableOpacity
-    activeOpacity={gStyle.activeOpacity}
-    onPress={onPress}
-    style={styles.container}
-  >
-    <View style={gStyle.flexRowCenterAlign}>
-      <Feather color={colors.greyInactive} name={icon} size={24} />
-      <Text style={styles.title}>{title}</Text>
-    </View>
-    <View style={styles.containerRight}>
-      <Feather color={colors.greyInactive} name="chevron-right" size={20} />
-    </View>
-  </TouchableOpacity>
-);
+const LineItemCategory = ({
+  icon,
+  onPress,
+  title,
+  disableRightSide,
+  iconLibrary
+}) => {
+  // TODO: spread props
+  const Icon = {
+    Feather: <Feather color={colors.greyInactive} name={icon} size={24} />,
+    Entypo: <Entypo color={colors.greyInactive} name={icon} size={24} />,
+    MaterialCommunityIcons: (
+      <MaterialCommunityIcons
+        color={colors.greyInactive}
+        name={icon}
+        size={24}
+      />
+    ),
+    MaterialIcons: (
+      <MaterialIcons color={colors.greyInactive} name={icon} size={24} />
+    ),
+    FontAwesome: (
+      <FontAwesome color={colors.greyInactive} name={icon} size={24} />
+    )
+  };
+
+  return (
+    <TouchableOpacity
+      activeOpacity={gStyle.activeOpacity}
+      onPress={onPress}
+      style={styles.container}
+    >
+      <View style={gStyle.flexRowCenterAlign}>
+        {iconLibrary ? (
+          Icon[iconLibrary]
+        ) : (
+          <Feather color={colors.greyInactive} name={icon} size={24} />
+        )}
+        <Text style={styles.title}>{title}</Text>
+      </View>
+
+      {disableRightSide ? null : (
+        <View style={styles.containerRight}>
+          <Feather color={colors.greyInactive} name="chevron-right" size={20} />
+        </View>
+      )}
+    </TouchableOpacity>
+  );
+};
+
+LineItemCategory.defaultProps = {
+  disableRightSide: false,
+  iconLibrary: false
+};
 
 LineItemCategory.propTypes = {
   // required
   icon: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+
+  // optional
+  disableRightSide: PropTypes.string,
+  iconLibrary: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
 };
 
 const styles = StyleSheet.create({
