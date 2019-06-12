@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { BlurView } from 'expo';
+import { BlurView } from 'expo-blur';
 import PropTypes from 'prop-types';
 import { Feather } from '@expo/vector-icons';
 import { colors, device, fonts, gStyle } from '../constants';
