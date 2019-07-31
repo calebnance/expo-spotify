@@ -1,8 +1,8 @@
 import React from 'react';
-import { Image, Slider, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { Image, Slider, StyleSheet, Text, View } from 'react-native';
 import { Feather, FontAwesome, MaterialIcons } from '@expo/vector-icons';
-import { colors, device, fonts, func, gStyle, images } from '../constants';
+import { colors, device, func, gStyle, images } from '../constants';
 
 // components
 import ModalHeader from '../components/ModalHeader';
@@ -152,14 +152,12 @@ const styles = StyleSheet.create({
     flex: 6
   },
   song: {
-    color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 24
+    ...gStyle.textSpotifyBold24,
+    color: colors.white
   },
   artist: {
-    color: colors.greyInactive,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 18
+    ...gStyle.textSpotify18,
+    color: colors.greyInactive
   },
   containerFavorite: {
     alignItems: 'flex-end',
@@ -170,9 +168,8 @@ const styles = StyleSheet.create({
     ...gStyle.flexRowSpace
   },
   time: {
-    color: colors.greyInactive,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 10
+    ...gStyle.textSpotify10,
+    color: colors.greyInactive
   },
   containerControls: {
     ...gStyle.flexRowSpace,

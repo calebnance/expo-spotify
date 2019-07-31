@@ -1,6 +1,6 @@
 import React from 'react';
-import { FlatList, ScrollView, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { FlatList, ScrollView, StyleSheet, View } from 'react-native';
 import { device, gStyle } from '../constants';
 
 // components

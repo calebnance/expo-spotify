@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import { colors, fonts, gStyle } from '../constants';
+import { colors, gStyle } from '../constants';
 
 const LineItemCategory = ({ icon, onPress, title }) => (
   <TouchableOpacity
@@ -37,9 +37,8 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   title: {
+    ...gStyle.textSpotify14,
     color: colors.white,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 14,
     marginLeft: 16
   },
   containerRight: {
