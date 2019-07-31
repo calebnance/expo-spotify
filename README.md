@@ -22,7 +22,7 @@ Run Project Locally: `expo start`
 
 ## Stats
 
-- Expo SDK 33
+- Expo SDK 34
 - React Navigation v3
 - PropTypes
 
@@ -61,6 +61,8 @@ a couple manual changes within `index.html` i found needed to be made so far:
 
 ### version 0.0.1 (current)
 
+- upgraded to [Expo SDK 34](https://blog.expo.io/expo-sdk-34-is-now-available-4f7825239319)
+- upgraded to [Expo SDK 33](https://blog.expo.io/expo-sdk-v33-0-0-is-now-available-52d1c99dfe4c)
 - iOS and Android
 - Tab Navigation (stacks created)
   - Home
