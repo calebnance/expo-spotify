@@ -1,6 +1,9 @@
 import colors from './colors';
 import fonts from './fonts';
 
+// space grid, some use 8pt grid, some 5pt, this is setting one place then done
+const spaceGrid = 8;
+
 export default {
   activeOpacity: 0.7,
   container: {
@@ -61,33 +64,33 @@ export default {
 
   // margins
   // ///////////////////////////////////////////////////////////////////////////
-  mB8: { marginBottom: 8 },
-  mR8: { marginRight: 8 },
-  mR16: { marginRight: 16 },
-  mR24: { marginRight: 24 },
-  mR48: { marginRight: 48 },
-  mR64: { marginRight: 64 },
-  mT4: { marginTop: 4 },
-  mT8: { marginTop: 8 },
-  mT16: { marginTop: 16 },
+  mB1: { marginBottom: spaceGrid },
+  mR1: { marginRight: spaceGrid },
+  mR2: { marginRight: spaceGrid * 2 },
+  mR3: { marginRight: spaceGrid * 3 },
+  mR6: { marginRight: spaceGrid * 6 },
+  mR8: { marginRight: spaceGrid * 8 },
+  mTHalf: { marginTop: spaceGrid / 2 },
+  mT1: { marginTop: spaceGrid },
+  mT2: { marginTop: spaceGrid * 2 },
 
-  mH24: { marginHorizontal: 24 },
+  mH3: { marginHorizontal: spaceGrid * 3 },
 
-  mV16: { marginVertical: 16 },
-  mV24: { marginVertical: 24 },
-  mV32: { marginVertical: 32 },
+  mV2: { marginVertical: spaceGrid * 2 },
+  mV3: { marginVertical: spaceGrid * 3 },
+  mV4: { marginVertical: spaceGrid * 4 },
 
   // paddings
   // ///////////////////////////////////////////////////////////////////////////
-  p4: { padding: 4 },
-  p8: { padding: 8 },
-  p16: { padding: 16 },
-  p24: { padding: 24 },
+  pHalf: { padding: spaceGrid / 2 },
+  p1: { padding: spaceGrid },
+  p2: { padding: spaceGrid * 2 },
+  p3: { padding: spaceGrid * 3 },
 
-  pH4: { paddingHorizontal: 4 },
-  pH8: { paddingHorizontal: 8 },
-  pH16: { paddingHorizontal: 16 },
-  pH24: { paddingHorizontal: 24 },
+  pHHalf: { paddingHorizontal: spaceGrid / 2 },
+  pH8: { paddingHorizontal: spaceGrid },
+  pH16: { paddingHorizontal: spaceGrid * 2 },
+  pH3: { paddingHorizontal: spaceGrid * 3 },
 
   // navigation styles
   // ///////////////////////////////////////////////////////////////////////////

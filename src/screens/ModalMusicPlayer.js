@@ -54,7 +54,7 @@ class ModalMusicPlayer extends React.Component {
           text={currentSongData.album}
         />
 
-        <View style={gStyle.p24}>
+        <View style={gStyle.p3}>
           <Image source={images[currentSongData.image]} style={styles.image} />
 
           <View style={[gStyle.flexRowSpace, styles.containerDetails]}>
@@ -96,7 +96,7 @@ class ModalMusicPlayer extends React.Component {
                 iconSize={32}
                 onPress={() => null}
               />
-              <View style={gStyle.pH24}>
+              <View style={gStyle.pH3}>
                 <TouchIcon
                   icon={<FontAwesome color={colors.white} name={iconPlay} />}
                   iconSize={64}
