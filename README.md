@@ -28,6 +28,7 @@ Run Project Locally: `expo start`
 
 ## Linting
 
+- run: `yarn lint` for a list of linting warnings/error in cli
 - prettier and airbnb config
 - make sure you have [prettier package](https://atom.io/packages/prettier-atom) installed on your atom/vscode editor
 - then make sure to enable these options (packages → prettier):

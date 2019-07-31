@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "expo start",
     "start": "expo start",
-    "lint": "eslint ./",
+    "lint": "eslint ./src",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject"
