@@ -13,9 +13,7 @@ const cacheFonts = fonts => fonts.map(font => Font.loadAsync(font));
 // cache images
 // /////////////////////////////////////////////////////////////////////////////
 const cacheImages = images => {
-  const imagesArray = Object.values(images);
-
-  return imagesArray.map(image => {
+  return Object.values(images).map(image => {
     if (typeof image === 'string') {
       return Image.prefetch(image);
     }

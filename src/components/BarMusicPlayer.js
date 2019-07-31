@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import { colors, device, fonts, gStyle } from '../constants';
+import { colors, device, gStyle } from '../constants';
 
 class BarMusicPlayer extends React.Component {
   constructor(props) {
@@ -116,19 +116,16 @@ const styles = StyleSheet.create({
     width: device.width - 100
   },
   title: {
-    color: colors.white,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 12
+    ...gStyle.textSpotify12,
+    color: colors.white
   },
   artist: {
-    color: colors.greyLight,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 12
+    ...gStyle.textSpotify12,
+    color: colors.greyLight
   },
   device: {
+    ...gStyle.textSpotify10,
     color: colors.brandPrimary,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 10,
     marginLeft: 4,
     textTransform: 'uppercase'
   }

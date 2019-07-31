@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Animated,
   FlatList,
@@ -7,9 +8,8 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
-import PropTypes from 'prop-types';
 import { FontAwesome } from '@expo/vector-icons';
-import { colors, device, fonts, gStyle } from '../constants';
+import { colors, device, gStyle } from '../constants';
 
 // components
 import PlaylistItem from '../components/PlaylistItem';
@@ -145,14 +145,12 @@ const styles = StyleSheet.create({
     paddingVertical: 16
   },
   searchPlaceholderText: {
-    color: colors.blackBg,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 16
+    ...gStyle.textSpotify16,
+    color: colors.blackBg
   },
   sectionHeading: {
+    ...gStyle.textSpotifyBold18,
     color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 18,
     marginBottom: 24,
     marginLeft: 24,
     marginTop: 16
