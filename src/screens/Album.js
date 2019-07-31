@@ -187,7 +187,7 @@ class Album extends React.Component {
                 {downloaded ? 'Downloaded' : 'Download'}
               </Text>
               <Switch
-                tintColor={colors.greySwitchBorder}
+                trackColor={colors.greySwitchBorder}
                 onValueChange={val => this.toggleDownloaded(val)}
                 value={downloaded}
               />
