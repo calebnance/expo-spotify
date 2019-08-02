@@ -58,7 +58,7 @@ class Home extends React.Component {
           showsVerticalScrollIndicator={false}
           style={gStyle.container}
         >
-          <View style={gStyle.spacer128} />
+          <View style={gStyle.spacer16} />
 
           <AlbumsHorizontal
             data={recentlyPlayed}

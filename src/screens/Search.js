@@ -56,7 +56,7 @@ class Search extends React.Component {
           stickyHeaderIndices={[1]}
           style={gStyle.container}
         >
-          <View style={gStyle.spacer88} />
+          <View style={gStyle.spacer11} />
           <View style={styles.containerSearchBar}>
             <Animated.View style={{ width: opacity }}>
               <TouchableOpacity

@@ -207,7 +207,7 @@ class Album extends React.Component {
                 />
               ))}
           </View>
-          <View style={gStyle.spacer128} />
+          <View style={gStyle.spacer16} />
         </Animated.ScrollView>
       </View>
     );
