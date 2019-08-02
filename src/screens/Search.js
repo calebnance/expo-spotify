@@ -56,7 +56,7 @@ class Search extends React.Component {
           stickyHeaderIndices={[1]}
           style={gStyle.container}
         >
-          <View style={gStyle.spacer88} />
+          <View style={gStyle.spacer11} />
           <View style={styles.containerSearchBar}>
             <Animated.View style={{ width: opacity }}>
               <TouchableOpacity
@@ -64,7 +64,7 @@ class Search extends React.Component {
                 onPress={() => null}
                 style={styles.searchPlaceholder}
               >
-                <View style={gStyle.mR8}>
+                <View style={gStyle.mR1}>
                   <SvgSearch />
                 </View>
                 <Text style={styles.searchPlaceholderText}>
@@ -131,7 +131,7 @@ Search.propTypes = {
 
 const styles = StyleSheet.create({
   containerSearchBar: {
-    ...gStyle.pH24,
+    ...gStyle.pH3,
     backgroundColor: colors.blackBg,
     paddingBottom: 16,
     paddingTop: device.iPhoneX ? 64 : 24
