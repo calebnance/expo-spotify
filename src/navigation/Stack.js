@@ -1,9 +1,6 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 
 // grab navigation
-import { BlurView } from 'expo';
-import { StyleSheet } from 'react-native';
-import React from 'react';
 import TabNavigation from './TabNavigation';
 
 // grab screens
