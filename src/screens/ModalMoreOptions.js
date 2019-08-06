@@ -62,7 +62,7 @@ const ModalMoreOptions = ({ navigation, screenProps: { setToggleTabBar } }) => {
             const { item } = itemObj;
 
             return (
-              <View style={gStyle.mB22}>
+              <View>
                 <LineItemCategory
                   icon={item.icon}
                   onPress={() => null}
@@ -88,7 +88,7 @@ ModalMoreOptions.propTypes = {
 const styles = StyleSheet.create({
   buttonContainer: {
     ...gStyle.flexCenter,
-    ...gStyle.spacer48
+    ...gStyle.spacer6
   },
   buttonText: {
     color: colors.white,
