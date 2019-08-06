@@ -32,10 +32,10 @@ const StackNavigator = createStackNavigator(
     TabNavigation
   },
   {
-    transparentCard: true,
     headerMode: 'none',
     initialRouteName: 'TabNavigation',
-    // transitionConfig: ModalRoutes
+    transitionConfig: ModalRoutes,
+    transparentCard: true,
     mode: 'modal'
   }
 );
