@@ -15,10 +15,7 @@ import { device, gStyle, images, colors, fonts } from '../constants';
 import moreOptions from '../mockdata/menuMoreOptions';
 import LineItemCategory from '../components/LineItemCategory';
 
-export default function ModalMoreOptions({
-  navigation,
-  screenProps: { setToggleTabBar }
-}) {
+const ModalMoreOptions = ({ navigation, screenProps: { setToggleTabBar } }) => {
   const album = navigation.getParam('album');
 
   return (
@@ -80,7 +77,7 @@ export default function ModalMoreOptions({
       </ScrollView>
     </React.Fragment>
   );
-}
+};
 
 ModalMoreOptions.propTypes = {
   // required
@@ -127,3 +124,5 @@ const styles = StyleSheet.create({
     marginBottom: 48
   }
 });
+
+export default ModalMoreOptions;
