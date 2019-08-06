@@ -17,24 +17,40 @@ const LineItemCategory = ({
   disableRightSide,
   iconLibrary
 }) => {
-  // TODO: spread props
-  const Icon = {
-    Feather: <Feather color={colors.greyInactive} name={icon} size={24} />,
-    Entypo: <Entypo color={colors.greyInactive} name={icon} size={24} />,
-    MaterialCommunityIcons: (
-      <MaterialCommunityIcons
-        color={colors.greyInactive}
-        name={icon}
-        size={24}
-      />
-    ),
-    MaterialIcons: (
-      <MaterialIcons color={colors.greyInactive} name={icon} size={24} />
-    ),
-    FontAwesome: (
-      <FontAwesome color={colors.greyInactive} name={icon} size={24} />
-    )
-  };
+  let iconDisplay;
+
+  switch (iconLibrary) {
+    default:
+    case 'Feather':
+      iconDisplay = (
+        <Feather color={colors.greyInactive} name={icon} size={24} />
+      );
+      break;
+    case 'Entypo':
+      iconDisplay = (
+        <Entypo color={colors.greyInactive} name={icon} size={24} />
+      );
+      break;
+    case 'MaterialIcons':
+      iconDisplay = (
+        <MaterialIcons color={colors.greyInactive} name={icon} size={24} />
+      );
+      break;
+    case 'MaterialCommunityIcons':
+      iconDisplay = (
+        <MaterialCommunityIcons
+          color={colors.greyInactive}
+          name={icon}
+          size={24}
+        />
+      );
+      break;
+    case 'FontAwesome':
+      iconDisplay = (
+        <FontAwesome color={colors.greyInactive} name={icon} size={24} />
+      );
+      break;
+  }
 
   return (
     <TouchableOpacity
@@ -43,11 +59,7 @@ const LineItemCategory = ({
       style={styles.container}
     >
       <View style={gStyle.flexRowCenterAlign}>
-        {iconLibrary ? (
-          Icon[iconLibrary]
-        ) : (
-          <Feather color={colors.greyInactive} name={icon} size={24} />
-        )}
+        {iconDisplay}
         <Text style={styles.title}>{title}</Text>
       </View>
 
@@ -61,8 +73,8 @@ const LineItemCategory = ({
 };
 
 LineItemCategory.defaultProps = {
-  disableRightSide: false,
-  iconLibrary: false
+  disableRightSide: PropTypes.bool,
+  iconLibrary: 'Feather'
 };
 
 LineItemCategory.propTypes = {
