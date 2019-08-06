@@ -1,14 +1,14 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 
-// grab navigation
+// modal routes (dynamic transitions)
+import ModalRoutes from './ModalRoutes';
+
+// navigation
 import TabNavigation from './TabNavigation';
 
-// grab screens
+// screens
 import ModalMusicPlayer from '../screens/ModalMusicPlayer';
 import ModalMoreOptions from '../screens/ModalMoreOptions';
-
-// grab modal routes (dynamic transitions)
-import ModalRoutes from './ModalRoutes';
 
 const StackNavigator = createStackNavigator(
   {

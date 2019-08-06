@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { BlurView } from 'expo';
 import PropTypes from 'prop-types';
+import { StyleSheet, Text, View } from 'react-native';
+import { BlurView } from 'expo-blur';
 import { Feather } from '@expo/vector-icons';
-import { colors, device, fonts, gStyle } from '../constants';
+import { colors, device, gStyle } from '../constants';
 
 // components
 import TouchIcon from './TouchIcon';
@@ -55,9 +55,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   text: {
+    ...gStyle.textSpotifyBold16,
     color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 16,
     textAlign: 'center'
   },
   left: {

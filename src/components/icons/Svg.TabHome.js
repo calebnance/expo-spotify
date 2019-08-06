@@ -1,6 +1,6 @@
 import React from 'react';
-import { Svg } from 'expo';
 import PropTypes from 'prop-types';
+import Svg, { Path } from 'react-native-svg';
 import { colors } from '../../constants';
 
 const SvgTabHome = ({ active, size }) => {
@@ -11,7 +11,7 @@ const SvgTabHome = ({ active, size }) => {
 
   return (
     <Svg height={size} width={size} viewBox="0 0 512 512">
-      <Svg.Path d={dPath} fill={fill} />
+      <Path d={dPath} fill={fill} />
     </Svg>
   );
 };

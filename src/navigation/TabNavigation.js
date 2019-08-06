@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 import { colors } from '../constants';
 
-// grabs stacks
+// navigation stacks
 import StackHome from './StackHome';
 import StackSearch from './StackSearch';
 import StackLibrary from './StackLibrary';

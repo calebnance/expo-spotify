@@ -8,7 +8,7 @@ import {
   MaterialCommunityIcons,
   FontAwesome
 } from '@expo/vector-icons';
-import { colors, fonts, gStyle } from '../constants';
+import { colors, gStyle } from '../constants';
 
 const LineItemCategory = ({
   icon,
@@ -73,7 +73,7 @@ const LineItemCategory = ({
 };
 
 LineItemCategory.defaultProps = {
-  disableRightSide: PropTypes.bool,
+  disableRightSide: null,
   iconLibrary: 'Feather'
 };
 
@@ -84,7 +84,7 @@ LineItemCategory.propTypes = {
   title: PropTypes.string.isRequired,
 
   // optional
-  disableRightSide: PropTypes.string,
+  disableRightSide: PropTypes.bool,
   iconLibrary: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
 };
 
@@ -98,9 +98,8 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   title: {
+    ...gStyle.textSpotify14,
     color: colors.white,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 14,
     marginLeft: 16
   },
   containerRight: {

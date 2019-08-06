@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Alert,
   Animated,
@@ -8,10 +9,9 @@ import {
   Text,
   View
 } from 'react-native';
-import PropTypes from 'prop-types';
 import { Feather } from '@expo/vector-icons';
-import { BlurView } from 'expo';
-import { colors, device, fonts, gStyle, images } from '../constants';
+import { BlurView } from 'expo-blur';
+import { colors, device, gStyle, images } from '../constants';
 
 // components
 import LinearGradient from '../components/LinearGradient';
@@ -48,9 +48,6 @@ class Album extends React.Component {
     const { currentSongData } = screenProps;
     // const albumTitle = navigation.getParam('title', 'ALBUM NOT FOUND?!');
     const albumTitle = navigation.getParam('title', 'Extraordinary Machine');
-
-    // TODO :: tintColor deprecated
-    console.disableYellowBox = true;
 
     this.setState({
       album: albums[albumTitle] || null,
@@ -161,6 +158,7 @@ class Album extends React.Component {
               icon={<Feather color={colors.white} name="more-horizontal" />}
               onPress={() => {
                 setToggleTabBar();
+
                 navigation.navigate('ModalMoreOptions', {
                   album
                 });
@@ -218,7 +216,7 @@ class Album extends React.Component {
                 {downloaded ? 'Downloaded' : 'Download'}
               </Text>
               <Switch
-                tintColor={colors.greySwitchBorder}
+                trackColor={colors.greySwitchBorder}
                 onValueChange={val => this.toggleDownloaded(val)}
                 value={downloaded}
               />
@@ -241,7 +239,7 @@ class Album extends React.Component {
                 />
               ))}
           </View>
-          <View style={gStyle.spacer128} />
+          <View style={gStyle.spacer16} />
         </Animated.ScrollView>
       </View>
     );
@@ -277,9 +275,8 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   headerTitle: {
+    ...gStyle.textSpotifyBold16,
     color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 16,
     paddingHorizontal: 8,
     marginTop: 2,
     textAlign: 'center',
@@ -308,17 +305,15 @@ const styles = StyleSheet.create({
     width: 148
   },
   title: {
+    ...gStyle.textSpotifyBold20,
     color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 20,
     paddingHorizontal: 24,
     marginBottom: 8,
     textAlign: 'center'
   },
   albumInfo: {
+    ...gStyle.textSpotify12,
     color: colors.greyInactive,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 12,
     marginBottom: 48
   },
   containerScroll: {
@@ -347,9 +342,8 @@ const styles = StyleSheet.create({
     width: 220
   },
   btnText: {
+    ...gStyle.textSpotifyBold16,
     color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 16,
     letterSpacing: 1,
     textTransform: 'uppercase'
   },
@@ -366,9 +360,8 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   downloadText: {
-    color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 18
+    ...gStyle.textSpotifyBold18,
+    color: colors.white
   }
 });
 

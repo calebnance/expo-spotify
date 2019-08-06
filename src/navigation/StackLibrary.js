@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createStackNavigator } from 'react-navigation';
 
+// screens
 import LibraryScreen from '../screens/Library';
+
+// icons
 import SvgTabLibrary from '../components/icons/Svg.TabLibrary';
 
 const Icon = ({ focused }) => <SvgTabLibrary active={focused} />;
