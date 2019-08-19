@@ -41,10 +41,7 @@ class Album extends React.Component {
 
   componentDidMount() {
     const { navigation, screenProps } = this.props;
-    // this.toggleBlur();
-    // navigation.navigate('ModalMoreOptions', {
-    //   toggleBlur: this.toggleBlur
-    // });
+
     const { currentSongData } = screenProps;
     // const albumTitle = navigation.getParam('title', 'ALBUM NOT FOUND?!');
     const albumTitle = navigation.getParam('title', 'Extraordinary Machine');
@@ -134,9 +131,9 @@ class Album extends React.Component {
       <View style={gStyle.container}>
         {toggleTabBarState ? (
           <BlurView
-            tint="dark"
             intensity={99}
-            style={{ zIndex: 101, ...StyleSheet.absoluteFill }}
+            style={{ ...StyleSheet.absoluteFill, zIndex: 101 }}
+            tint="dark"
           />
         ) : null}
 
