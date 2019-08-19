@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Animated,
   FlatList,
@@ -123,11 +122,6 @@ class Search extends React.Component {
     );
   }
 }
-
-Search.propTypes = {
-  // required
-  navigation: PropTypes.object.isRequired
-};
 
 const styles = StyleSheet.create({
   containerSearchBar: {
