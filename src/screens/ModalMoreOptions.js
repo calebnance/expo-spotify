@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Text,
   View,
@@ -9,39 +10,36 @@ import {
   StyleSheet,
   Image
 } from 'react-native';
-
-import PropTypes from 'prop-types';
 import { device, gStyle, images, colors, fonts } from '../constants';
-import moreOptions from '../mockdata/menuMoreOptions';
+
+// components
 import LineItemCategory from '../components/LineItemCategory';
+
+// mock data
+import moreOptions from '../mockdata/menuMoreOptions';
 
 const ModalMoreOptions = ({ navigation, screenProps: { setToggleTabBar } }) => {
   const album = navigation.getParam('album');
 
   return (
     <React.Fragment>
-      <SafeAreaView
-        style={{
-          ...gStyle.containerAbsolute,
-          backgroundColor: colors.blackBlur
-        }}
-      >
+      <SafeAreaView style={styles.containerSafeArea}>
         <TouchableWithoutFeedback
           onPress={() => {
             navigation.goBack();
             setToggleTabBar();
           }}
         >
-          <View style={styles.buttonContainer}>
+          <View style={styles.containerButton}>
             <Text style={styles.buttonText}>Cancel</Text>
           </View>
         </TouchableWithoutFeedback>
       </SafeAreaView>
 
       <ScrollView
+        contentContainerStyle={[gStyle.flex1, gStyle.pB80]}
         showsVerticalScrollIndicator={false}
         style={[gStyle.container, { backgroundColor: 'transparent' }]}
-        contentContainerStyle={[gStyle.flex1, gStyle.pB80]}
       >
         <View style={styles.container}>
           <View style={styles.containerImage}>
@@ -58,21 +56,15 @@ const ModalMoreOptions = ({ navigation, screenProps: { setToggleTabBar } }) => {
         <FlatList
           data={moreOptions}
           keyExtractor={itemObj => itemObj.id.toString()}
-          renderItem={itemObj => {
-            const { item } = itemObj;
-
-            return (
-              <View>
-                <LineItemCategory
-                  icon={item.icon}
-                  onPress={() => null}
-                  title={item.title}
-                  disableRightSide
-                  iconLibrary={item.lib}
-                />
-              </View>
-            );
-          }}
+          renderItem={({ item }) => (
+            <LineItemCategory
+              disableRightSide
+              icon={item.icon}
+              iconLibrary={item.lib}
+              onPress={() => null}
+              title={item.title}
+            />
+          )}
         />
       </ScrollView>
     </React.Fragment>
@@ -86,7 +78,11 @@ ModalMoreOptions.propTypes = {
 };
 
 const styles = StyleSheet.create({
-  buttonContainer: {
+  containerSafeArea: {
+    ...gStyle.containerAbsolute,
+    backgroundColor: colors.blackBlur
+  },
+  containerButton: {
     ...gStyle.flexCenter,
     ...gStyle.spacer6
   },
