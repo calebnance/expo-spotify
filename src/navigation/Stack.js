@@ -8,11 +8,10 @@ import TabNavigation from './TabNavigation';
 
 // screens
 import ModalMusicPlayer from '../screens/ModalMusicPlayer';
+import ModalMoreOptions from '../screens/ModalMoreOptions';
 
 const StackNavigator = createStackNavigator(
   {
-    TabNavigation,
-
     // Modals
     // /////////////////////////////////////////////////////////////////////////
     ModalMusicPlayer: {
@@ -20,12 +19,21 @@ const StackNavigator = createStackNavigator(
       navigationOptions: {
         gesturesEnabled: false
       }
-    }
+    },
+    ModalMoreOptions: {
+      screen: ModalMoreOptions,
+      navigationOptions: {
+        gesturesEnabled: false
+      }
+    },
+    TabNavigation
   },
   {
     headerMode: 'none',
     initialRouteName: 'TabNavigation',
-    transitionConfig: ModalRoutes
+    transitionConfig: ModalRoutes,
+    transparentCard: true,
+    mode: 'modal'
   }
 );
 

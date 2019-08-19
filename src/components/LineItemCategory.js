@@ -1,30 +1,91 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Feather } from '@expo/vector-icons';
+import PropTypes from 'prop-types';
+import {
+  Feather,
+  Entypo,
+  MaterialIcons,
+  MaterialCommunityIcons,
+  FontAwesome
+} from '@expo/vector-icons';
 import { colors, gStyle } from '../constants';
 
-const LineItemCategory = ({ icon, onPress, title }) => (
-  <TouchableOpacity
-    activeOpacity={gStyle.activeOpacity}
-    onPress={onPress}
-    style={styles.container}
-  >
-    <View style={gStyle.flexRowCenterAlign}>
-      <Feather color={colors.greyInactive} name={icon} size={24} />
-      <Text style={styles.title}>{title}</Text>
-    </View>
-    <View style={styles.containerRight}>
-      <Feather color={colors.greyInactive} name="chevron-right" size={20} />
-    </View>
-  </TouchableOpacity>
-);
+const LineItemCategory = ({
+  icon,
+  onPress,
+  title,
+  disableRightSide,
+  iconLibrary
+}) => {
+  let iconDisplay;
+
+  switch (iconLibrary) {
+    default:
+    case 'Feather':
+      iconDisplay = (
+        <Feather color={colors.greyInactive} name={icon} size={24} />
+      );
+      break;
+    case 'Entypo':
+      iconDisplay = (
+        <Entypo color={colors.greyInactive} name={icon} size={24} />
+      );
+      break;
+    case 'MaterialIcons':
+      iconDisplay = (
+        <MaterialIcons color={colors.greyInactive} name={icon} size={24} />
+      );
+      break;
+    case 'MaterialCommunityIcons':
+      iconDisplay = (
+        <MaterialCommunityIcons
+          color={colors.greyInactive}
+          name={icon}
+          size={24}
+        />
+      );
+      break;
+    case 'FontAwesome':
+      iconDisplay = (
+        <FontAwesome color={colors.greyInactive} name={icon} size={24} />
+      );
+      break;
+  }
+
+  return (
+    <TouchableOpacity
+      activeOpacity={gStyle.activeOpacity}
+      onPress={onPress}
+      style={styles.container}
+    >
+      <View style={gStyle.flexRowCenterAlign}>
+        {iconDisplay}
+        <Text style={styles.title}>{title}</Text>
+      </View>
+
+      {disableRightSide ? null : (
+        <View style={styles.containerRight}>
+          <Feather color={colors.greyInactive} name="chevron-right" size={20} />
+        </View>
+      )}
+    </TouchableOpacity>
+  );
+};
+
+LineItemCategory.defaultProps = {
+  disableRightSide: null,
+  iconLibrary: 'Feather'
+};
 
 LineItemCategory.propTypes = {
   // required
   icon: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+
+  // optional
+  disableRightSide: PropTypes.bool,
+  iconLibrary: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
 };
 
 const styles = StyleSheet.create({

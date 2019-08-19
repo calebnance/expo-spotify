@@ -10,6 +10,12 @@ export default {
     backgroundColor: colors.blackBg,
     flex: 1
   },
+  containerAbsolute: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    zIndex: 50
+  },
 
   // flex
   // ///////////////////////////////////////////////////////////////////////////
@@ -72,13 +78,21 @@ export default {
   spacer8: { height: spaceGrid * 8 },
   spacer11: { height: spaceGrid * 11 },
   spacer16: { height: spaceGrid * 16 },
+  spacer24: { height: spaceGrid * 24 },
+  spacer48: { height: spaceGrid * 48 },
+  spacer64: { height: spaceGrid * 64 },
+  spacer88: { height: spaceGrid * 88 },
+  spacer128: { height: spaceGrid * 128 },
 
   // margins
   // ///////////////////////////////////////////////////////////////////////////
+
   mB1: { marginBottom: spaceGrid },
   mB2: { marginBottom: spaceGrid * 2 },
   mB3: { marginBottom: spaceGrid * 3 },
   mB4: { marginBottom: spaceGrid * 4 },
+  mB8: { marginBottom: spaceGrid * 8 },
+  mB22: { marginBottom: spaceGrid * 24 },
 
   mL1: { marginLeft: spaceGrid },
   mL2: { marginLeft: spaceGrid * 2 },
@@ -89,22 +103,33 @@ export default {
   mR2: { marginRight: spaceGrid * 2 },
   mR3: { marginRight: spaceGrid * 3 },
   mR4: { marginRight: spaceGrid * 4 },
+  mR8: { marginRight: spaceGrid * 8 },
+  mR16: { marginRight: spaceGrid * 16 },
+  mR24: { marginRight: spaceGrid * 24 },
+  mR48: { marginRight: spaceGrid * 48 },
+  mR64: { marginRight: spaceGrid * 64 },
 
   mTHalf: { marginTop: spaceGrid / 2 },
   mT1: { marginTop: spaceGrid },
   mT2: { marginTop: spaceGrid * 2 },
   mT3: { marginTop: spaceGrid * 3 },
   mT4: { marginTop: spaceGrid * 4 },
+  mT8: { marginTop: spaceGrid * 8 },
+  mT16: { marginTop: spaceGrid * 16 },
 
   mH1: { marginHorizontal: spaceGrid * 1 },
   mH2: { marginHorizontal: spaceGrid * 2 },
   mH3: { marginHorizontal: spaceGrid * 3 },
   mH4: { marginHorizontal: spaceGrid * 4 },
+  mH24: { marginHorizontal: spaceGrid * 24 },
 
   mV1: { marginVertical: spaceGrid * 1 },
   mV2: { marginVertical: spaceGrid * 2 },
   mV3: { marginVertical: spaceGrid * 3 },
   mV4: { marginVertical: spaceGrid * 4 },
+  mV16: { marginVertical: spaceGrid * 16 },
+  mV24: { marginVertical: spaceGrid * 24 },
+  mV32: { marginVertical: spaceGrid * 32 },
 
   // paddings
   // ///////////////////////////////////////////////////////////////////////////

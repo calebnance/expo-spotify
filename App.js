@@ -18,10 +18,18 @@ export default class App extends React.Component {
         length: 312,
         title: 'So It Goes'
       },
-      isLoading: true
+      isLoading: true,
+      toggleTabBar: false
     };
 
     this.changeSong = this.changeSong.bind(this);
+    this.setToggleTabBar = this.setToggleTabBar.bind(this);
+  }
+
+  setToggleTabBar() {
+    this.setState(({ toggleTabBar }) => ({
+      toggleTabBar: !toggleTabBar
+    }));
   }
 
   changeSong(data) {
@@ -31,7 +39,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { currentSongData, isLoading } = this.state;
+    const { currentSongData, isLoading, toggleTabBar } = this.state;
 
     if (isLoading) {
       return (
@@ -49,7 +57,9 @@ export default class App extends React.Component {
         <Stack
           screenProps={{
             currentSongData,
-            changeSong: this.changeSong
+            changeSong: this.changeSong,
+            setToggleTabBar: this.setToggleTabBar,
+            toggleTabBarState: toggleTabBar
           }}
         />
       </React.Fragment>

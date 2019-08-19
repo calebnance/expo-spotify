@@ -10,6 +10,7 @@ import {
   View
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import { BlurView } from 'expo-blur';
 import { colors, device, gStyle, images } from '../constants';
 
 // components
@@ -35,10 +36,15 @@ class Album extends React.Component {
 
     this.toggleDownloaded = this.toggleDownloaded.bind(this);
     this.changeSong = this.changeSong.bind(this);
+    this.toggleBlur = this.toggleBlur.bind(this);
   }
 
   componentDidMount() {
     const { navigation, screenProps } = this.props;
+    // this.toggleBlur();
+    // navigation.navigate('ModalMoreOptions', {
+    //   toggleBlur: this.toggleBlur
+    // });
     const { currentSongData } = screenProps;
     // const albumTitle = navigation.getParam('title', 'ALBUM NOT FOUND?!');
     const albumTitle = navigation.getParam('title', 'Extraordinary Machine');
@@ -77,8 +83,9 @@ class Album extends React.Component {
   }
 
   changeSong(songData) {
-    const { screenProps } = this.props;
-    const { changeSong } = screenProps;
+    const {
+      screenProps: { changeSong }
+    } = this.props;
 
     changeSong(songData);
 
@@ -87,8 +94,19 @@ class Album extends React.Component {
     });
   }
 
+  toggleBlur() {
+    const {
+      screenProps: { setToggleTabBar }
+    } = this.props;
+
+    setToggleTabBar();
+  }
+
   render() {
-    const { navigation } = this.props;
+    const {
+      navigation,
+      screenProps: { toggleTabBarState, setToggleTabBar }
+    } = this.props;
     const { album, downloaded, scrollY, song, title } = this.state;
 
     // album data not set?
@@ -114,6 +132,14 @@ class Album extends React.Component {
 
     return (
       <View style={gStyle.container}>
+        {toggleTabBarState ? (
+          <BlurView
+            tint="dark"
+            intensity={99}
+            style={{ zIndex: 101, ...StyleSheet.absoluteFill }}
+          />
+        ) : null}
+
         <View style={styles.containerHeader}>
           <Animated.View
             style={[styles.headerLinear, { opacity: opacityHeading }]}
@@ -130,7 +156,13 @@ class Album extends React.Component {
             </Animated.View>
             <TouchIcon
               icon={<Feather color={colors.white} name="more-horizontal" />}
-              onPress={() => null}
+              onPress={() => {
+                setToggleTabBar();
+
+                navigation.navigate('ModalMoreOptions', {
+                  album
+                });
+              }}
             />
           </View>
         </View>
