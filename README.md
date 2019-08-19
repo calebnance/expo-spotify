@@ -72,6 +72,10 @@ a couple manual changes within `index.html` i found needed to be made so far:
       - animation opacity on header
       - scroll sticky of shuffle button
       - current song playing shows in album list view
+    - Album More Options (added by [@bidah](https://github.com/bidah))
+      - blur view
+      - SafeAreaView example
+      - action list with supporting icons
     - Header animation on scroll event
       - animation opacity on iPhoneX notch
       - animation opacity on cog icon
