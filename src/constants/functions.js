@@ -1,23 +1,19 @@
 import { Image } from 'react-native';
-import { Asset, Font, Permissions } from 'expo';
+import { Permissions } from 'expo';
+import { Asset } from 'expo-asset';
+import * as Font from 'expo-font';
 
 import preloadFonts from './preloadFonts';
 import preloadImages from './preloadImages';
 
 // cache fonts
 // /////////////////////////////////////////////////////////////////////////////
-export const cacheFonts = fonts => {
-  const mappedFonts = fonts.map(font => Font.loadAsync(font));
-
-  return mappedFonts;
-};
+const cacheFonts = fonts => fonts.map(font => Font.loadAsync(font));
 
 // cache images
 // /////////////////////////////////////////////////////////////////////////////
-export const cacheImages = images => {
-  const imagesArray = Object.values(images);
-
-  return imagesArray.map(image => {
+const cacheImages = images => {
+  return Object.values(images).map(image => {
     if (typeof image === 'string') {
       return Image.prefetch(image);
     }
@@ -28,7 +24,7 @@ export const cacheImages = images => {
 
 // preload async
 // /////////////////////////////////////////////////////////////////////////////
-export const loadAssetsAsync = () => {
+const loadAssetsAsync = async () => {
   // preload assets
   const fontAssets = cacheFonts(preloadFonts);
   const imageAssets = cacheImages(preloadImages);
@@ -39,7 +35,7 @@ export const loadAssetsAsync = () => {
 
 // camera permissions
 // /////////////////////////////////////////////////////////////////////////////
-export const cameraAccessAsync = async () => {
+const cameraAccessAsync = async () => {
   // get exisiting camera permissions first
   const { status: existingStatus } = await Permissions.getAsync(
     Permissions.CAMERA
@@ -57,11 +53,19 @@ export const cameraAccessAsync = async () => {
 
 // format seconds
 // /////////////////////////////////////////////////////////////////////////////
-export const formatTime = sec => {
+const formatTime = sec => {
   const padTime = (num, size) => `000${num}`.slice(size * -1);
   const time = parseFloat(sec).toFixed(3);
   const minutes = Math.floor(time / 60) % 60;
   const seconds = Math.floor(time - minutes * 60);
 
   return `${padTime(minutes, 1)}:${padTime(seconds, 2)}`;
+};
+
+export default {
+  cacheFonts,
+  cacheImages,
+  loadAssetsAsync,
+  cameraAccessAsync,
+  formatTime
 };

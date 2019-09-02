@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Feather, Ionicons } from '@expo/vector-icons';
-import { colors, fonts, gStyle } from '../api';
+import { colors, gStyle } from '../constants';
 
 const LineItemSong = ({ active, downloaded, onPress, songData }) => (
   <View style={styles.container}>
@@ -69,9 +69,8 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   title: {
+    ...gStyle.textSpotify16,
     color: colors.white,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 16,
     marginBottom: 4
   },
   circleDownloaded: {
@@ -84,9 +83,8 @@ const styles = StyleSheet.create({
     width: 14
   },
   artist: {
-    color: colors.greyInactive,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 12
+    ...gStyle.textSpotify12,
+    color: colors.greyInactive
   },
   containerRight: {
     alignItems: 'flex-end',

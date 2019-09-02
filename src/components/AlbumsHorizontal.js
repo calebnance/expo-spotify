@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   FlatList,
   Image,
@@ -7,8 +8,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
-import PropTypes from 'prop-types';
-import { colors, fonts, gStyle, images } from '../api';
+import { colors, gStyle, images } from '../constants';
 
 const AlbumsHorizontal = ({ data, heading, navigation, tagline }) => (
   <View style={styles.container}>
@@ -68,16 +68,14 @@ const styles = StyleSheet.create({
     paddingLeft: 16
   },
   heading: {
+    ...gStyle.textSpotifyBold18,
     color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 18,
     paddingBottom: 6,
     textAlign: 'center'
   },
   tagline: {
+    ...gStyle.textSpotify12,
     color: colors.greyInactive,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 12,
     paddingBottom: 6,
     textAlign: 'center'
   },
@@ -91,9 +89,8 @@ const styles = StyleSheet.create({
     width: 148
   },
   title: {
+    ...gStyle.textSpotifyBold12,
     color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 12,
     marginTop: 4,
     textAlign: 'center'
   }

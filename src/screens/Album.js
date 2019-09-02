@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Alert,
   Animated,
@@ -8,9 +9,9 @@ import {
   Text,
   View
 } from 'react-native';
-import PropTypes from 'prop-types';
 import { Feather } from '@expo/vector-icons';
-import { colors, device, fonts, gStyle, images } from '../api';
+import { BlurView } from 'expo-blur';
+import { colors, device, gStyle, images } from '../constants';
 
 // components
 import LinearGradient from '../components/LinearGradient';
@@ -35,16 +36,15 @@ class Album extends React.Component {
 
     this.toggleDownloaded = this.toggleDownloaded.bind(this);
     this.changeSong = this.changeSong.bind(this);
+    this.toggleBlur = this.toggleBlur.bind(this);
   }
 
   componentDidMount() {
     const { navigation, screenProps } = this.props;
+
     const { currentSongData } = screenProps;
     // const albumTitle = navigation.getParam('title', 'ALBUM NOT FOUND?!');
     const albumTitle = navigation.getParam('title', 'Extraordinary Machine');
-
-    // TODO :: tintColor deprecated
-    console.disableYellowBox = true;
 
     this.setState({
       album: albums[albumTitle] || null,
@@ -89,8 +89,9 @@ class Album extends React.Component {
   }
 
   changeSong(songData) {
-    const { screenProps } = this.props;
-    const { changeSong } = screenProps;
+    const {
+      screenProps: { changeSong }
+    } = this.props;
 
     changeSong(songData);
 
@@ -99,8 +100,19 @@ class Album extends React.Component {
     });
   }
 
+  toggleBlur() {
+    const {
+      screenProps: { setToggleTabBar }
+    } = this.props;
+
+    setToggleTabBar();
+  }
+
   render() {
-    const { navigation } = this.props;
+    const {
+      navigation,
+      screenProps: { toggleTabBarState, setToggleTabBar }
+    } = this.props;
     const { album, downloaded, scrollY, song, title } = this.state;
 
     // album data not set?
@@ -130,6 +142,14 @@ class Album extends React.Component {
 
     return (
       <View style={gStyle.container}>
+        {toggleTabBarState ? (
+          <BlurView
+            intensity={99}
+            style={{ ...StyleSheet.absoluteFill, zIndex: 101 }}
+            tint="dark"
+          />
+        ) : null}
+
         <View style={styles.containerHeader}>
           <Animated.View
             style={[styles.headerLinear, { opacity: opacityHeading }]}
@@ -146,7 +166,13 @@ class Album extends React.Component {
             </Animated.View>
             <TouchIcon
               icon={<Feather color={colors.white} name="more-horizontal" />}
-              onPress={() => null}
+              onPress={() => {
+                setToggleTabBar();
+
+                navigation.navigate('ModalMoreOptions', {
+                  album
+                });
+              }}
             />
           </View>
         </View>
@@ -204,7 +230,7 @@ class Album extends React.Component {
                 {downloaded ? 'Downloaded' : 'Download'}
               </Text>
               <Switch
-                tintColor={colors.greySwitchBorder}
+                trackColor={colors.greySwitchBorder}
                 onValueChange={val => this.toggleDownloaded(val)}
                 value={downloaded}
               />
@@ -227,7 +253,7 @@ class Album extends React.Component {
                 />
               ))}
           </View>
-          <View style={gStyle.spacer128} />
+          <View style={gStyle.spacer16} />
         </Animated.ScrollView>
       </View>
     );
@@ -263,9 +289,8 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   headerTitle: {
+    ...gStyle.textSpotifyBold16,
     color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 16,
     paddingHorizontal: 8,
     marginTop: 2,
     textAlign: 'center',
@@ -300,9 +325,8 @@ const styles = StyleSheet.create({
     zIndex: device.web ? 20 : 0
   },
   title: {
+    ...gStyle.textSpotifyBold20,
     color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 20,
     paddingHorizontal: 24,
     marginBottom: 8,
     textAlign: 'center'
@@ -311,9 +335,8 @@ const styles = StyleSheet.create({
     zIndex: device.web ? 20 : 0
   },
   albumInfo: {
+    ...gStyle.textSpotify12,
     color: colors.greyInactive,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 12,
     marginBottom: 48
   },
   containerScroll: {
@@ -342,9 +365,8 @@ const styles = StyleSheet.create({
     width: 220
   },
   btnText: {
+    ...gStyle.textSpotifyBold16,
     color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 16,
     letterSpacing: 1,
     textTransform: 'uppercase'
   },
@@ -361,9 +383,8 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   downloadText: {
-    color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 18
+    ...gStyle.textSpotifyBold18,
+    color: colors.white
   }
 });
 

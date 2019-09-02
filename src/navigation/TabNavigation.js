@@ -1,8 +1,8 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
-import { colors } from '../api';
+import { colors } from '../constants';
 
-// grabs stacks
+// navigation stacks
 import StackHome from './StackHome';
 import StackSearch from './StackSearch';
 import StackLibrary from './StackLibrary';
@@ -10,7 +10,7 @@ import StackLibrary from './StackLibrary';
 // components
 import CustomTabBar from '../components/CustomTabBar';
 
-export default createBottomTabNavigator(
+const BottomTabNavigator = createBottomTabNavigator(
   {
     StackHome,
     StackSearch,
@@ -29,3 +29,5 @@ export default createBottomTabNavigator(
     }
   }
 );
+
+export default BottomTabNavigator;

@@ -1,9 +1,8 @@
 import React from 'react';
-import { Image, Slider, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { Image, Slider, StyleSheet, Text, View } from 'react-native';
 import { Feather, FontAwesome, MaterialIcons } from '@expo/vector-icons';
-import { colors, device, fonts, gStyle, images } from '../api';
-import { formatTime } from '../api/functions';
+import { colors, device, func, gStyle, images } from '../constants';
 
 // components
 import ModalHeader from '../components/ModalHeader';
@@ -43,8 +42,8 @@ class ModalMusicPlayer extends React.Component {
     const favoriteIcon = favorited ? 'heart' : 'heart-o';
     const iconPlay = paused ? 'play-circle' : 'pause-circle';
 
-    const timePast = formatTime(0);
-    const timeLeft = formatTime(currentSongData.length);
+    const timePast = func.formatTime(0);
+    const timeLeft = func.formatTime(currentSongData.length);
 
     return (
       <View style={gStyle.container}>
@@ -55,7 +54,7 @@ class ModalMusicPlayer extends React.Component {
           text={currentSongData.album}
         />
 
-        <View style={gStyle.p24}>
+        <View style={gStyle.p3}>
           <Image source={images[currentSongData.image]} style={styles.image} />
 
           <View style={[gStyle.flexRowSpace, styles.containerDetails]}>
@@ -97,7 +96,7 @@ class ModalMusicPlayer extends React.Component {
                 iconSize={32}
                 onPress={() => null}
               />
-              <View style={gStyle.pH24}>
+              <View style={gStyle.pH3}>
                 <TouchIcon
                   icon={<FontAwesome color={colors.white} name={iconPlay} />}
                   iconSize={64}
@@ -153,14 +152,12 @@ const styles = StyleSheet.create({
     flex: 6
   },
   song: {
-    color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 24
+    ...gStyle.textSpotifyBold24,
+    color: colors.white
   },
   artist: {
-    color: colors.greyInactive,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 18
+    ...gStyle.textSpotify18,
+    color: colors.greyInactive
   },
   containerFavorite: {
     alignItems: 'flex-end',
@@ -171,9 +168,8 @@ const styles = StyleSheet.create({
     ...gStyle.flexRowSpace
   },
   time: {
-    color: colors.greyInactive,
-    fontFamily: fonts.spotifyRegular,
-    fontSize: 10
+    ...gStyle.textSpotify10,
+    color: colors.greyInactive
   },
   containerControls: {
     ...gStyle.flexRowSpace,

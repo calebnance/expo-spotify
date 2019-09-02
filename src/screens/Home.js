@@ -1,8 +1,8 @@
 import React from 'react';
-import { Animated, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { Animated, StyleSheet, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import { colors, device, gStyle } from '../api';
+import { colors, device, gStyle } from '../constants';
 
 // components
 import AlbumsHorizontal from '../components/AlbumsHorizontal';
@@ -58,7 +58,7 @@ class Home extends React.Component {
           showsVerticalScrollIndicator={false}
           style={gStyle.container}
         >
-          <View style={gStyle.spacer128} />
+          <View style={gStyle.spacer16} />
 
           <AlbumsHorizontal
             data={recentlyPlayed}

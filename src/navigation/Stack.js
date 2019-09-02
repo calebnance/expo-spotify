@@ -1,16 +1,19 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 
-// grab navigation
+// modal routes (dynamic transitions)
+import ModalRoutes from './ModalRoutes';
+
+// navigation
 import TabNavigation from './TabNavigation';
 
-// grab screens
+// screens
 import ModalMusicPlayer from '../screens/ModalMusicPlayer';
-
-// grab modal routes (dynamic transitions)
-import ModalRoutes from './ModalRoutes';
+import ModalMoreOptions from '../screens/ModalMoreOptions';
 
 const StackNavigator = createStackNavigator(
   {
+    // Main Tab Navigation
+    // /////////////////////////////////////////////////////////////////////////
     TabNavigation,
 
     // Modals
@@ -20,12 +23,20 @@ const StackNavigator = createStackNavigator(
       navigationOptions: {
         gesturesEnabled: false
       }
+    },
+    ModalMoreOptions: {
+      screen: ModalMoreOptions,
+      navigationOptions: {
+        gesturesEnabled: false
+      }
     }
   },
   {
     headerMode: 'none',
     initialRouteName: 'TabNavigation',
-    transitionConfig: ModalRoutes
+    mode: 'modal',
+    transitionConfig: ModalRoutes,
+    transparentCard: true
   }
 );
 

@@ -1,15 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { BlurView } from 'expo';
 import PropTypes from 'prop-types';
+import { StyleSheet, Text, View } from 'react-native';
+import { BlurView } from 'expo-blur';
 import { Feather } from '@expo/vector-icons';
-import { colors, device, fonts, gStyle } from '../api';
+import { colors, device, gStyle } from '../constants';
 
 // components
 import TouchIcon from './TouchIcon';
 
 const ScreenHeader = ({ navigation, showBack, title }) => (
-  <BlurView tint="dark" intensity={96} style={styles.container}>
+  <BlurView tint="dark" intensity={95} style={styles.container}>
     {showBack && (
       <View style={styles.left}>
         <TouchIcon
@@ -55,9 +55,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   text: {
+    ...gStyle.textSpotifyBold16,
     color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 16,
     textAlign: 'center'
   },
   left: {

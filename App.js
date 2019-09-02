@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
-import { loadAssetsAsync } from './src/api/functions';
+import { func } from './src/constants';
 
 // main navigation stack
 import Stack from './src/navigation/Stack';
@@ -18,10 +18,18 @@ export default class App extends React.Component {
         length: 312,
         title: 'So It Goes'
       },
-      isLoading: true
+      isLoading: true,
+      toggleTabBar: false
     };
 
     this.changeSong = this.changeSong.bind(this);
+    this.setToggleTabBar = this.setToggleTabBar.bind(this);
+  }
+
+  setToggleTabBar() {
+    this.setState(({ toggleTabBar }) => ({
+      toggleTabBar: !toggleTabBar
+    }));
   }
 
   changeSong(data) {
@@ -31,13 +39,13 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { currentSongData, isLoading } = this.state;
+    const { currentSongData, isLoading, toggleTabBar } = this.state;
 
     if (isLoading) {
       return (
         <AppLoading
           onFinish={() => this.setState({ isLoading: false })}
-          startAsync={loadAssetsAsync}
+          startAsync={func.loadAssetsAsync}
         />
       );
     }
@@ -49,7 +57,9 @@ export default class App extends React.Component {
         <Stack
           screenProps={{
             currentSongData,
-            changeSong: this.changeSong
+            changeSong: this.changeSong,
+            setToggleTabBar: this.setToggleTabBar,
+            toggleTabBarState: toggleTabBar
           }}
         />
       </React.Fragment>
