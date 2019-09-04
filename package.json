@@ -18,6 +18,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "web-build": "expo build:web",
     "eject": "expo eject"
   },
   "dependencies": {
