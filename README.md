@@ -1,5 +1,7 @@
 # Spotify Clone with Expo
 
+web demo: [Expo Spotify](https://expo-spotify.calebnance.now.sh)
+
 <p align="center">
   <img src="screenshots/screenshare-4.jpg?raw=true" />
 </p>
@@ -23,6 +25,7 @@ Run Project Locally: `expo start`
 ## Stats
 
 - Expo SDK 34
+- iOS, Android and PWA (Web App)
 - React Navigation v3
 - PropTypes
 
@@ -39,17 +42,15 @@ Run Project Locally: `expo start`
 
 ## Expo Web
 
-Currently Expo Web support is not production ready, but if you want to see how this project looks on the web as a PWA (Progressive Web App)...
+Currently Expo Web support is **not production ready**, but if you want to see how this project looks on the web as a PWA (Progressive Web App)... using [react-native-web](https://github.com/necolas/react-native-web) and react-dom.
 
 [PWA: Expo Spotify](https://expo-spotify.calebnance.now.sh) looks best on a mobile device, but not bad on desktop!
-
-View the code here: [feature_expo-web](https://github.com/calebnance/expo-spotify/tree/feature_expo-web)
 
 **Dev with Expo Web**
 - Remove node_modules if they exist: `rm -rf nodes_modules`
 - Install/Re-install: `yarn`
-- Start development: `expo start --web`
-- Build PWA: `expo build:web`
+- Start development: `yarn web` or `expo start --web`
+- Build PWA: `yarn web-build` or `expo build:web`
 
 a couple manual changes within `index.html` i found needed to be made so far:
 - **to make splash screen work:** "mobile-web-app-capable" => "apple-mobile-web-app-capable"
@@ -62,6 +63,7 @@ a couple manual changes within `index.html` i found needed to be made so far:
 
 ### version 0.0.1 (current)
 
+- Expo Web support
 - upgraded to [Expo SDK 34](https://blog.expo.io/expo-sdk-34-is-now-available-4f7825239319)
 - upgraded to [Expo SDK 33](https://blog.expo.io/expo-sdk-v33-0-0-is-now-available-52d1c99dfe4c)
 - iOS and Android

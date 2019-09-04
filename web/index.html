@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta httpequiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Expo Spotify</title>
+    <style>
+      body,
+      body > div,
+      html {
+        background-color:#121212;
+        width:100%;
+        -webkit-overflow-scrolling:touch;
+        margin:0;
+        padding:0;
+        min-height:100%
+      }
+      body > div {
+        flex-shrink:0;
+        flex-basis:auto;
+        flex-grow:1;
+        display:flex;
+        flex:1
+      }
+      html {
+        font-size:14px;
+        scroll-behavior:smooth;
+        -webkit-text-size-adjust:100%;
+        height:100%
+      }
+      body {
+        display:flex;
+        overflow-y:scroll;
+        overscroll-behavior-y:none;
+        text-rendering:optimizeLegibility;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+        -ms-overflow-style:scrollbar
+      }
+    </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/icon_180x180.758ec436c6d0adaeb36f32ea9dd051bb.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/assets/splash/icon_1242x2688.8aa91f63eb70deb19fe9da7f4622e7ef.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="/assets/splash/icon_2436x1125.0272518e0538337469bc87df32017632.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/assets/splash/icon_640x1136.6a10854ff6df41e7099a1b4a0cc3f33a.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="/assets/splash/icon_2688x1242.2b53542b00ab3ebabe0bc76d95e7c4ac.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/assets/splash/icon_1792x828.a3b66d9e9dcf79aa1b2e53ab6aefd9f6.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/assets/splash/icon_1136x640.ea04fffa91bb00d8d5028b7a3905c675.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/assets/splash/icon_1125x2436.4d77d617575ef6ab421140cc754e54cf.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="/assets/splash/icon_2208x1242.69588be9663d6f02c581be4abd0d452c.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/assets/splash/icon_828x1792.93a43581145fbd5984c4d5d775b79394.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/assets/splash/icon_1242x2208.bad32e5136b68a1375066beca715ff11.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/assets/splash/icon_1334x750.cd18c18895b5ad8fc05eefe5fb7b51c2.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/assets/splash/icon_2732x2048.41fbcdd234e3ec4eac56eab60820b076.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/assets/splash/icon_750x1334.0629ecc6337cb3b0e6883a874eee92ce.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/assets/splash/icon_2048x2732.244f4f823c22a90094216d988fdd28d8.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/assets/splash/icon_1668x2388.44d42da3688277e54f633dabba3cc078.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/assets/splash/icon_2388x1668.dbb3f70f2cfce5866c3b671225dc47c5.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/assets/splash/icon_2224x1668.921cc3f3874e1f65e5a580409c6c3571.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/assets/splash/icon_1668x2224.41a3add059629c6a019652a0850ea35a.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="/assets/splash/icon_2048x1536.71ca3a2c515737754f4fbd009a6437d4.png"/>
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/assets/splash/icon_1536x2048.e3dd5f13e29eff462edbdb8c071d7a42.png"/>
+    <link rel="manifest" href="/manifest.json"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1.00001,viewport-fit=cover"/>
+    <meta name="description" content="spotify clone with expo"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-title" content="Expo Spotify"/>
+    <meta name="theme-color" content="#181414"/>
+  </head>
+  <body>
+    <noscript>"<form action="" method="POST" style="background-color:#fff;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999"><div style="font-size:18px;font-family:Helvetica,sans-serif;line-height:24px;margin:10%;width:80%"><p>Oh no! It looks like JavaScript is not enabled in your browser.</p><p style="margin:20px 0"><button type="submit" style="background-color:#4630eb;border-radius:100px;border:none;box-shadow:none;color:#fff;cursor:pointer;font-size:14px;font-weight:700;line-height:20px;padding:6px 16px">Ok</button></p></div></form>"</noscript>
+    <div id="root"></div>
+  </body>
+</html>

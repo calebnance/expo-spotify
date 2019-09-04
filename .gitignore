@@ -1,5 +1,6 @@
 node_modules/**/*
 .expo/*
+web-build/*
 .expo-shared/*
 web-build/*
 npm-debug.*
