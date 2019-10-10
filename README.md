@@ -2,6 +2,8 @@
 
 web demo: [Expo Spotify](https://expo-spotify.calebnance.now.sh)
 
+[![supports iOS and Android](https://img.shields.io/badge/Platforms-Native-4630EB.svg?style=for-the-badge&logo=EXPO&labelColor=000&logoColor=fff)](https://github.com/expo/expo) [![supports web](https://img.shields.io/badge/Platforms-Web-4630EB.svg?style=for-the-badge&logo=EXPO&labelColor=000&logoColor=fff)](https://github.com/expo/expo)
+
 <p align="center">
   <img src="screenshots/screenshare-4.jpg?raw=true" />
 </p>
