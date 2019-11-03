@@ -1,7 +1,7 @@
 import { Dimensions, Platform } from 'react-native';
 
-// device
-// /////////////////////////////////////////////////////////////////////////////
+// android
+const android = Platform.OS === 'android';
 
 // is iPhoneX, iPhoneXs, iPhoneXr, iPhoneXs Max
 const iOS = Platform.OS === 'ios';
@@ -24,8 +24,10 @@ if (iOS) {
 }
 
 export default {
+  android,
   aspectRatio,
   height,
+  iOS,
   iPhoneX,
   isPad,
   web,
