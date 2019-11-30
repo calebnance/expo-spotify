@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import { colors, gStyle, images } from '../constants';
 
 const AlbumsHorizontal = ({ data, heading, navigation, tagline }) => (
@@ -19,26 +20,22 @@ const AlbumsHorizontal = ({ data, heading, navigation, tagline }) => (
       contentContainerStyle={styles.containerContent}
       data={data}
       horizontal
-      keyExtractor={itemObj => itemObj.id.toString()}
-      renderItem={itemObj => {
-        const { item } = itemObj;
-
-        return (
-          <TouchableOpacity
-            activeOpacity={gStyle.activeOpacity}
-            hitSlop={{ top: 10, left: 10, bottom: 10, right: 10 }}
-            onPress={() => navigation.navigate('Album', { title: item.title })}
-            style={styles.item}
-          >
-            <View style={styles.image}>
-              {item.image && (
-                <Image source={images[item.image]} style={styles.image} />
-              )}
-            </View>
-            <Text style={styles.title}>{item.title}</Text>
-          </TouchableOpacity>
-        );
-      }}
+      keyExtractor={({ id }) => id.toString()}
+      renderItem={({ item }) => (
+        <TouchableOpacity
+          activeOpacity={gStyle.activeOpacity}
+          hitSlop={{ top: 10, left: 10, bottom: 10, right: 10 }}
+          onPress={() => navigation.navigate('Album', { title: item.title })}
+          style={styles.item}
+        >
+          <View style={styles.image}>
+            {item.image && (
+              <Image source={images[item.image]} style={styles.image} />
+            )}
+          </View>
+          <Text style={styles.title}>{item.title}</Text>
+        </TouchableOpacity>
+      )}
       showsHorizontalScrollIndicator={false}
     />
   </View>
@@ -96,4 +93,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default AlbumsHorizontal;
+export default withNavigation(AlbumsHorizontal);

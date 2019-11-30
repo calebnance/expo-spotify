@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import { FontAwesome } from '@expo/vector-icons';
 import { colors, device, gStyle } from '../constants';
 
@@ -131,4 +132,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default BarMusicPlayer;
+export default withNavigation(BarMusicPlayer);

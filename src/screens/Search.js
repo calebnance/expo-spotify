@@ -77,38 +77,30 @@ class Search extends React.Component {
           <FlatList
             contentContainerStyle={styles.containerFlatlist}
             data={topGenres}
-            keyExtractor={itemObj => itemObj.id.toString()}
+            keyExtractor={({ id }) => id.toString()}
             numColumns={2}
-            renderItem={itemObj => {
-              const { item } = itemObj;
-
-              return (
-                <PlaylistItem
-                  bgColor={item.color}
-                  onPress={() => null}
-                  title={item.title}
-                />
-              );
-            }}
+            renderItem={({ item }) => (
+              <PlaylistItem
+                bgColor={item.color}
+                onPress={() => null}
+                title={item.title}
+              />
+            )}
           />
 
           <Text style={styles.sectionHeading}>Browse all</Text>
           <FlatList
             contentContainerStyle={styles.containerFlatlist}
             data={browseAll}
-            keyExtractor={itemObj => itemObj.id.toString()}
+            keyExtractor={({ id }) => id.toString()}
             numColumns={2}
-            renderItem={itemObj => {
-              const { item } = itemObj;
-
-              return (
-                <PlaylistItem
-                  bgColor={item.color}
-                  onPress={() => null}
-                  title={item.title}
-                />
-              );
-            }}
+            renderItem={({ item }) => (
+              <PlaylistItem
+                bgColor={item.color}
+                onPress={() => null}
+                title={item.title}
+              />
+            )}
           />
         </Animated.ScrollView>
 

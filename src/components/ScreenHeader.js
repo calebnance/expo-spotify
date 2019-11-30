@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Text, View } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import { BlurView } from 'expo-blur';
 import { Feather } from '@expo/vector-icons';
 import { colors, device, gStyle } from '../constants';
@@ -65,4 +66,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ScreenHeader;
+export default withNavigation(ScreenHeader);

@@ -55,7 +55,7 @@ const ModalMoreOptions = ({ navigation, screenProps: { setToggleTabBar } }) => {
 
         <FlatList
           data={moreOptions}
-          keyExtractor={itemObj => itemObj.id.toString()}
+          keyExtractor={({ id }) => id.toString()}
           renderItem={({ item }) => (
             <LineItemCategory
               disableRightSide
