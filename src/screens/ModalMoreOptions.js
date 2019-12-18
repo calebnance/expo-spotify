@@ -5,7 +5,6 @@ import {
   View,
   TouchableWithoutFeedback,
   SafeAreaView,
-  FlatList,
   ScrollView,
   StyleSheet,
   Image
@@ -53,19 +52,20 @@ const ModalMoreOptions = ({ navigation, screenProps: { setToggleTabBar } }) => {
           </Text>
         </View>
 
-        <FlatList
-          data={moreOptions}
-          keyExtractor={({ id }) => id.toString()}
-          renderItem={({ item }) => (
+        {Object.keys(moreOptions).map(index => {
+          const item = moreOptions[index];
+
+          return (
             <LineItemCategory
+              key={item.id}
               disableRightSide
               icon={item.icon}
               iconLibrary={item.lib}
               onPress={() => null}
               title={item.title}
             />
-          )}
-        />
+          );
+        })}
       </ScrollView>
     </React.Fragment>
   );

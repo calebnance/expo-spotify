@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Animated,
-  FlatList,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -74,34 +73,38 @@ class Search extends React.Component {
           </View>
 
           <Text style={styles.sectionHeading}>Your top genres</Text>
-          <FlatList
-            contentContainerStyle={styles.containerFlatlist}
-            data={topGenres}
-            keyExtractor={({ id }) => id.toString()}
-            numColumns={2}
-            renderItem={({ item }) => (
-              <PlaylistItem
-                bgColor={item.color}
-                onPress={() => null}
-                title={item.title}
-              />
-            )}
-          />
+          <View style={styles.containerRow}>
+            {Object.keys(topGenres).map(index => {
+              const item = topGenres[index];
+
+              return (
+                <View key={item.id} style={styles.containerColumn}>
+                  <PlaylistItem
+                    bgColor={item.color}
+                    onPress={() => null}
+                    title={item.title}
+                  />
+                </View>
+              );
+            })}
+          </View>
 
           <Text style={styles.sectionHeading}>Browse all</Text>
-          <FlatList
-            contentContainerStyle={styles.containerFlatlist}
-            data={browseAll}
-            keyExtractor={({ id }) => id.toString()}
-            numColumns={2}
-            renderItem={({ item }) => (
-              <PlaylistItem
-                bgColor={item.color}
-                onPress={() => null}
-                title={item.title}
-              />
-            )}
-          />
+          <View style={styles.containerRow}>
+            {Object.keys(browseAll).map(index => {
+              const item = browseAll[index];
+
+              return (
+                <View key={item.id} style={styles.containerColumn}>
+                  <PlaylistItem
+                    bgColor={item.color}
+                    onPress={() => null}
+                    title={item.title}
+                  />
+                </View>
+              );
+            })}
+          </View>
         </Animated.ScrollView>
 
         <View style={styles.iconRight}>
@@ -141,8 +144,14 @@ const styles = StyleSheet.create({
     marginLeft: 24,
     marginTop: 16
   },
-  containerFlatlist: {
+  containerRow: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     marginLeft: 24
+  },
+  containerColumn: {
+    width: '50%'
   },
   iconRight: {
     alignItems: 'center',
