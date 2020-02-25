@@ -54,8 +54,5 @@
   },
   "eslintIgnore": [
     "babel.config.js"
-  ],
-  "engines": {
-    "node": ">=10.3.0"
-  }
+  ]
 }
