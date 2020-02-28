@@ -72,6 +72,7 @@ a couple manual changes within `index.html` i found needed to be made so far:
 - Expo Web support
 - upgraded to [Expo SDK 34](https://blog.expo.io/expo-sdk-34-is-now-available-4f7825239319)
 - upgraded to [Expo SDK 33](https://blog.expo.io/expo-sdk-v33-0-0-is-now-available-52d1c99dfe4c)
+- started with [React Navigation v3](https://reactnavigation.org/docs/3.x/getting-started)
 - iOS and Android
 - Tab Navigation (stacks created)
   - Home
