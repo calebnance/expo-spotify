@@ -1,7 +1,5 @@
-import { createAppContainer, createStackNavigator } from 'react-navigation';
-
-// modal routes (dynamic transitions)
-import ModalRoutes from './ModalRoutes';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
 // navigation
 import TabNavigation from './TabNavigation';
@@ -18,25 +16,18 @@ const StackNavigator = createStackNavigator(
 
     // Modals
     // /////////////////////////////////////////////////////////////////////////
-    ModalMusicPlayer: {
-      screen: ModalMusicPlayer,
-      navigationOptions: {
-        gesturesEnabled: false
-      }
-    },
+    ModalMusicPlayer,
     ModalMoreOptions: {
       screen: ModalMoreOptions,
       navigationOptions: {
-        gesturesEnabled: false
+        cardStyle: { backgroundColor: 'transparent' }
       }
     }
   },
   {
     headerMode: 'none',
     initialRouteName: 'TabNavigation',
-    mode: 'modal',
-    transitionConfig: ModalRoutes,
-    transparentCard: true
+    mode: 'modal'
   }
 );
 

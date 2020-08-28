@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BottomTabBar } from 'react-navigation';
+import { BottomTabBar } from 'react-navigation-tabs';
 
 // components
 import BarMusicPlayer from './BarMusicPlayer';
