@@ -20,11 +20,11 @@ web demo: [Expo Spotify](https://expo-spotify.calebnance.now.sh)
 
 ## Install & Build
 
-Install: `yarn install`
+First, make sure you have Expo CLI installed: `npm install -g expo-cli`
 
-Expo CLI: `npm install -g expo-cli` (if not already installed)
+Install: `yarn` or `yarn install`
 
-Run Project Locally: `expo start`
+Run Project Locally: `yarn dev` or `yarn start`
 
 ## Features
 
