@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Expo Spotify",
-    "description": "spotify clone with expo",
+    "description": "spotify ui clone with expo",
     "scheme": "spotifyclone",
     "slug": "spotifyclone",
     "privacy": "public",
