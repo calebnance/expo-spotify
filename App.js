@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
 import { func } from './src/constants';
