@@ -11,7 +11,7 @@
     "spotify"
   ],
   "private": true,
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "src/App.js",
   "scripts": {
     "dev": "expo start",
     "start": "expo start",
