@@ -231,7 +231,7 @@ class Album extends React.Component {
               </Text>
               <Switch
                 trackColor={colors.greySwitchBorder}
-                onValueChange={val => this.toggleDownloaded(val)}
+                onValueChange={(val) => this.toggleDownloaded(val)}
                 value={downloaded}
               />
             </View>

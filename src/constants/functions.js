@@ -8,12 +8,12 @@ import preloadImages from './preloadImages';
 
 // cache fonts
 // /////////////////////////////////////////////////////////////////////////////
-const cacheFonts = fonts => fonts.map(font => Font.loadAsync(font));
+const cacheFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
 
 // cache images
 // /////////////////////////////////////////////////////////////////////////////
-const cacheImages = images => {
-  return Object.values(images).map(image => {
+const cacheImages = (images) => {
+  return Object.values(images).map((image) => {
     if (typeof image === 'string') {
       return Image.prefetch(image);
     }
@@ -53,7 +53,7 @@ const cameraAccessAsync = async () => {
 
 // format seconds
 // /////////////////////////////////////////////////////////////////////////////
-const formatTime = sec => {
+const formatTime = (sec) => {
   const padTime = (num, size) => `000${num}`.slice(size * -1);
   const time = parseFloat(sec).toFixed(3);
   const minutes = Math.floor(time / 60) % 60;

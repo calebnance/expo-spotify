@@ -17,8 +17,8 @@ import TouchIcon from '../components/TouchIcon';
 import SvgSearch from '../components/icons/Svg.Search';
 
 // mock data
-import browseAll from '../mockdata/searchBrowseAll';
-import topGenres from '../mockdata/searchTopGenres';
+import browseAll from '../mockdata/searchBrowseAll.json';
+import topGenres from '../mockdata/searchTopGenres.json';
 
 class Search extends React.Component {
   constructor(props) {
@@ -75,7 +75,7 @@ class Search extends React.Component {
 
           <Text style={styles.sectionHeading}>Your top genres</Text>
           <View style={styles.containerRow}>
-            {Object.keys(topGenres).map(index => {
+            {Object.keys(topGenres).map((index) => {
               const item = topGenres[index];
 
               return (
@@ -92,7 +92,7 @@ class Search extends React.Component {
 
           <Text style={styles.sectionHeading}>Browse all</Text>
           <View style={styles.containerRow}>
-            {Object.keys(browseAll).map(index => {
+            {Object.keys(browseAll).map((index) => {
               const item = browseAll[index];
 
               return (

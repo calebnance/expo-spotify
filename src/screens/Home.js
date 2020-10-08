@@ -7,9 +7,9 @@ import { colors, device, gStyle } from '../constants';
 import AlbumsHorizontal from '../components/AlbumsHorizontal';
 
 // mock data
-import heavyRotation from '../mockdata/heavyRotation';
-import jumpBackIn from '../mockdata/jumpBackIn';
-import recentlyPlayed from '../mockdata/recentlyPlayed';
+import heavyRotation from '../mockdata/heavyRotation.json';
+import jumpBackIn from '../mockdata/jumpBackIn.json';
+import recentlyPlayed from '../mockdata/recentlyPlayed.json';
 
 class Home extends React.Component {
   constructor(props) {

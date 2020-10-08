@@ -15,7 +15,7 @@ import { device, gStyle, images, colors, fonts } from '../constants';
 import LineItemCategory from '../components/LineItemCategory';
 
 // mock data
-import moreOptions from '../mockdata/menuMoreOptions';
+import moreOptions from '../mockdata/menuMoreOptions.json';
 
 const ModalMoreOptions = ({ navigation, screenProps: { setToggleTabBar } }) => {
   const album = navigation.getParam('album');
@@ -52,7 +52,7 @@ const ModalMoreOptions = ({ navigation, screenProps: { setToggleTabBar } }) => {
           </Text>
         </View>
 
-        {Object.keys(moreOptions).map(index => {
+        {Object.keys(moreOptions).map((index) => {
           const item = moreOptions[index];
 
           return (

@@ -22,13 +22,13 @@ class ModalMusicPlayer extends React.Component {
   }
 
   toggleFavorite() {
-    this.setState(prev => ({
+    this.setState((prev) => ({
       favorited: !prev.favorited
     }));
   }
 
   togglePlay() {
-    this.setState(prev => ({
+    this.setState((prev) => ({
       paused: !prev.paused
     }));
   }

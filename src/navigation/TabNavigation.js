@@ -18,7 +18,7 @@ const BottomTabNavigator = createBottomTabNavigator(
   },
   {
     initialRouteName: 'StackHome',
-    tabBarComponent: props => <CustomTabBar {...props} />,
+    tabBarComponent: (props) => <CustomTabBar {...props} />,
     tabBarOptions: {
       activeTintColor: colors.white,
       inactiveTintColor: colors.greyInactive,

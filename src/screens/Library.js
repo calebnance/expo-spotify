@@ -7,7 +7,7 @@ import LineItemCategory from '../components/LineItemCategory';
 import ScreenHeader from '../components/ScreenHeader';
 
 // mock data
-import yourLibrary from '../mockdata/menuYourLibrary';
+import yourLibrary from '../mockdata/menuYourLibrary.json';
 
 const Library = () => (
   <View style={gStyle.container}>

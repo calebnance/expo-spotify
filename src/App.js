@@ -7,8 +7,8 @@ import { func } from './constants';
 import Stack from './navigation/Stack';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       currentSongData: {
