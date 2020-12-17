@@ -7,7 +7,7 @@
   },
   {
     "id": 2,
-    "icon": "artist",
+    "icon": "account-music",
     "title": "View artist",
     "lib": "MaterialCommunityIcons"
   },
