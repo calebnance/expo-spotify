@@ -1,4 +1,4 @@
-# Spotify: UI Clone with Expo
+# Spotify: UI Clone with React Native / Expo
 
 web demo: [Expo Spotify](https://expo-spotify.calebnance.now.sh)
 
