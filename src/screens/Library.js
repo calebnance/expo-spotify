@@ -32,7 +32,7 @@ const Library = () => (
 
 const styles = StyleSheet.create({
   containerFlatlist: {
-    marginTop: device.iPhoneX ? 88 : 64
+    marginTop: device.iPhoneNotch ? 88 : 64
   }
 });
 

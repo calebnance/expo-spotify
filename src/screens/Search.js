@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     ...gStyle.pH3,
     backgroundColor: colors.blackBg,
     paddingBottom: 16,
-    paddingTop: device.iPhoneX ? 64 : 24
+    paddingTop: device.iPhoneNotch ? 64 : 24
   },
   searchPlaceholder: {
     alignItems: 'center',

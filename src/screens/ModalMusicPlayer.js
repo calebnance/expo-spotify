@@ -142,7 +142,7 @@ ModalMusicPlayer.propTypes = {
 const styles = StyleSheet.create({
   image: {
     height: device.width - 48,
-    marginVertical: device.iPhoneX ? 36 : 8,
+    marginVertical: device.iPhoneNotch ? 36 : 8,
     width: device.width - 48
   },
   containerDetails: {
@@ -173,11 +173,11 @@ const styles = StyleSheet.create({
   },
   containerControls: {
     ...gStyle.flexRowSpace,
-    marginTop: device.iPhoneX ? 24 : 8
+    marginTop: device.iPhoneNotch ? 24 : 8
   },
   containerBottom: {
     ...gStyle.flexRowSpace,
-    marginTop: device.iPhoneX ? 32 : 8
+    marginTop: device.iPhoneNotch ? 32 : 8
   }
 });
 

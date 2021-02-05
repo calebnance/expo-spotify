@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   container: {
-    paddingTop: device.iPhoneX ? 94 : 50,
+    paddingTop: device.iPhoneNotch ? 94 : 50,
     alignItems: 'center'
   },
   containerImage: {

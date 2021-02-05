@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 24,
-    paddingTop: device.iPhoneX ? 48 : 24
+    paddingTop: device.iPhoneNotch ? 48 : 24
   },
   containerText: {
     alignItems: 'center',

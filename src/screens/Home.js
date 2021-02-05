@@ -37,7 +37,7 @@ class Home extends React.Component {
 
     return (
       <React.Fragment>
-        {device.iPhoneX && (
+        {device.iPhoneNotch && (
           <Animated.View style={[styles.iPhoneNotch, { opacity: opacityIn }]} />
         )}
 
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end',
     paddingHorizontal: 16,
-    paddingTop: device.iPhoneX ? 60 : 36,
+    paddingTop: device.iPhoneNotch ? 60 : 36,
     position: 'absolute',
     top: 0,
     width: '100%',

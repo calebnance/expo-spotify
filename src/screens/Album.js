@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 24,
-    paddingTop: device.iPhoneX ? 48 : 24,
+    paddingTop: device.iPhoneNotch ? 48 : 24,
     position: 'absolute',
     top: 0,
     width: '100%'
@@ -298,7 +298,7 @@ const styles = StyleSheet.create({
   },
   containerFixed: {
     alignItems: 'center',
-    paddingTop: device.iPhoneX ? 94 : 60,
+    paddingTop: device.iPhoneNotch ? 94 : 60,
     position: 'absolute',
     width: '100%'
   },
@@ -343,7 +343,7 @@ const styles = StyleSheet.create({
     paddingTop: 89
   },
   containerSticky: {
-    marginTop: device.iPhoneX ? 238 : 194
+    marginTop: device.iPhoneNotch ? 238 : 194
   },
   containerShuffle: {
     alignItems: 'center',

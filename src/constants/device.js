@@ -3,7 +3,6 @@ import { Dimensions, Platform } from 'react-native';
 // android
 const android = Platform.OS === 'android';
 
-// is iPhoneX, iPhoneXs, iPhoneXr, iPhoneXs Max
 const iOS = Platform.OS === 'ios';
 const web = Platform.OS === 'web';
 const windowInfo = Dimensions.get('window');
@@ -13,13 +12,14 @@ const aspectRatio = height / width;
 // is iPad
 const { isPad } = Platform;
 
-let iPhoneX = false;
+// is iPhone with Notch?
+// iPhoneX, iPhoneXs, iPhoneXr, iPhoneXs Max, iPhone 11 & 12
+let iPhoneNotch = false;
 if (iOS) {
   // iphone screen breakdown
-  // https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions
-  // http://iosres.com
-  if (height === 812 || width === 812 || height === 896 || width === 896) {
-    iPhoneX = true;
+  // https://blog.calebnance.com/development/iphone-ipad-pixel-sizes-guide-complete-list.html
+  if (height === 812 || height === 844 || height === 896 || height === 926) {
+    iPhoneNotch = true;
   }
 }
 
@@ -28,7 +28,7 @@ export default {
   aspectRatio,
   height,
   iOS,
-  iPhoneX,
+  iPhoneNotch,
   isPad,
   web,
   width
