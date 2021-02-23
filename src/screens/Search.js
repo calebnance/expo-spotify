@@ -21,8 +21,8 @@ import browseAll from '../mockdata/searchBrowseAll.json';
 import topGenres from '../mockdata/searchTopGenres.json';
 
 class Search extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     // search start (24 horizontal padding )
     const searchStart = device.width - 48;

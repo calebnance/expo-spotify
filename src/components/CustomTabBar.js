@@ -6,9 +6,8 @@ import { BottomTabBar } from 'react-navigation-tabs';
 import BarMusicPlayer from './BarMusicPlayer';
 
 const CustomTabBar = (props) => {
-  const {
-    screenProps: { currentSongData, toggleTabBarState }
-  } = props;
+  const { screenProps } = props;
+  const { currentSongData, toggleTabBarState } = screenProps;
 
   return toggleTabBarState ? null : (
     <React.Fragment>

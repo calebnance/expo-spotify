@@ -4,36 +4,35 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Feather, Ionicons } from '@expo/vector-icons';
 import { colors, gStyle } from '../constants';
 
-const LineItemSong = ({ active, downloaded, onPress, songData }) => (
-  <View style={styles.container}>
-    <TouchableOpacity
-      activeOpacity={gStyle.activeOpacity}
-      onPress={() => onPress(songData)}
-      style={gStyle.flex5}
-    >
-      <Text
-        style={[
-          styles.title,
-          { color: active ? colors.brandPrimary : colors.white }
-        ]}
-      >
-        {songData.title}
-      </Text>
-      <View style={gStyle.flexRow}>
-        {downloaded && (
-          <View style={styles.circleDownloaded}>
-            <Ionicons color={colors.blackBg} name="arrow-down" size={14} />
-          </View>
-        )}
-        <Text style={styles.artist}>{songData.artist}</Text>
-      </View>
-    </TouchableOpacity>
+const LineItemSong = ({ active, downloaded, onPress, songData }) => {
+  const activeColor = active ? colors.brandPrimary : colors.white;
 
-    <View style={styles.containerRight}>
-      <Feather color={colors.greyLight} name="more-horizontal" size={20} />
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity
+        activeOpacity={gStyle.activeOpacity}
+        onPress={() => onPress(songData)}
+        style={gStyle.flex5}
+      >
+        <Text style={[styles.title, { color: activeColor }]}>
+          {songData.title}
+        </Text>
+        <View style={gStyle.flexRow}>
+          {downloaded && (
+            <View style={styles.circleDownloaded}>
+              <Ionicons color={colors.blackBg} name="arrow-down" size={14} />
+            </View>
+          )}
+          <Text style={styles.artist}>{songData.artist}</Text>
+        </View>
+      </TouchableOpacity>
+
+      <View style={styles.containerRight}>
+        <Feather color={colors.greyLight} name="more-horizontal" size={20} />
+      </View>
     </View>
-  </View>
-);
+  );
+};
 
 LineItemSong.defaultProps = {
   active: false,

@@ -9,8 +9,8 @@ import ModalHeader from '../components/ModalHeader';
 import TouchIcon from '../components/TouchIcon';
 
 class ModalMusicPlayer extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       favorited: false,

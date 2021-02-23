@@ -6,8 +6,8 @@ import { FontAwesome } from '@expo/vector-icons';
 import { colors, device, gStyle } from '../constants';
 
 class BarMusicPlayer extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       favorited: false,

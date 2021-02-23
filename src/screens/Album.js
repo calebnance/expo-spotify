@@ -23,8 +23,8 @@ import TouchText from '../components/TouchText';
 import albums from '../mockdata/albums';
 
 class Album extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       album: null,
