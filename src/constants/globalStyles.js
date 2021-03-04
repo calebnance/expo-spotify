@@ -84,6 +84,10 @@ export default {
   spacer88: { height: spaceGrid * 88 },
   spacer128: { height: spaceGrid * 128 },
 
+  spacer1W: { width: spaceGrid * 1 },
+  spacer2W: { width: spaceGrid * 2 },
+  spacer3W: { width: spaceGrid * 3 },
+
   // margins
   // ///////////////////////////////////////////////////////////////////////////
 
