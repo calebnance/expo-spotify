@@ -38,7 +38,7 @@ const ModalMoreOptions = ({ navigation, screenProps: { setToggleTabBar } }) => {
       <ScrollView
         contentContainerStyle={[gStyle.flex1, gStyle.pB80]}
         showsVerticalScrollIndicator={false}
-        style={[gStyle.container, { backgroundColor: 'transparent' }]}
+        style={[gStyle.container, styles.transparent]}
       >
         <View style={styles.container}>
           <View style={styles.containerImage}>
@@ -90,9 +90,12 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontSize: 18
   },
+  transparent: {
+    backgroundColor: 'transparent'
+  },
   container: {
-    paddingTop: device.iPhoneNotch ? 94 : 50,
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingTop: device.iPhoneNotch ? 94 : 50
   },
   containerImage: {
     shadowColor: colors.black,
@@ -109,8 +112,8 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontFamily: fonts.spotifyBold,
     fontSize: 20,
-    paddingHorizontal: 24,
     marginBottom: 8,
+    paddingHorizontal: 24,
     textAlign: 'center'
   },
   albumInfo: {

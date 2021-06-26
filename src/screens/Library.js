@@ -11,7 +11,7 @@ import yourLibrary from '../mockdata/menuYourLibrary.json';
 
 const Library = () => (
   <View style={gStyle.container}>
-    <View style={{ position: 'absolute', top: 0, width: '100%', zIndex: 10 }}>
+    <View style={styles.containerHeader}>
       <ScreenHeader title="Your Library" />
     </View>
 
@@ -31,6 +31,12 @@ const Library = () => (
 );
 
 const styles = StyleSheet.create({
+  containerHeader: {
+    position: 'absolute',
+    top: 0,
+    width: '100%',
+    zIndex: 10
+  },
   containerFlatlist: {
     marginTop: device.iPhoneNotch ? 88 : 64
   }

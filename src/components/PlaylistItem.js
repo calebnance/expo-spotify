@@ -23,8 +23,8 @@ PlaylistItem.propTypes = {
 const styles = StyleSheet.create({
   playlistItem: {
     borderRadius: 6,
-    height: 98,
     flex: 1,
+    height: 98,
     marginBottom: 24,
     marginRight: 24,
     paddingLeft: 12,

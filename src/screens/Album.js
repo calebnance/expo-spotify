@@ -143,11 +143,7 @@ class Album extends React.Component {
     return (
       <View style={gStyle.container}>
         {toggleTabBarState ? (
-          <BlurView
-            intensity={99}
-            style={{ ...StyleSheet.absoluteFill, zIndex: 101 }}
-            tint="dark"
-          />
+          <BlurView intensity={99} style={styles.blurview} tint="dark" />
         ) : null}
 
         <View style={styles.containerHeader}>
@@ -267,6 +263,10 @@ Album.propTypes = {
 };
 
 const styles = StyleSheet.create({
+  blurview: {
+    ...StyleSheet.absoluteFill,
+    zIndex: 101
+  },
   containerHeader: {
     height: 89,
     position: 'absolute',
@@ -291,8 +291,8 @@ const styles = StyleSheet.create({
   headerTitle: {
     ...gStyle.textSpotifyBold16,
     color: colors.white,
-    paddingHorizontal: 8,
     marginTop: 2,
+    paddingHorizontal: 8,
     textAlign: 'center',
     width: device.width - 100
   },
@@ -327,8 +327,8 @@ const styles = StyleSheet.create({
   title: {
     ...gStyle.textSpotifyBold20,
     color: colors.white,
-    paddingHorizontal: 24,
     marginBottom: 8,
+    paddingHorizontal: 24,
     textAlign: 'center'
   },
   containerAlbum: {
@@ -354,8 +354,8 @@ const styles = StyleSheet.create({
     shadowRadius: 20
   },
   containerStickyLinear: {
-    top: 0,
     position: 'absolute',
+    top: 0,
     width: '100%'
   },
   btn: {
