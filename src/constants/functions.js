@@ -11,15 +11,14 @@ const cacheFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
 
 // cache images
 // /////////////////////////////////////////////////////////////////////////////
-const cacheImages = (images) => {
-  return Object.values(images).map((image) => {
+const cacheImages = (images) =>
+  Object.values(images).map((image) => {
     if (typeof image === 'string') {
       return Image.prefetch(image);
     }
 
     return Asset.fromModule(image).downloadAsync();
   });
-};
 
 // preload async
 // /////////////////////////////////////////////////////////////////////////////
