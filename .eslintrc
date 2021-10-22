@@ -27,6 +27,7 @@
     "__DEV__": "readonly",
     "describe": "readonly",
     "expect": "readonly",
+    "fetch": "readonly",
     "it": "readonly",
     "jest": "readonly"
   }

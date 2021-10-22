@@ -42,6 +42,12 @@ Run Project Locally: `yarn dev` or `yarn start`
   - automatic format on save (toggle format on save)
 - be aware of the `.prettierignore` file
 
+**Update Linting Packages:**
+
+```
+yarn add @babel/core eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-import-helpers eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native prettier --dev
+```
+
 ## Expo Web
 
 Currently Expo Web support is **not production ready**, but if you want to see how this project looks on the web as a PWA (Progressive Web App)... using [react-native-web](https://github.com/necolas/react-native-web) and react-dom.
