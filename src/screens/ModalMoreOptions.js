@@ -17,16 +17,24 @@ import LineItemCategory from '../components/LineItemCategory';
 // mock data
 import moreOptions from '../mockdata/menuMoreOptions.json';
 
-const ModalMoreOptions = ({ navigation, screenProps: { setToggleTabBar } }) => {
-  const album = navigation.getParam('album');
+// context
+import Context from '../context';
+
+const ModalMoreOptions = ({ navigation, route }) => {
+  const { album } = route.params;
+
+  // get main app state
+  const { toggleTabBar, updateState } = React.useContext(Context);
 
   return (
     <React.Fragment>
       <SafeAreaView style={styles.containerSafeArea}>
         <TouchableWithoutFeedback
           onPress={() => {
+            // update main state
+            updateState('toggleTabBar', !toggleTabBar);
+
             navigation.goBack();
-            setToggleTabBar();
           }}
         >
           <View style={styles.containerButton}>
@@ -74,7 +82,7 @@ const ModalMoreOptions = ({ navigation, screenProps: { setToggleTabBar } }) => {
 ModalMoreOptions.propTypes = {
   // required
   navigation: PropTypes.object.isRequired,
-  screenProps: PropTypes.object.isRequired
+  route: PropTypes.object.isRequired
 };
 
 const styles = StyleSheet.create({

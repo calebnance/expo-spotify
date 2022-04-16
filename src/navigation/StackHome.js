@@ -1,32 +1,28 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import { createStackNavigator } from 'react-navigation-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 // screens
-import Home from '../screens/Home';
-import Album from '../screens/Album';
+import HomeScreen from '../screens/Home';
+import AlbumScreen from '../screens/Album';
 
-// icons
-import SvgTabHome from '../components/icons/Svg.TabHome';
+const Stack = createStackNavigator();
 
-const Icon = ({ focused }) => <SvgTabHome active={focused} />;
-
-Icon.propTypes = {
-  // required
-  focused: PropTypes.bool.isRequired
-};
-
-export default createStackNavigator(
-  {
-    Home,
-    Album
-  },
-  {
-    headerMode: 'none',
-    initialRouteName: 'Home',
-    navigationOptions: {
-      tabBarLabel: 'Home',
-      tabBarIcon: Icon
-    }
-  }
+export default () => (
+  <Stack.Navigator>
+    <Stack.Screen
+      name="Home"
+      component={HomeScreen}
+      options={{
+        headerShown: false
+      }}
+    />
+    <Stack.Screen
+      name="Album"
+      component={AlbumScreen}
+      options={{
+        headerShown: false
+      }}
+      initialParams={{ title: 'Extraordinary Machine' }}
+    />
+  </Stack.Navigator>
 );
