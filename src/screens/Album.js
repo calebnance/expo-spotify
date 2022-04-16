@@ -25,29 +25,20 @@ import albums from '../mockdata/albums';
 // context
 import Context from '../context';
 
-const Album = (props) => {
+const Album = ({ navigation, route }) => {
+  const { title } = route.params;
+
   // get main app state
   const { currentSongData, toggleTabBar, updateState } =
     React.useContext(Context);
 
-  const { navigation } = props;
-
   // local state
-  const [album, setAlbum] = React.useState(null);
   const [downloaded, setDownloaded] = React.useState(false);
-  const [song, setSong] = React.useState(null);
-  const [title, setTitle] = React.useState(null);
+  const [song, setSong] = React.useState(currentSongData.title);
   const scrollY = React.useRef(new Animated.Value(0)).current;
 
-  React.useEffect(() => {
-    // onMount
-    // const albumTitle = navigation.getParam('title', 'ALBUM NOT FOUND?!');
-    const albumTitle = navigation.getParam('title', 'Extraordinary Machine');
-
-    setAlbum(albums[albumTitle] || null);
-    setSong(currentSongData.title);
-    setTitle(albumTitle);
-  }, []);
+  // ui state
+  const album = albums[title] || null;
 
   const onToggleDownloaded = (val) => {
     // if web
@@ -226,7 +217,8 @@ const Album = (props) => {
 
 Album.propTypes = {
   // required
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
+  route: PropTypes.object.isRequired
 };
 
 const styles = StyleSheet.create({

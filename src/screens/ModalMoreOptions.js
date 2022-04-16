@@ -20,11 +20,11 @@ import moreOptions from '../mockdata/menuMoreOptions.json';
 // context
 import Context from '../context';
 
-const ModalMoreOptions = ({ navigation }) => {
+const ModalMoreOptions = ({ navigation, route }) => {
+  const { album } = route.params;
+
   // get main app state
   const { toggleTabBar, updateState } = React.useContext(Context);
-
-  const album = navigation.getParam('album');
 
   return (
     <React.Fragment>
@@ -81,7 +81,8 @@ const ModalMoreOptions = ({ navigation }) => {
 
 ModalMoreOptions.propTypes = {
   // required
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
+  route: PropTypes.object.isRequired
 };
 
 const styles = StyleSheet.create({

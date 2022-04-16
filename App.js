@@ -3,8 +3,8 @@ import { StatusBar } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { func } from './src/constants';
 
-// main navigation stack
-import Stack from './src/navigation/Stack';
+// root navigation stack
+import RootStack from './src/navigation/RootStack';
 
 // app context state
 import AppState from './src/context/AppState';
@@ -29,7 +29,7 @@ const App = () => {
     <AppState>
       <StatusBar barStyle="light-content" />
 
-      <Stack />
+      <RootStack />
     </AppState>
   );
 };

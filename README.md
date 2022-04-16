@@ -28,7 +28,8 @@ Run Project Locally: `yarn dev` or `yarn start`
 
 - Expo SDK 44
 - iOS, Android and PWA (Web App)
-- React Navigation v4
+- React Navigation v5
+- React Context
 - PropTypes
 
 ## Linting
@@ -71,6 +72,8 @@ a couple manual changes within `index.html` i found needed to be made so far:
 
 ### version 0.0.1 (current)
 
+- upgraded to [React Navigation v5](https://reactnavigation.org/docs/5.x/getting-started)
+- Removed ScreenProps for [React Context](https://reactjs.org/docs/context.html)
 - upgraded to [Expo SDK 44](https://blog.expo.dev/expo-sdk-44-4c4b8306584a)
 - upgraded to [Expo SDK 43](https://blog.expo.dev/expo-sdk-43-aa9b3c7d5541)
 - upgraded to [Expo SDK 42](https://blog.expo.io/expo-sdk-42-579aee2348b6)
