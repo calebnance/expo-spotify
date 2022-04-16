@@ -29,7 +29,7 @@ const Album = ({ navigation, route }) => {
   const { title } = route.params;
 
   // get main app state
-  const { currentSongData, toggleTabBar, updateState } =
+  const { currentSongData, showMusicBar, updateState } =
     React.useContext(Context);
 
   // local state
@@ -104,7 +104,7 @@ const Album = ({ navigation, route }) => {
 
   return (
     <View style={gStyle.container}>
-      {toggleTabBar === true && (
+      {showMusicBar === false && (
         <BlurView intensity={99} style={styles.blurview} tint="dark" />
       )}
 
@@ -126,7 +126,7 @@ const Album = ({ navigation, route }) => {
             icon={<Feather color={colors.white} name="more-horizontal" />}
             onPress={() => {
               // update main state
-              updateState('toggleTabBar', !toggleTabBar);
+              updateState('showMusicBar', !showMusicBar);
 
               navigation.navigate('ModalMoreOptions', {
                 album

@@ -21,23 +21,21 @@ export default () => (
   <Tab.Navigator
     screenOptions={({ route }) => ({
       headerShown: false,
-      tabBarIcon: ({ focused }) => {
-        let icon = <SvgTabHome active={focused} />;
+      tabBarIcon: ({ active }) => {
+        let icon = <SvgTabHome active={active} />;
 
         if (route.name === 'StackSearch') {
-          icon = <SvgTabSearch active={focused} />;
+          icon = <SvgTabSearch active={active} />;
         } else if (route.name === 'StackLibrary') {
-          icon = <SvgTabLibrary active={focused} />;
+          icon = <SvgTabLibrary active={active} />;
         }
 
         return icon;
-      }
+      },
+      tabBarActiveTintColor: colors.white,
+      tabBarInactiveTintColor: colors.greyInactive
     })}
     tabBar={(props) => <CustomTabBar {...props} />}
-    tabBarOptions={{
-      activeTintColor: colors.white,
-      inactiveTintColor: colors.greyInactive
-    }}
   >
     <Tab.Screen
       name="StackHome"

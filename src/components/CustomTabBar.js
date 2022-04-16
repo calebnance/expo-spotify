@@ -12,7 +12,7 @@ import Context from '../context';
 // https://reactnavigation.org/docs/5.x/bottom-tab-navigator/#tabbar
 const CustomTabBar = ({ descriptors, navigation, state }) => {
   // get main app state
-  const { currentSongData } = React.useContext(Context);
+  const { currentSongData, showMusicBar } = React.useContext(Context);
 
   const focusedOptions = descriptors[state.routes[state.index].key].options;
 
@@ -22,21 +22,26 @@ const CustomTabBar = ({ descriptors, navigation, state }) => {
 
   return (
     <React.Fragment>
-      <BarMusicPlayer song={currentSongData} />
+      {showMusicBar && <BarMusicPlayer song={currentSongData} />}
+
       <View style={styles.container}>
         {state.routes.map((route, index) => {
           const { options } = descriptors[route.key];
 
-          const Icon = options.tabBarIcon;
+          // default label
+          const defaultLabl =
+            options.title !== undefined ? options.title : route.name;
+          // label set
           const label =
             options.tabBarLabel !== undefined
               ? options.tabBarLabel
-              : options.title !== undefined
-              ? options.title
-              : route.name;
+              : defaultLabl;
 
           const isFocused = state.index === index;
           const color = isFocused ? colors.white : colors.greyInactive;
+
+          // custom icon
+          const Icon = options.tabBarIcon;
 
           const onPress = () => {
             const event = navigation.emit({
@@ -63,6 +68,7 @@ const CustomTabBar = ({ descriptors, navigation, state }) => {
               accessibilityRole="button"
               accessibilityState={isFocused ? { selected: true } : {}}
               accessibilityLabel={options.tabBarAccessibilityLabel}
+              activeOpacity={gStyle.activeOpacity}
               testID={options.tabBarTestID}
               onPress={onPress}
               onLongPress={onLongPress}
@@ -97,7 +103,7 @@ const styles = StyleSheet.create({
     ...gStyle.flexCenter
   },
   label: {
-    color: 'red',
+    ...gStyle.textSpotify12,
     paddingTop: 4
   }
 });

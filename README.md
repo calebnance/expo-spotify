@@ -28,7 +28,7 @@ Run Project Locally: `yarn dev` or `yarn start`
 
 - Expo SDK 44
 - iOS, Android and PWA (Web App)
-- React Navigation v5
+- React Navigation v6
 - React Context
 - PropTypes
 
@@ -56,12 +56,14 @@ Currently Expo Web support is **not production ready**, but if you want to see h
 [PWA: Expo Spotify](https://expo-spotify.calebnance.now.sh) looks best on a mobile device, but not bad on desktop!
 
 **Dev with Expo Web**
+
 - Remove node_modules if they exist: `rm -rf nodes_modules`
 - Install/Re-install: `yarn`
 - Start development: `yarn web` or `expo start --web`
 - Build PWA: `yarn web-build` or `expo build:web`
 
 a couple manual changes within `index.html` i found needed to be made so far:
+
 - **to make splash screen work:** "mobile-web-app-capable" => "apple-mobile-web-app-capable"
 - **status bar transparent:** apple-mobile-web-app-status-bar-style="default" => "black-translucent"
 - **no white background:** add background color within body{background-color: #121212; ...}
@@ -70,21 +72,34 @@ a couple manual changes within `index.html` i found needed to be made so far:
 
 ## Release Notes
 
-### version 0.0.1 (current)
+**version 0.5.0 (current)**
 
+- upgraded to [React Navigation v6](https://reactnavigation.org/docs/getting-started)
 - upgraded to [React Navigation v5](https://reactnavigation.org/docs/5.x/getting-started)
 - Removed ScreenProps for [React Context](https://reactjs.org/docs/context.html)
+
+**version 0.4.0**
+
 - upgraded to [Expo SDK 44](https://blog.expo.dev/expo-sdk-44-4c4b8306584a)
 - upgraded to [Expo SDK 43](https://blog.expo.dev/expo-sdk-43-aa9b3c7d5541)
 - upgraded to [Expo SDK 42](https://blog.expo.io/expo-sdk-42-579aee2348b6)
+
+**version 0.3.0**
+
 - upgraded to [Expo SDK 41](https://blog.expo.io/expo-sdk-41-12cc5232f2ef)
 - upgraded to [Expo SDK 40](https://blog.expo.io/expo-sdk-40-is-now-available-d4d73e67da33)
 - upgraded to [Expo SDK 39](https://blog.expo.io/expo-sdk-39-is-now-available-4c10aa825e3f)
 - upgraded to [Expo SDK 38](https://blog.expo.io/expo-sdk-38-is-now-available-ab6cd30ca2ee)
+
+**version 0.2.0**
+
 - upgraded to [React Navigation v4](https://reactnavigation.org/docs/4.x/getting-started)
 - upgraded to [Expo SDK 37](https://blog.expo.io/expo-sdk-37-is-now-available-dd5770f066a6)
 - upgraded to [Expo SDK 36](https://blog.expo.io/expo-sdk-36-is-now-available-b91897b437fe)
 - upgraded to [Expo SDK 35](https://blog.expo.io/expo-sdk-35-is-now-available-beee0dfafbf4)
+
+**version 0.1.0**
+
 - Expo Web support
 - upgraded to [Expo SDK 34](https://blog.expo.io/expo-sdk-34-is-now-available-4f7825239319)
 - upgraded to [Expo SDK 33](https://blog.expo.io/expo-sdk-v33-0-0-is-now-available-52d1c99dfe4c)
