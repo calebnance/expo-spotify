@@ -17,7 +17,7 @@ class AppState extends React.Component {
         title: 'So It Goes'
       },
       isLoading: true,
-      toggleTabBar: false
+      showMusicBar: true
     };
 
     this.updateState = this.updateState.bind(this);
@@ -33,14 +33,14 @@ class AppState extends React.Component {
     const { children } = this.props;
 
     // app state
-    const { currentSongData, isLoading, toggleTabBar } = this.state;
+    const { currentSongData, isLoading, showMusicBar } = this.state;
 
     return (
       <Context.Provider
         value={{
           currentSongData,
           isLoading,
-          toggleTabBar,
+          showMusicBar,
           updateState: this.updateState
         }}
       >

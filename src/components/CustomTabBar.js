@@ -12,7 +12,7 @@ import Context from '../context';
 // https://reactnavigation.org/docs/5.x/bottom-tab-navigator/#tabbar
 const CustomTabBar = ({ descriptors, navigation, state }) => {
   // get main app state
-  const { currentSongData, toggleTabBar } = React.useContext(Context);
+  const { currentSongData, showMusicBar } = React.useContext(Context);
 
   const focusedOptions = descriptors[state.routes[state.index].key].options;
 
@@ -22,7 +22,7 @@ const CustomTabBar = ({ descriptors, navigation, state }) => {
 
   return (
     <React.Fragment>
-      {toggleTabBar === false && <BarMusicPlayer song={currentSongData} />}
+      {showMusicBar && <BarMusicPlayer song={currentSongData} />}
 
       <View style={styles.container}>
         {state.routes.map((route, index) => {

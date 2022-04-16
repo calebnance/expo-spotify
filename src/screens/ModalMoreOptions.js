@@ -24,7 +24,7 @@ const ModalMoreOptions = ({ navigation, route }) => {
   const { album } = route.params;
 
   // get main app state
-  const { toggleTabBar, updateState } = React.useContext(Context);
+  const { showMusicBar, updateState } = React.useContext(Context);
 
   return (
     <React.Fragment>
@@ -32,7 +32,7 @@ const ModalMoreOptions = ({ navigation, route }) => {
         <TouchableWithoutFeedback
           onPress={() => {
             // update main state
-            updateState('toggleTabBar', !toggleTabBar);
+            updateState('showMusicBar', !showMusicBar);
 
             navigation.goBack();
           }}

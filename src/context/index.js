@@ -9,5 +9,5 @@ export default React.createContext({
     title: 'So It Goes'
   },
   isLoading: true,
-  toggleTabBar: false
+  showMusicBar: true
 });
