@@ -41,7 +41,8 @@ export default () => (
         name="ModalMoreOptions"
         component={ModalMoreOptions}
         options={{
-          headerShown: false
+          headerShown: false,
+          presentation: 'transparentModal'
         }}
       />
     </Stack.Navigator>
