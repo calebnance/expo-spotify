@@ -10,7 +10,7 @@
     "react navigation",
     "spotify"
   ],
-  "main": "src/App.js",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "dev": "expo start",
     "start": "expo start",
@@ -23,11 +23,12 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^12.0.0",
-    "@react-native-community/masked-view": "0.1.10",
+    "@react-native-community/masked-view": "^0.1.11",
     "@react-native-community/slider": "4.1.12",
+    "@react-navigation/native": "^5.x",
     "expo": "^44.0.0",
     "expo-app-loading": "~1.3.0",
-    "expo-asset": "~8.4.4",
+    "expo-asset": "~8.4.6",
     "expo-blur": "~11.0.0",
     "expo-font": "~10.0.4",
     "prop-types": "^15.7.2",

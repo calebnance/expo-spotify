@@ -2709,10 +2709,10 @@
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
 
-"@react-native-community/masked-view@0.1.10":
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.10.tgz#5dda643e19e587793bc2034dd9bf7398ad43d401"
-  integrity sha512-rk4sWFsmtOw8oyx8SD3KSvawwaK7gRBSEIy2TAwURyGt+3TizssXP1r8nx3zY+R7v2vYYHXZ+k2/GULAT/bcaQ==
+"@react-native-community/masked-view@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.11.tgz#2f4c6e10bee0786abff4604e39a37ded6f3980ce"
+  integrity sha512-rQfMIGSR/1r/SyN87+VD8xHHzDYeHaJq6elOSCAD+0iLagXkSI2pfA0LmSXP21uw5i3em7GkkRjfJ8wpqWXZNw==
 
 "@react-native-community/slider@4.1.12":
   version "4.1.12"
@@ -2749,6 +2749,17 @@
     query-string "^6.13.6"
     react-is "^16.13.0"
 
+"@react-navigation/core@^5.16.1":
+  version "5.16.1"
+  resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-5.16.1.tgz#e0d308bd9bbd930114ce55c4151806b6d7907f69"
+  integrity sha512-3AToC7vPNeSNcHFLd1h71L6u34hfXoRAS1CxF9Fc4uC8uOrVqcNvphpeFbE0O9Bw6Zpl0BnMFl7E5gaL3KGzNA==
+  dependencies:
+    "@react-navigation/routers" "^5.7.4"
+    escape-string-regexp "^4.0.0"
+    nanoid "^3.1.15"
+    query-string "^6.13.6"
+    react-is "^16.13.0"
+
 "@react-navigation/native@^3.8.4":
   version "3.8.4"
   resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-3.8.4.tgz#4d77f86506364ecf18b33c7f8740afb6763d0b37"
@@ -2756,6 +2767,22 @@
   dependencies:
     hoist-non-react-statics "^3.3.2"
     react-native-safe-area-view "^0.14.9"
+
+"@react-navigation/native@^5.x":
+  version "5.9.8"
+  resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.9.8.tgz#ac76ee6390ea7ce807486ca5c38d903e23433a97"
+  integrity sha512-DNbcDHXQPSFDLn51kkVVJjT3V7jJy2GztNYZe/2bEg29mi5QEcHHcpifjMCtyFKntAOWzKlG88UicIQ17UEghg==
+  dependencies:
+    "@react-navigation/core" "^5.16.1"
+    escape-string-regexp "^4.0.0"
+    nanoid "^3.1.15"
+
+"@react-navigation/routers@^5.7.4":
+  version "5.7.4"
+  resolved "https://registry.yarnpkg.com/@react-navigation/routers/-/routers-5.7.4.tgz#8b5460e841a0c64f6c9a5fbc2a1eb832432d4fb0"
+  integrity sha512-0N202XAqsU/FlE53Nmh6GHyMtGm7g6TeC93mrFAFJOqGRKznT0/ail+cYlU6tNcPA9AHzZu1Modw1eoDINSliQ==
+  dependencies:
+    nanoid "^3.1.15"
 
 "@sideway/address@^4.1.0":
   version "4.1.2"
@@ -4443,6 +4470,17 @@ expo-asset@~8.4.4:
   version "8.4.4"
   resolved "https://registry.yarnpkg.com/expo-asset/-/expo-asset-8.4.4.tgz#6214270a41af378ac734a28fbff7b542ca84a3cf"
   integrity sha512-0yxAOJo8bnYvnRNOWikQ1xFP+YQViJ/px3MofZFUPGw02iaSSUzArcKDfMtpJNmH/EC7HE7GJSZpkoxx+zsHWA==
+  dependencies:
+    blueimp-md5 "^2.10.0"
+    invariant "^2.2.4"
+    md5-file "^3.2.3"
+    path-browserify "^1.0.0"
+    url-parse "^1.4.4"
+
+expo-asset@~8.4.6:
+  version "8.4.6"
+  resolved "https://registry.yarnpkg.com/expo-asset/-/expo-asset-8.4.6.tgz#1c40e9badac66dbd3d2be2810711937e5b9b09bd"
+  integrity sha512-Kpzcmmf1lceHnZkAdJOvq7l7SU/hCL59vAj2xUZS66U6lFkUf7LNEA/NzILA56loCd4cka5ShYlWs+BMchyFDQ==
   dependencies:
     blueimp-md5 "^2.10.0"
     invariant "^2.2.4"
@@ -6293,6 +6331,11 @@ mz@^2.7.0:
     any-promise "^1.0.0"
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
+
+nanoid@^3.1.15:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.2.tgz#c89622fafb4381cd221421c69ec58547a1eec557"
+  integrity sha512-CuHBogktKwpm5g2sRgv83jEy2ijFzBwMoYA60orPDR7ynsLijJDqgsi4RDGj3OJpy3Ieb+LYwiRmIOGyytgITA==
 
 nanomatch@^1.2.9:
   version "1.2.13"
