@@ -11,9 +11,9 @@ import StackLibrary from './StackLibrary';
 import CustomTabBar from '../components/CustomTabBar';
 
 // icons
-import SvgTabHome from '../components/icons/Svg.TabHome';
-import SvgTabLibrary from '../components/icons/Svg.TabLibrary';
-import SvgTabSearch from '../components/icons/Svg.TabSearch';
+import SvgTabHome from '../icons/Svg.TabHome';
+import SvgTabLibrary from '../icons/Svg.TabLibrary';
+import SvgTabSearch from '../icons/Svg.TabSearch';
 
 const Tab = createBottomTabNavigator();
 

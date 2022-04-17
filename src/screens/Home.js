@@ -11,71 +11,59 @@ import heavyRotation from '../mockdata/heavyRotation.json';
 import jumpBackIn from '../mockdata/jumpBackIn.json';
 import recentlyPlayed from '../mockdata/recentlyPlayed.json';
 
-class Home extends React.Component {
-  constructor() {
-    super();
+const Home = () => {
+  const scrollY = React.useRef(new Animated.Value(0)).current;
 
-    this.state = {
-      scrollY: new Animated.Value(0)
-    };
-  }
+  const opacityIn = scrollY.interpolate({
+    inputRange: [0, 128],
+    outputRange: [0, 1],
+    extrapolate: 'clamp'
+  });
 
-  render() {
-    const { scrollY } = this.state;
+  const opacityOut = scrollY.interpolate({
+    inputRange: [0, 88],
+    outputRange: [1, 0],
+    extrapolate: 'clamp'
+  });
 
-    const opacityIn = scrollY.interpolate({
-      inputRange: [0, 128],
-      outputRange: [0, 1],
-      extrapolate: 'clamp'
-    });
+  return (
+    <React.Fragment>
+      {device.iPhoneNotch && (
+        <Animated.View style={[styles.iPhoneNotch, { opacity: opacityIn }]} />
+      )}
 
-    const opacityOut = scrollY.interpolate({
-      inputRange: [0, 88],
-      outputRange: [1, 0],
-      extrapolate: 'clamp'
-    });
+      <Animated.View style={[styles.containerHeader, { opacity: opacityOut }]}>
+        <FontAwesome color={colors.white} name="cog" size={28} />
+      </Animated.View>
 
-    return (
-      <React.Fragment>
-        {device.iPhoneNotch && (
-          <Animated.View style={[styles.iPhoneNotch, { opacity: opacityIn }]} />
+      <Animated.ScrollView
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+          { useNativeDriver: true }
         )}
+        scrollEventThrottle={16}
+        showsVerticalScrollIndicator={false}
+        style={gStyle.container}
+      >
+        <View style={gStyle.spacer16} />
 
-        <Animated.View
-          style={[styles.containerHeader, { opacity: opacityOut }]}
-        >
-          <FontAwesome color={colors.white} name="cog" size={28} />
-        </Animated.View>
+        <AlbumsHorizontal data={recentlyPlayed} heading="Recently played" />
 
-        <Animated.ScrollView
-          onScroll={Animated.event(
-            [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-            { useNativeDriver: true }
-          )}
-          scrollEventThrottle={16}
-          showsVerticalScrollIndicator={false}
-          style={gStyle.container}
-        >
-          <View style={gStyle.spacer16} />
+        <AlbumsHorizontal
+          data={heavyRotation}
+          heading="Your heavy rotation"
+          tagline="The music you've had on repeat this month."
+        />
 
-          <AlbumsHorizontal data={recentlyPlayed} heading="Recently played" />
-
-          <AlbumsHorizontal
-            data={heavyRotation}
-            heading="Your heavy rotation"
-            tagline="The music you've had on repeat this month."
-          />
-
-          <AlbumsHorizontal
-            data={jumpBackIn}
-            heading="Jump back in"
-            tagline="Your top listens from the past few months."
-          />
-        </Animated.ScrollView>
-      </React.Fragment>
-    );
-  }
-}
+        <AlbumsHorizontal
+          data={jumpBackIn}
+          heading="Jump back in"
+          tagline="Your top listens from the past few months."
+        />
+      </Animated.ScrollView>
+    </React.Fragment>
+  );
+};
 
 const styles = StyleSheet.create({
   iPhoneNotch: {

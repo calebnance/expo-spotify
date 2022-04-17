@@ -193,11 +193,11 @@ const Album = ({ navigation, route }) => {
           </View>
 
           {album.tracks &&
-            album.tracks.map((track, index) => (
+            album.tracks.map((track) => (
               <LineItemSong
                 active={song === track.title}
                 downloaded={downloaded}
-                key={index.toString()}
+                key={track.title}
                 onPress={onChangeSong}
                 songData={{
                   album: album.title,

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Svg, { Path } from 'react-native-svg';
-import { colors } from '../../constants';
+import { colors } from '../constants';
 
 const SvgTabLibrary = ({ active, size }) => {
   const fill = active ? colors.white : colors.greyInactive;
