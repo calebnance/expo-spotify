@@ -26,7 +26,7 @@ Run Project Locally: `yarn dev` or `yarn start`
 
 ## Features
 
-- Expo SDK 44
+- Expo SDK 45
 - iOS, Android and PWA (Web App)
 - React Navigation v6
 - React Context
@@ -74,6 +74,7 @@ a couple manual changes within `index.html` i found needed to be made so far:
 
 **version 0.5.0 (current)**
 
+- upgraded to [Expo SDK 45](https://blog.expo.dev/expo-sdk-45-f4e332954a68)
 - upgraded to [React Navigation v6](https://reactnavigation.org/docs/getting-started)
 - upgraded to [React Navigation v5](https://reactnavigation.org/docs/5.x/getting-started)
 - Removed ScreenProps for [React Context](https://reactjs.org/docs/context.html)
