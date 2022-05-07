@@ -1231,6 +1231,14 @@
     uuid "^3.4.0"
     wrap-ansi "^7.0.0"
 
+"@expo/code-signing-certificates@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@expo/code-signing-certificates/-/code-signing-certificates-0.0.1.tgz#ac43f89b2a00c937b4e24e0d3a233b887ad3a31e"
+  integrity sha512-m1AVZGsMgpXRLULQ331AZdxh1D64Qbcb6z7A19JmXUrCQu3591zPn1wjR6J63/Dzi00m5TR5w+9GvqnFY5X//Q==
+  dependencies:
+    node-forge "^1.2.1"
+    nullthrows "^1.1.1"
+
 "@expo/code-signing-certificates@^0.0.2":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@expo/code-signing-certificates/-/code-signing-certificates-0.0.2.tgz#65cd615800e6724b54831c966dd1a90145017246"
@@ -1360,7 +1368,7 @@
     json5 "^1.0.1"
     write-file-atomic "^2.3.0"
 
-"@expo/metro-config@0.3.16", "@expo/metro-config@~0.3.16":
+"@expo/metro-config@0.3.16", "@expo/metro-config@~0.3.16", "@expo/metro-config@~0.3.7":
   version "0.3.16"
   resolved "https://registry.yarnpkg.com/@expo/metro-config/-/metro-config-0.3.16.tgz#af3fe62219e3640b51ca85137dfc718daeecbc6f"
   integrity sha512-rMYYpJibi1M8p9jGyU9f4lSNKZC6NSWzfEJsX8yd8gFbMBZV41DqyNzkrl1bx90DzYoLKB8kEPhkDdCJ8bGd/A==
@@ -3710,6 +3718,11 @@ expo-constants@~13.1.1:
     "@expo/config" "^6.0.14"
     uuid "^3.3.2"
 
+expo-eas-client@~0.2.0:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/expo-eas-client/-/expo-eas-client-0.2.1.tgz#cf67459589e9fe8e90f377833593fd425f069501"
+  integrity sha512-XlZr57iHxqo3+AT2TtcRipMuQEyXnTUAv7H5+KVvj6EEJEAHmwc9wZZdKzqf0MbVRUTOawZsl/b2iYanf+kQsQ==
+
 expo-error-recovery@~3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/expo-error-recovery/-/expo-error-recovery-3.1.0.tgz#c841772e11ed55180e30ebf809580ab051b70535"
@@ -3730,10 +3743,22 @@ expo-font@~10.1.0:
   dependencies:
     fontfaceobserver "^2.1.0"
 
+expo-json-utils@~0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/expo-json-utils/-/expo-json-utils-0.3.0.tgz#0c4a0195ee2bbde02cbb5f4d384d1cb63bea7493"
+  integrity sha512-ceo0pWFJqRAsNjZWX3rVDhy+NDzmrBNFOdvW+HE4EHqlt+OEUu9INIYKO8fU+g3ifI0VcKqHfvvj5wKsSpvPBw==
+
 expo-keep-awake@~10.1.1:
   version "10.1.1"
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-10.1.1.tgz#03023c130f7e3824b738e3fdd5353b8a2c0c1980"
   integrity sha512-9zC0sdhQljUeMr2yQ7o4kzEZXVAy82fFOAZE1+TwPL7qR0b0sphe7OJ5T1GX1qLcwuVaJ8YewaPoLSHRk79+Rg==
+
+expo-manifests@~0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/expo-manifests/-/expo-manifests-0.3.0.tgz#724e85a4e726cb1ef775f9846c9ecb8d243a17d7"
+  integrity sha512-HegANp+KpZlMX0T2Zb8X7mAVkCThFDq1wjLIjkrSLHhKLczYI2xa/Z5Nk0Tm7qPdGT8NTInCDoOL/nUMtKdNyQ==
+  dependencies:
+    expo-json-utils "~0.3.0"
 
 expo-modules-autolinking@0.8.0:
   version "0.8.0"
@@ -3772,6 +3797,34 @@ expo-splash-screen@~0.15.0, expo-splash-screen@~0.15.1:
   dependencies:
     "@expo/configure-splash-screen" "^0.6.0"
     "@expo/prebuild-config" "~4.0.0"
+
+expo-structured-headers@~2.2.0:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/expo-structured-headers/-/expo-structured-headers-2.2.1.tgz#739f969101de6bead921eee59e5899399ad67715"
+  integrity sha512-nY6GuvoS/U5XdhfBNmvXGRoGzIXywXpSZs2wdiP+FbS79P9UWyEqzgARrBTF+6pQxUVMs6/vdffxRpwhjwYPug==
+
+expo-updates-interface@~0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/expo-updates-interface/-/expo-updates-interface-0.6.0.tgz#cef5250106e59572afdfcf245c534754c8c844ba"
+  integrity sha512-oQcGTsE8mSkSxENPlWjZPGoJpt3RFDNPuO5d8shBDxBb4ZNH/W2ojavSFQMaLbNMoS0bYQQhzbRNEIBd306QMg==
+
+expo-updates@~0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/expo-updates/-/expo-updates-0.13.1.tgz#ffed4216eda6afbc15f06399115a5b9e649102a6"
+  integrity sha512-6GTqgAco3da/rk0/AvDRFmrWxEIxlmIs7vvoCWWxyvifLBlQAaU08+AdZH5RwdN3aUaIep70pnqlc67xe/y0og==
+  dependencies:
+    "@expo/code-signing-certificates" "0.0.1"
+    "@expo/config" "^6.0.14"
+    "@expo/config-plugins" "^4.0.14"
+    "@expo/metro-config" "~0.3.7"
+    arg "4.1.0"
+    expo-eas-client "~0.2.0"
+    expo-manifests "~0.3.0"
+    expo-structured-headers "~2.2.0"
+    expo-updates-interface "~0.6.0"
+    fbemitter "^3.0.0"
+    resolve-from "^5.0.0"
+    uuid "^3.4.0"
 
 expo@^45.0.0:
   version "45.0.1"
