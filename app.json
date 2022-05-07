@@ -5,7 +5,7 @@
     "scheme": "spotifyclone",
     "slug": "spotifyclone",
     "privacy": "public",
-    "version": "0.0.1",
+    "version": "0.5.0",
     "platforms": ["android", "ios", "web"],
     "githubUrl": "https://github.com/calebnance/expo-spotify",
     "orientation": "portrait",
@@ -21,10 +21,10 @@
     },
     "assetBundlePatterns": ["**/*"],
     "android": {
-      "versionCode": 1
+      "versionCode": 50
     },
     "ios": {
-      "buildNumber": "0.0.1",
+      "buildNumber": "0.5.0",
       "supportsTablet": true
     }
   }
