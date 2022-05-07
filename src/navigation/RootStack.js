@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { DarkTheme, NavigationContainer } from '@react-navigation/native';
-import {
-  CardStyleInterpolators,
-  createStackNavigator
-} from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // navigation
 import TabNavigation from './TabNavigation';
@@ -12,14 +9,13 @@ import TabNavigation from './TabNavigation';
 import ModalMusicPlayer from '../screens/ModalMusicPlayer';
 import ModalMoreOptions from '../screens/ModalMoreOptions';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default () => (
   <NavigationContainer theme={DarkTheme}>
     <Stack.Navigator
       screenOptions={{
-        cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
-        presentation: 'modal'
+        presentation: 'fullScreenModal'
       }}
     >
       <Stack.Screen
@@ -41,6 +37,7 @@ export default () => (
         name="ModalMoreOptions"
         component={ModalMoreOptions}
         options={{
+          animation: 'slide_from_bottom',
           headerShown: false,
           presentation: 'transparentModal'
         }}

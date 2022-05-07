@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // screens
 import HomeScreen from '../screens/Home';
 import AlbumScreen from '../screens/Album';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default () => (
   <Stack.Navigator>
