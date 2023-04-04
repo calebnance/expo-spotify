@@ -20,13 +20,21 @@ web demo: [Expo Spotify](https://expo-spotify.vercel.app)
 
 First, make sure you have Expo CLI installed: `npm install -g expo-cli`
 
-Install: `yarn` or `yarn install`
+**Install:**
 
-Run Project Locally: `yarn dev` or `yarn start`
+```bash
+yarn
+```
+
+**Run Project Locally:**
+
+```bash
+yarn dev
+```
 
 ## Features
 
-- Expo SDK 45
+- Expo SDK 46
 - iOS, Android and PWA (Web App)
 - React Navigation v6
 - React Context
@@ -74,6 +82,7 @@ a couple manual changes within `index.html` i found needed to be made so far:
 
 **version 0.5.0 (current)**
 
+- upgraded to [Expo SDK 46](https://blog.expo.dev/expo-sdk-46-c2a1655f63f7)
 - upgraded to [Expo SDK 45](https://blog.expo.dev/expo-sdk-45-f4e332954a68)
 - upgraded to [React Navigation v6](https://reactnavigation.org/docs/getting-started)
 - upgraded to [React Navigation v5](https://reactnavigation.org/docs/5.x/getting-started)
