@@ -14,7 +14,7 @@ web demo: [Expo Spotify](https://expo-spotify.vercel.app)
 - [Features](#features)
 - [Linting](#linting)
 - [Expo Web](#expo-web)
-- [Demo & Release Notes](#release-notes)
+- [Release Notes](#release-notes)
 
 ## Install & Build
 
@@ -34,7 +34,7 @@ yarn dev
 
 ## Features
 
-- Expo SDK 46
+- Expo SDK 47
 - iOS, Android and PWA (Web App)
 - React Navigation v6
 - React Context
@@ -82,6 +82,7 @@ a couple manual changes within `index.html` i found needed to be made so far:
 
 **version 0.5.0 (current)**
 
+- upgraded to [Expo SDK 47](https://blog.expo.dev/expo-sdk-47-a0f6f5c038af)
 - upgraded to [Expo SDK 46](https://blog.expo.dev/expo-sdk-46-c2a1655f63f7)
 - upgraded to [Expo SDK 45](https://blog.expo.dev/expo-sdk-45-f4e332954a68)
 - upgraded to [React Navigation v6](https://reactnavigation.org/docs/getting-started)
