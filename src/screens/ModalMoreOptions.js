@@ -20,7 +20,7 @@ import moreOptions from '../mockdata/menuMoreOptions.json';
 // context
 import Context from '../context';
 
-const ModalMoreOptions = ({ navigation, route }) => {
+function ModalMoreOptions({ navigation, route }) {
   const { album } = route.params;
 
   // get main app state
@@ -77,7 +77,7 @@ const ModalMoreOptions = ({ navigation, route }) => {
       </ScrollView>
     </React.Fragment>
   );
-};
+}
 
 ModalMoreOptions.propTypes = {
   // required

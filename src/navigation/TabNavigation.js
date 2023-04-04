@@ -17,46 +17,50 @@ import SvgTabSearch from '../icons/Svg.TabSearch';
 
 const Tab = createBottomTabNavigator();
 
-export default () => (
-  <Tab.Navigator
-    screenOptions={({ route }) => ({
-      headerShown: false,
-      tabBarIcon: ({ active }) => {
-        let icon = <SvgTabHome active={active} />;
+function TabNavigation() {
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarIcon: ({ active }) => {
+          let icon = <SvgTabHome active={active} />;
 
-        if (route.name === 'StackSearch') {
-          icon = <SvgTabSearch active={active} />;
-        } else if (route.name === 'StackLibrary') {
-          icon = <SvgTabLibrary active={active} />;
-        }
+          if (route.name === 'StackSearch') {
+            icon = <SvgTabSearch active={active} />;
+          } else if (route.name === 'StackLibrary') {
+            icon = <SvgTabLibrary active={active} />;
+          }
 
-        return icon;
-      },
-      tabBarActiveTintColor: colors.white,
-      tabBarInactiveTintColor: colors.greyInactive
-    })}
-    tabBar={(props) => <CustomTabBar {...props} />}
-  >
-    <Tab.Screen
-      name="StackHome"
-      component={StackHome}
-      options={{
-        tabBarLabel: 'Home'
-      }}
-    />
-    <Tab.Screen
-      name="StackSearch"
-      component={StackSearch}
-      options={{
-        tabBarLabel: 'Search'
-      }}
-    />
-    <Tab.Screen
-      name="StackLibrary"
-      component={StackLibrary}
-      options={{
-        tabBarLabel: 'Library'
-      }}
-    />
-  </Tab.Navigator>
-);
+          return icon;
+        },
+        tabBarActiveTintColor: colors.white,
+        tabBarInactiveTintColor: colors.greyInactive
+      })}
+      tabBar={(props) => <CustomTabBar {...props} />}
+    >
+      <Tab.Screen
+        name="StackHome"
+        component={StackHome}
+        options={{
+          tabBarLabel: 'Home'
+        }}
+      />
+      <Tab.Screen
+        name="StackSearch"
+        component={StackSearch}
+        options={{
+          tabBarLabel: 'Search'
+        }}
+      />
+      <Tab.Screen
+        name="StackLibrary"
+        component={StackLibrary}
+        options={{
+          tabBarLabel: 'Library'
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
+
+export default TabNavigation;

@@ -25,7 +25,7 @@ import albums from '../mockdata/albums';
 // context
 import Context from '../context';
 
-const Album = ({ navigation, route }) => {
+function Album({ navigation, route }) {
   const { title } = route.params;
 
   // get main app state
@@ -213,7 +213,7 @@ const Album = ({ navigation, route }) => {
       </Animated.ScrollView>
     </View>
   );
-};
+}
 
 Album.propTypes = {
   // required

@@ -6,23 +6,27 @@ import { colors, device, gStyle } from '../constants';
 // components
 import TouchIcon from './TouchIcon';
 
-const ModalHeader = ({ left, leftPress, right, rightPress, style, text }) => (
-  <View style={[styles.container, style]}>
-    {left && <TouchIcon icon={left} onPress={leftPress} style={styles.left} />}
-    {!left && <View style={styles.left} />}
+function ModalHeader({ left, leftPress, right, rightPress, style, text }) {
+  return (
+    <View style={[styles.container, style]}>
+      {left && (
+        <TouchIcon icon={left} onPress={leftPress} style={styles.left} />
+      )}
+      {!left && <View style={styles.left} />}
 
-    {text && (
-      <View style={styles.containerText}>
-        <Text style={styles.text}>{text}</Text>
-      </View>
-    )}
+      {text && (
+        <View style={styles.containerText}>
+          <Text style={styles.text}>{text}</Text>
+        </View>
+      )}
 
-    {right && (
-      <TouchIcon icon={right} onPress={rightPress} style={styles.right} />
-    )}
-    {!right && <View style={styles.right} />}
-  </View>
-);
+      {right && (
+        <TouchIcon icon={right} onPress={rightPress} style={styles.right} />
+      )}
+      {!right && <View style={styles.right} />}
+    </View>
+  );
+}
 
 ModalHeader.defaultProps = {
   left: null,

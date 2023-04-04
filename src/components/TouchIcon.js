@@ -3,16 +3,18 @@ import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
 import { gStyle } from '../constants';
 
-const TouchIcon = ({ icon, iconSize, onPress, style }) => (
-  <TouchableOpacity
-    activeOpacity={gStyle.activeOpacity}
-    onPress={onPress}
-    hitSlop={{ bottom: 5, left: 5, right: 5, top: 5 }}
-    style={[gStyle.flexCenter, style]}
-  >
-    {React.cloneElement(icon, { size: iconSize })}
-  </TouchableOpacity>
-);
+function TouchIcon({ icon, iconSize, onPress, style }) {
+  return (
+    <TouchableOpacity
+      activeOpacity={gStyle.activeOpacity}
+      onPress={onPress}
+      hitSlop={{ bottom: 5, left: 5, right: 5, top: 5 }}
+      style={[gStyle.flexCenter, style]}
+    >
+      {React.cloneElement(icon, { size: iconSize })}
+    </TouchableOpacity>
+  );
+}
 
 TouchIcon.defaultProps = {
   iconSize: 24,

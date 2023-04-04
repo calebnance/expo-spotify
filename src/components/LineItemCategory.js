@@ -10,22 +10,16 @@ import {
 } from '@expo/vector-icons';
 import { colors, gStyle } from '../constants';
 
-const LineItemCategory = ({
+function LineItemCategory({
   icon,
   onPress,
   title,
   disableRightSide,
   iconLibrary
-}) => {
+}) {
   let iconDisplay;
 
   switch (iconLibrary) {
-    default:
-    case 'Feather':
-      iconDisplay = (
-        <Feather color={colors.greyInactive} name={icon} size={24} />
-      );
-      break;
     case 'Entypo':
       iconDisplay = (
         <Entypo color={colors.greyInactive} name={icon} size={24} />
@@ -50,6 +44,12 @@ const LineItemCategory = ({
         <FontAwesome color={colors.greyInactive} name={icon} size={24} />
       );
       break;
+    case 'Feather':
+    default:
+      iconDisplay = (
+        <Feather color={colors.greyInactive} name={icon} size={24} />
+      );
+      break;
   }
 
   return (
@@ -70,7 +70,7 @@ const LineItemCategory = ({
       )}
     </TouchableOpacity>
   );
-};
+}
 
 LineItemCategory.defaultProps = {
   disableRightSide: null,

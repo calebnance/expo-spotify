@@ -20,7 +20,7 @@ import SvgSearch from '../icons/Svg.Search';
 import browseAll from '../mockdata/searchBrowseAll.json';
 import topGenres from '../mockdata/searchTopGenres.json';
 
-const Search = () => {
+function Search() {
   const scrollY = React.useRef(new Animated.Value(0)).current;
 
   // search start (24 horizontal padding )
@@ -106,7 +106,7 @@ const Search = () => {
       </View>
     </React.Fragment>
   );
-};
+}
 
 const styles = StyleSheet.create({
   containerSearchBar: {

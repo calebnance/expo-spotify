@@ -6,14 +6,18 @@ import SearchScreen from '../screens/Search';
 
 const Stack = createNativeStackNavigator();
 
-export default () => (
-  <Stack.Navigator>
-    <Stack.Screen
-      name="Search"
-      component={SearchScreen}
-      options={{
-        headerShown: false
-      }}
-    />
-  </Stack.Navigator>
-);
+function StackSearch() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Search"
+        component={SearchScreen}
+        options={{
+          headerShown: false
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+export default StackSearch;

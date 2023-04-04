@@ -6,14 +6,18 @@ import LibraryScreen from '../screens/Library';
 
 const Stack = createNativeStackNavigator();
 
-export default () => (
-  <Stack.Navigator>
-    <Stack.Screen
-      name="Library"
-      component={LibraryScreen}
-      options={{
-        headerShown: false
-      }}
-    />
-  </Stack.Navigator>
-);
+function StackLibrary() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Library"
+        component={LibraryScreen}
+        options={{
+          headerShown: false
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+export default StackLibrary;

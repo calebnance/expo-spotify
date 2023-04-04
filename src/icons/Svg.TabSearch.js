@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Svg, { Path } from 'react-native-svg';
 import { colors } from '../constants';
 
-const SvgTabSearch = ({ active, size }) => {
+function SvgTabSearch({ active, size }) {
   const fill = active ? colors.white : colors.greyInactive;
   const dPath = active
     ? 'M357.079 341.334l94.476 110.73-32.508 27.683-94.222-110.476q-45.714 30.476-100.826 30.476-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476 14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905 38.603 38.603 57.905 14.349 70.476q0 23.365-5.841 45.714t-16.635 41.651-25.778 35.555zM224 357.079q28.19 0 53.841-11.048t44.19-29.587 29.587-44.19 11.048-53.841-11.048-53.841-29.587-44.191-44.19-29.587T224 79.747t-53.841 11.047-44.191 29.588-29.587 44.19-11.047 53.841 11.047 53.841 29.588 44.19 44.19 29.587T224 357.079z'
@@ -14,7 +14,7 @@ const SvgTabSearch = ({ active, size }) => {
       <Path d={dPath} fill={fill} fillRule="evenodd" />
     </Svg>
   );
-};
+}
 
 SvgTabSearch.defaultProps = {
   active: false,

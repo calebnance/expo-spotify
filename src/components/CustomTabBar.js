@@ -10,7 +10,7 @@ import BarMusicPlayer from './BarMusicPlayer';
 import Context from '../context';
 
 // https://reactnavigation.org/docs/5.x/bottom-tab-navigator/#tabbar
-const CustomTabBar = ({ descriptors, navigation, state }) => {
+function CustomTabBar({ descriptors, navigation, state }) {
   // get main app state
   const { currentSongData, showMusicBar } = React.useContext(Context);
 
@@ -82,7 +82,7 @@ const CustomTabBar = ({ descriptors, navigation, state }) => {
       </View>
     </React.Fragment>
   );
-};
+}
 
 CustomTabBar.propTypes = {
   // required

@@ -3,16 +3,18 @@ import PropTypes from 'prop-types';
 import { Text, TouchableOpacity } from 'react-native';
 import { gStyle } from '../constants';
 
-const TouchText = ({ onPress, style, styleText, text }) => (
-  <TouchableOpacity
-    activeOpacity={gStyle.activeOpacity}
-    hitSlop={{ top: 10, left: 10, bottom: 10, right: 10 }}
-    onPress={onPress}
-    style={[gStyle.flexCenter, style]}
-  >
-    <Text style={styleText}>{text}</Text>
-  </TouchableOpacity>
-);
+function TouchText({ onPress, style, styleText, text }) {
+  return (
+    <TouchableOpacity
+      activeOpacity={gStyle.activeOpacity}
+      hitSlop={{ top: 10, left: 10, bottom: 10, right: 10 }}
+      onPress={onPress}
+      style={[gStyle.flexCenter, style]}
+    >
+      <Text style={styleText}>{text}</Text>
+    </TouchableOpacity>
+  );
+}
 
 TouchText.defaultProps = {
   style: {},

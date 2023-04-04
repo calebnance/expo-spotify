@@ -11,37 +11,41 @@ import ModalMoreOptions from '../screens/ModalMoreOptions';
 
 const Stack = createNativeStackNavigator();
 
-export default () => (
-  <NavigationContainer theme={DarkTheme}>
-    <Stack.Navigator
-      screenOptions={{
-        presentation: 'fullScreenModal'
-      }}
-    >
-      <Stack.Screen
-        name="TabNavigation"
-        component={TabNavigation}
-        options={{
-          headerShown: false
+function RootStack() {
+  return (
+    <NavigationContainer theme={DarkTheme}>
+      <Stack.Navigator
+        screenOptions={{
+          presentation: 'fullScreenModal'
         }}
-      />
+      >
+        <Stack.Screen
+          name="TabNavigation"
+          component={TabNavigation}
+          options={{
+            headerShown: false
+          }}
+        />
 
-      <Stack.Screen
-        name="ModalMusicPlayer"
-        component={ModalMusicPlayer}
-        options={{
-          headerShown: false
-        }}
-      />
-      <Stack.Screen
-        name="ModalMoreOptions"
-        component={ModalMoreOptions}
-        options={{
-          animation: 'slide_from_bottom',
-          headerShown: false,
-          presentation: 'transparentModal'
-        }}
-      />
-    </Stack.Navigator>
-  </NavigationContainer>
-);
+        <Stack.Screen
+          name="ModalMusicPlayer"
+          component={ModalMusicPlayer}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="ModalMoreOptions"
+          component={ModalMoreOptions}
+          options={{
+            animation: 'slide_from_bottom',
+            headerShown: false,
+            presentation: 'transparentModal'
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default RootStack;

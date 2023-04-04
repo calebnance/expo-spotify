@@ -11,7 +11,7 @@ import heavyRotation from '../mockdata/heavyRotation.json';
 import jumpBackIn from '../mockdata/jumpBackIn.json';
 import recentlyPlayed from '../mockdata/recentlyPlayed.json';
 
-const Home = () => {
+function Home() {
   const scrollY = React.useRef(new Animated.Value(0)).current;
 
   const opacityIn = scrollY.interpolate({
@@ -63,7 +63,7 @@ const Home = () => {
       </Animated.ScrollView>
     </React.Fragment>
   );
-};
+}
 
 const styles = StyleSheet.create({
   iPhoneNotch: {

@@ -12,7 +12,7 @@ import TouchIcon from '../components/TouchIcon';
 // context
 import Context from '../context';
 
-const ModalMusicPlayer = (props) => {
+function ModalMusicPlayer(props) {
   // get main app state
   const { currentSongData } = React.useContext(Context);
 
@@ -114,7 +114,7 @@ const ModalMusicPlayer = (props) => {
       </View>
     </View>
   );
-};
+}
 
 ModalMusicPlayer.propTypes = {
   // required

@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { FontAwesome } from '@expo/vector-icons';
 import { colors, device, gStyle } from '../constants';
 
-const BarMusicPlayer = ({ song }) => {
+function BarMusicPlayer({ song }) {
   const navigation = useNavigation();
 
   // local state
@@ -58,7 +58,7 @@ const BarMusicPlayer = ({ song }) => {
       </TouchableOpacity>
     </TouchableOpacity>
   );
-};
+}
 
 BarMusicPlayer.defaultProps = {
   song: null

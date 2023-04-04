@@ -9,7 +9,7 @@ import { colors, device, gStyle } from '../constants';
 // components
 import TouchIcon from './TouchIcon';
 
-const ScreenHeader = ({ showBack, title }) => {
+function ScreenHeader({ showBack, title }) {
   const navigation = useNavigation();
 
   return (
@@ -30,7 +30,7 @@ const ScreenHeader = ({ showBack, title }) => {
       {showBack && <View style={gStyle.flex1} />}
     </BlurView>
   );
-};
+}
 
 ScreenHeader.defaultProps = {
   showBack: false
