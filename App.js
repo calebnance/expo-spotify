@@ -9,7 +9,7 @@ import RootStack from './src/navigation/RootStack';
 // app context state
 import AppState from './src/context/AppState';
 
-const App = () => {
+function App() {
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -53,6 +53,6 @@ const App = () => {
       <RootStack />
     </AppState>
   );
-};
+}
 
 export default App;
